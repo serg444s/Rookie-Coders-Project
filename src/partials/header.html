@@ -1,0 +1,70 @@
+
+<header id="header" class="header">
+  <div class="container header_container">
+    <a href="/index.html" class="header_logo" aria-label="Logo">
+      <svg class="header_svg" width="24" height="24">
+        <use href="/src/img/logo.png"></use>
+      </svg>
+      <svg class="header_svg" width="77" height="14">
+        <use href="/"></use>
+      </svg>
+      <span>Logo</span>
+    </a>
+    <nav class="navigation">
+      <ul class="navigation_list">
+        <li class="navigation_item">
+          <a
+            class="navigation_link_home current_page"
+            href="/index.html"
+            aria-label="Link to home page"
+            >Home</a
+          >
+        </li>
+        <li class="navigation_item">
+          <a
+            class="navigation_link_shopping current_page_shop"
+            href="/src/partials/shopping-list.html"
+            aria-label="Link to Shopping list"
+            >Shopping list
+            <svg width="20" height="20">
+              <use href="/"></use></svg
+          ></a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header_right">
+      <div class="header_togglers">
+        <label for="toggler" class="switch">
+          <input
+            id="toggler"
+            type="checkbox"
+            class="switch_input"
+            aria-label="Toggle menu"
+          />
+          <span class="switch_slider"></span>
+        </label>
+        <button
+          type="button"
+          class="burger"
+          data-action="open-modal"
+          aria-label="Toggle color theme"
+        >
+          <svg width="28" height="28">
+            <use href="/"></use>
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="menu_toggle"
+          data-action="close-modal"
+          aria-label="Close modal"
+          style="display: none"
+        >
+          <svg width="28" height="28">
+            <use href="/"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
