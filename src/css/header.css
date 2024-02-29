@@ -13,8 +13,8 @@ ul {
 .header {
   z-index: 999;
   width: 100%;
-  background-color: var(--main-text-cl-dark-theme);
-  border: 1.5px solid var(--black);
+  background-color: #fff;
+  border: 1.5px solid #111;
   border-radius: 0 0 8px 8px;
   transition: all 0.3s;
   position: fixed;
@@ -106,7 +106,7 @@ ul {
   left: 1px;
 }
 .burger {
-  background-color: var(--main-text-cl-dark-theme);
+  background-color: #fff;
   stroke: #111;
   border: none;
   padding: 0;
