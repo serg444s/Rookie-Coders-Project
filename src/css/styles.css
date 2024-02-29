@@ -5,8 +5,13 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./vite-promo.css');
+@import 'node_modules/modern-normalize/modern-normalize.css';
+@import url('./base.css');
 @import url('./header.css');
+@import url('./books.css');
+@import url('./categories.css');
+@import url('./shopping-list.css');
+@import url('./support.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
