@@ -1,1 +1,2 @@
-const refs = {};
+const refs = {
+};
