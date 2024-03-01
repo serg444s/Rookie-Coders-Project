@@ -13,28 +13,39 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/shopping-list.css" />
   </head>
   <body>
-    <div class="section">
-      <div class="shopping-list-div">
-        <h1 class="shoping_item">Shopping <span class="span-color">List</span></h1>
-        <div class="empty-shopping-list-main">
-          <p class="empty-shopping-list">
-            This page is empty, add some books and proceed to order.
-          </p>
-          <img
-            class="empty-shopping-img"
-            src="../img/shopping_list/shoppinglistmobile.png"
-            width="265"
-            height="198"
-          />
+    <div class="container">
+      <load ="../partials/header.html" />
+
+      <div class="section">
+        <div class="shopping-list-div">
+          <h1 class="shoping_item">
+            Shopping <span class="span-color">List</span>
+          </h1>
+          <div class="empty-shopping-list-main">
+            <p class="empty-shopping-list">
+              This page is empty, add some books and proceed to order.
+            </p>
+            <img
+              class="empty-shopping-img"
+              src="../img/shopping_list/shoppinglistmobile.png"
+              width="265"
+              height="198"
+            />
+          </div>
+
+          <!-- тимчасові елементи -->
+          <button type="button" class="add-book">
+            Add books to local storage
+          </button>
+          <!-- ============== -->
+
+          <div class="js-books-container"></div>
         </div>
-        <div class="js-books-container"></div>
       </div>
     </div>
 
     <script type="module" src="../js/shop_list.js"></script>
-    
   </body>
 </html>
