@@ -1,3 +1,6 @@
+.shopping-list-div{
+  margin-top: 40px;
+}
 .shoping_item { 
     font-size: 32px;
     font-weight: 700;
@@ -71,6 +74,51 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
+  .shop-list-list-name {
+    width: 165px;
+    height: 14px;
+    font-size: 12px;
+    color: #3B3B3B;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .remove-shop-list-book {
+    position: absolute;
+    padding: 6px;
+    right: 14px;
+    top: 14px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: #4f2ee8;
+  }
+  .shop-list-description {
+    width: 193px;
+    height: 68px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 6px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+  .shop-list-downpart {
+    width: 193px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .shop-list-links {
+    width: 80px;
+    height: 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center;
+  }
   @media screen and (min-width: 768px) {
     .empty-shopping-list-main {
       width: 349px;
@@ -106,10 +154,41 @@
     .shop-list-author {
       width: auto;
     }
-
+    .shop-list-list-name {
+      width: max-content;
+    }
+    .remove-shop-list-book {
+      right: 24px;
+      top: 24px;
+      width: 34px;
+      height: 34px;
+    }
+    .icon-basket-shop-list {
+      width: 28px;
+      height: 28px;
+    }
+    .shop-list-description {
+      width: 508px;
+      height: 53px;
+      margin-bottom: 24px;
+  
+    }
+    .shop-list-title { 
+      width: max-content;
+    }
+    .shop-list-downpart {
+      width: auto;
+    }
+    .shop-list-links {
+      width: 140px;
+      height: 30px;
+      gap: 16px;
+    }
+    
   @media screen and (min-width: 1440px) {
     .shopping-list-div {
       width: 996px;
     }
-    
-  }}
+    .shop-list-description {
+      width: 808px;
+  }}}
