@@ -12,6 +12,7 @@
 @import url('./categories.css');
 @import url('./shopping-list.css');
 @import url('./support.css');
+@import url('./main.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
