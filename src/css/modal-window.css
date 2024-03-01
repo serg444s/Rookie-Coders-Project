@@ -1,0 +1,23 @@
+.modal-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+.modal-icon-closed {
+    stroke-width: 3px;
+    stroke: #111;
+}
+.modal-icon-closed:hover {
+    stroke: #4f2ee8;
+}
+@media screen and (min-width: 768px) {
+    .modal-icon {
+        width: 28px;
+        height: 28px;
+        position: absolute;
+        top: 24px;
+        right: 24px;
+    }
+}
