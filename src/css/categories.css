@@ -1,0 +1,42 @@
+ul{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 32px;
+
+  width: 328px;
+  height: 452px;
+  overflow-y: scroll;
+  padding-right: 20px;
+}
+a.link_category-book{
+  font: 400 18px / 1.33333 "DM Sans", sans-serif;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.6);
+}
+a.link_category-book:hover {
+  font: 700 18px / 1.33333 "DM Sans", sans-serif;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #4f2ee8;
+}
+a.link_category-book:focus {
+  color: blue;
+  font-weight: bold;
+}
+a.link_category-book:active {
+  color: blue;
+  font-weight: bold;
+}
+/*a.link_category-book:visited {*/
+/*  color: blue;*/
+/*  font-weight: bold;*/
+/*}*/
+.categories-list_books::-webkit-scrollbar {
+  width: 8px;
+}
+.categories-list_books::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 12px;
+}
