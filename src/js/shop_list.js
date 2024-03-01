@@ -1,3 +1,11 @@
+import axios from 'axios';
+export async function getBookById(bookId) {
+  const resp = await axios.get(
+    `https://books-backend.p.goit.global/books/${bookId}`
+  );
+  return resp.data;
+}
+
 function addBooks() {
   //якщо це для отримання то краще назвати getBooks, в функцію addBooks треба зробити додавання нових книг
   //функція призначена для отримання списку збережених книг з локального сховища
@@ -61,7 +69,8 @@ function renderBooks() {
   const booksContainer = document.querySelector('.js-books-container'); // Отримуємо контейнер, в який будемо вставляти книги
   const emptyListImg = document.querySelector('.shopping-list-div');
 
-  if (savedBooks.length === 0) {//Цей блок перевіряє довжину масиву savedBooks. Якщо він дорівнює 0, це означає, що список книг порожній, і зображення з повідомленням про порожній список відображається, а контейнер книг очищається (booksContainer.innerHTML = '';). У протилежному випадку, якщо в savedBooks є книги, відбувається наступне:
+  if (savedBooks.length === 0) {
+    //Цей блок перевіряє довжину масиву savedBooks. Якщо він дорівнює 0, це означає, що список книг порожній, і зображення з повідомленням про порожній список відображається, а контейнер книг очищається (booksContainer.innerHTML = '';). У протилежному випадку, якщо в savedBooks є книги, відбувається наступне:
     emptyListImg.style.display = 'block';
     booksContainer.innerHTML = '';
   } else {
@@ -84,10 +93,9 @@ function removeBook(event) {
 
 // document.addEventListener('DOMContentLoaded', renderBooks);
 
-  document.addEventListener('DOMContentLoaded', renderBooks);//коли веб-сторінка буде повністю завантажена, функція renderBooks буде викликана автоматично. Це часто використовується для початкового відображення даних на сторінці, коли всі елементи DOM вже доступні для маніпуляції.
+document.addEventListener('DOMContentLoaded', renderBooks); //коли веб-сторінка буде повністю завантажена, функція renderBooks буде викликана автоматично. Це часто використовується для початкового відображення даних на сторінці, коли всі елементи DOM вже доступні для маніпуляції.
 
-
-document.addEventListener('click',removeBook );
+document.addEventListener('click', removeBook);
 // Викликаємо функцію renderBooks, щоб вона відобразила книги, які збережені у локальному сховищі, при завантаженні сторінки
 renderBooks();
 
