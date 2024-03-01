@@ -9,6 +9,7 @@ ul.categories-list_books {
   height: 452px;
   overflow-y: scroll;
   padding-right: 20px;
+  margin-top: 40px;
 }
 a.link_category-book {
   font: 400 18px / 1.33333 'DM Sans', sans-serif;
