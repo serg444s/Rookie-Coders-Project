@@ -30,14 +30,38 @@ a.link_category-book:active {
   color: blue;
   font-weight: bold;
 }
-/*a.link_category-book:visited {*/
-/*  color: blue;*/
-/*  font-weight: bold;*/
-/*}*/
 .categories-list_books::-webkit-scrollbar {
   width: 8px;
 }
 .categories-list_books::-webkit-scrollbar-thumb {
   background: #e0e0e0;
   border-radius: 12px;
+}
+
+@media screen and (min-width: 375px) {
+  .categories-block {
+    display: flex;
+    margin-top: 40px;
+    position: fixed;
+  }
+  ul.categories-list_books {
+    gap: 20px;
+    height: 228px;
+  }
+  a.link_category-book {
+    font: 400 16px / 1.125 "DM Sans", sans-serif;
+    letter-spacing: -0.02em;
+    color: rgba(17, 17, 17, 0.6);
+  }
+}
+@media screen and (min-width: 768px) {
+  categories-block {
+    display: flex;
+    margin-top: 40px;
+    position: fixed;
+  }
+  ul.categories-list_books {
+    gap: 20px;
+    height: 472px;
+  }
 }
