@@ -23,8 +23,8 @@ ul {
 }
 
 .header_container {
-  align-items: center;
   display: flex;
+  align-items: center;
 }
 
 .header_logo {
