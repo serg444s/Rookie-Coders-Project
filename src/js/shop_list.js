@@ -1,4 +1,5 @@
 import axios from 'axios';
+//функція Анатолія для отримання книги за id (поки тут, але потім її треба буде просто імпортувати)
 export async function getBookById(bookId) {
   const resp = await axios.get(
     `https://books-backend.p.goit.global/books/${bookId}`
@@ -6,22 +7,37 @@ export async function getBookById(bookId) {
   return resp.data;
 }
 
+//функція отримує масив id збережених у сховищі і повертає масив промісів на книги
 function addBooks() {
-  //якщо це для отримання то краще назвати getBooks, в функцію addBooks треба зробити додавання нових книг
-  //функція призначена для отримання списку збережених книг з локального сховища
-  const savedInShopList = localStorage.getItem('ключ сховища'); // функція отримує доступ до даних збережених в локальному сховищі браузера за ключем мутод getitem
-  if (savedInShopList) {
-    return JSON.parse(savedInShopList); // він інтерпретується як JSON рядок і перетворюється у відповідний об'єкт за допомогою JSON.parse(savedBooks).
-  }
-  return []; //якщо немає ніц або нал або андеф то поверне пустий рядок
+  return new Promise((resolve, reject) => {
+    const savedInShopList = localStorage.getItem('books');
+
+    if (savedInShopList) {
+      const booksIdArray = JSON.parse(savedInShopList);
+      const promises = [];
+
+      booksIdArray.forEach(bookId => {
+        const promise = getBookById(bookId);
+        promises.push(promise);
+      });
+
+      Promise.all(promises)
+        .then(books => {
+          resolve(books);
+        })
+        .catch(error => {
+          reject(error);
+        });
+    } else {
+      resolve([]);
+    }
+  });
 }
 
-//в функції що іде далі, не впеанена в іконках
-// і може бути один зайвий ДІВ вкінці))
-
+//функція повертає розмітку однієї картки
 function createBookCard(book) {
   const { book_image, title, list_name, description, author, buy_links, _id } =
-    book; //деструктуризуємо .src/img/icons.svg#icon-flash-hero
+    book; //деструктуризуємо
   return `<div class="book-list">
 <img class="book-card-img" src="${book_image}" alt="${title}" />
 <div class="shop-card-info">
@@ -65,21 +81,31 @@ alt="Amazon Shop"
 }
 
 function renderBooks() {
-  const savedBooks = addBooks(); // Отримуємо збережені книги з локального сховища
-  const booksContainer = document.querySelector('.js-books-container'); // Отримуємо контейнер, в який будемо вставляти книги
+  const booksContainer = document.querySelector('.js-books-container');
   const emptyListImg = document.querySelector('.shopping-list-div');
 
-  if (savedBooks.length === 0) {
-    //Цей блок перевіряє довжину масиву savedBooks. Якщо він дорівнює 0, це означає, що список книг порожній, і зображення з повідомленням про порожній список відображається, а контейнер книг очищається (booksContainer.innerHTML = '';). У протилежному випадку, якщо в savedBooks є книги, відбувається наступне:
-    emptyListImg.style.display = 'block';
-    booksContainer.innerHTML = '';
-  } else {
-    const booksMarkup = savedBooks.map(book => addBooks(book)).join('');
-    booksContainer.innerHTML = booksMarkup;
-    emptyListImg.style.display = 'none';
-  }
+  addBooks()
+    .then(result => {
+      const savedBooks = result;
+      if (savedBooks.length === 0) {
+        //Цей блок перевіряє довжину масиву savedBooks. Якщо він дорівнює 0, це означає, що список книг порожній, і зображення з повідомленням про порожній список відображається, а контейнер книг очищається (booksContainer.innerHTML = '';). У протилежному випадку, якщо в savedBooks є книги, відбувається наступне:
+        emptyListImg.style.display = 'block';
+        booksContainer.innerHTML = '';
+      } else {
+        const booksMarkup = savedBooks
+          .map(book => createBookCard(book))
+          .join('');
+        booksContainer.innerHTML = booksMarkup;
+        //закоментувала, бо з цим чомусь не працює, треба розбиратися
+        // emptyListImg.style.display = 'none';
+      }
+    })
+    .catch(error => {
+      console.error(error); // Обробка помилок
+    });
 }
 
+//функція видаляє книгу, тут треба ще додати виклик функції removeBookIdFromStorage і передати їй id книги, яку треба видалити з local storage
 function removeBook(event) {
   if (
     event.target.classList.contains('remove-shop-list-book') ||
@@ -93,9 +119,11 @@ function removeBook(event) {
 
 // document.addEventListener('DOMContentLoaded', renderBooks);
 
-document.addEventListener('DOMContentLoaded', renderBooks); //коли веб-сторінка буде повністю завантажена, функція renderBooks буде викликана автоматично. Це часто використовується для початкового відображення даних на сторінці, коли всі елементи DOM вже доступні для маніпуляції.
+// document.addEventListener('DOMContentLoaded', renderBooks); //коли веб-сторінка буде повністю завантажена, функція renderBooks буде викликана автоматично. Це часто використовується для початкового відображення даних на сторінці, коли всі елементи DOM вже доступні для маніпуляції.
 
-document.addEventListener('click', removeBook);
+//поки закоментувала видалення книжок
+// document.addEventListener('click', removeBook);
+
 // Викликаємо функцію renderBooks, щоб вона відобразила книги, які збережені у локальному сховищі, при завантаженні сторінки
 renderBooks();
 
