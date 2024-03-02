@@ -10,7 +10,7 @@ import axios from 'axios';
 }
 
 const booksContainer = document.querySelector('.js-books-container');
-const emptyListImg = document.querySelector('.empty-shopping-list-main'); //тут був неправильний селектор
+const emptyListImg = document.querySelector('.empty-shopping-list-main');
 const shoppingListLoader = document.querySelector('#shopping-list-loader');
 
 startFunction();
@@ -81,7 +81,7 @@ function createBookCard(book) {
 <div class="shop-card-hero">
 <div class="shop-list-title-name">
 <h3 class="shop-list-title">${title}<h3>
-<p class="shop-list-list-name>${list_name}"></p>
+<p class="shop-list-list-name">${list_name}></p>
 </div>
 <button class="remove-shop-list-book" data-bookid="${_id}">
 <svg class="icon-basket-shop-list" width="28" height="26" data-bookid="${_id}">
@@ -124,7 +124,7 @@ function removeBook(event) {
   if (
     event.target.classList.contains('remove-shop-list-book') || 
     event.target.classList.contains('icon-basket-shop-list') || 
-    event.target.dataset.name === 'remove-shop-list-book' 
+    event.target.dataset.bookid === 'remove-shop-list-book' 
   ) {
    const bookId = event.target.getAttribute('data-bookid');
     removeBookFromList(bookId);
