@@ -64,6 +64,20 @@ body {
   display: none;
 }
 
+.navigation_list {
+}
+.navigation_item {
+}
+.navigation_link_home {
+}
+.current_page {
+
+}
+.navigation_link_shopping {
+}
+.current_page_shop {
+} 
+
 .header_right {
   justify-content: center;
   align-items: center;
