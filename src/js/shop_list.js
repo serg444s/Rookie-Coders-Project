@@ -2,7 +2,7 @@ import { loaderOn, loaderOff } from './loader';
 import axios from 'axios';
 
 //функція Анатолія для отримання книги за id (поки тут, але потім її треба буде просто імпортувати)
-export async function getBookById(bookId) {
+ async function getBookById(bookId) {
   const resp = await axios.get(
     `https://books-backend.p.goit.global/books/${bookId}`
   );
@@ -36,11 +36,11 @@ export function renderBooks() {
           .join('');
         loaderOff(shoppingListLoader);
         booksContainer.innerHTML = booksMarkup;
-        emptyListImg.style.display = 'none'; //тепер це працює
+        emptyListImg.style.display = 'none'; 
       }
     })
     .catch(error => {
-      console.error(error); // Обробка помилок
+      console.error(error); 
     });
 }
 
@@ -85,7 +85,7 @@ function createBookCard(book) {
 </div>
 <button class="remove-shop-list-book" data-bookid="${_id}">
 <svg class="icon-basket-shop-list" width="28" height="26" data-bookid="${_id}">
- <use data-name="icon-removebook" href="./img/symbol-defs.svg#icon-removebook"></use>
+ <use data-name="icon-removebook" href="../img/symbol-defs.svg#icon-removebook"></use>
 </svg>
 </button>
 </div>
@@ -98,9 +98,9 @@ function createBookCard(book) {
   }">
 <img 
 class="amazon-img"
-srcset="./img/shopping_list/amazon1x.png 1x,
-./img/shopping_list/amazon2x.png 2x"
-src="./img/shopping_list/amazon1x.png"
+srcset="../img/shopping_list/amazon1x.png 1x,
+../img/shopping_list/amazon2x.png 2x"
+src="../img/shopping_list/amazon1x.png"
 alt="Amazon Shop"
 />
 </a>
@@ -109,7 +109,7 @@ alt="Amazon Shop"
   }">
      <img 
   class="open-book-icon"
-  src="./img/shopping_list/openbook.png"
+  src="../img/shopping_list/openbook.png"
   alt="Open book"
   />
   </a>
