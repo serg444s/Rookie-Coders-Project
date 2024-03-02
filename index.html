@@ -15,19 +15,19 @@
     <script type="module" crossorigin src="/Rookie-Coders-Project/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/Rookie-Coders-Project/assets/vendor-8cce9181.js">
     <link rel="stylesheet" href="/Rookie-Coders-Project/assets/vendor-e5212ee8.css">
-    <link rel="stylesheet" href="/Rookie-Coders-Project/assets/index-7ebcec5e.css">
+    <link rel="stylesheet" href="/Rookie-Coders-Project/assets/index-ff290854.css">
   </head>
   <body>
     <div class="container">
       <!-- хедер - Наталя -->
       <header id="header" class="header">
-  <div class="header_container">
-    <a href="/index.html" class="header_logo" aria-label="Logo">
+  <div class="container header_container">
+    <a href="./index.html" class="header_logo" aria-label="Logo">
       <svg class="header_svg" width="24" height="24">
-        <use href="/Rookie-Coders-Project/assets/symbol-defs-6c32eefb.svg#icon-color_logo"></use>
+        <use href="/Rookie-Coders-Project/assets/symbol-defs-b9d6c098.svg#icon-color_logo"></use>
       </svg>
       <svg class="header_svg" width="77" height="14">
-        <use href="/Rookie-Coders-Project/assets/symbol-defs-6c32eefb.svg#icon-Bookshelf"></use>
+        <use href="/Rookie-Coders-Project/assets/symbol-defs-b9d6c098.svg#icon-Bookshelf"></use>
       </svg>
       <span>Logo</span>
     </a>
@@ -35,28 +35,37 @@
       <ul class="navigation_list">
         <li class="navigation_item">
           <a
-            class="navigation_link_home current_page"
-            href="../index.html"
+            class="navigation_link_home"
+            href="./index.html"
             aria-label="Link to home page"
             >Home</a
           >
         </li>
         <li class="navigation_item">
           <a
-            class="navigation_link_shopping current_page_shop"
-            href="./partials/shopping-list.html"
+            class="navigation_link_shopping"
+            href="./shopping-list.html"
             aria-label="Link to Shopping list"
             >Shopping list
-            <svg width="20" height="20">
-              <use href="/Rookie-Coders-Project/assets/symbol-defs-c92dc0c2.svg#icon-shopping"></use></svg
+            <svg class="basket" width="20" height="20">
+              <use
+                href="/Rookie-Coders-Project/assets/symbol-defs-b9d6c098.svg#icon-basket"
+              ></use></svg
           ></a>
         </li>
       </ul>
     </nav>
     <div class="header_right">
       <div class="header_togglers">
-            <button type="button" class="btn">CHANGE</button>
-
+        <label for="toggler" class="switch">
+          <input
+            id="toggler"
+            type="checkbox"
+            class="switch_input"
+            aria-label="Toggle menu"
+          />
+          <span class="switch_slider"></span>
+        </label>
         <button
           type="button"
           class="burger"
