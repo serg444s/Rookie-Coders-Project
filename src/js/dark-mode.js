@@ -1,4 +1,3 @@
-
 export function onLoad() {
   const theme = localStorage.getItem('theme');
   if (theme === 'dark-mode') {
