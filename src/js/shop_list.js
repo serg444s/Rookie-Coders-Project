@@ -1,5 +1,9 @@
 import { loaderOn, loaderOff } from './loader';
 import axios from 'axios';
+import amazon1x from '../img/shopping_list/amazon1x.png';
+import amazon2x from '../img/shopping_list/amazon2x.png';
+import openbook from '../img/shopping_list/openbook.png';
+
 //функція Анатолія для отримання книги за id (поки тут, але потім її треба буде просто імпортувати)
 export async function getBookById(bookId) {
   const resp = await axios.get(
@@ -39,7 +43,7 @@ function renderBooks() {
       }
     })
     .catch(error => {
-      console.error(error); // Обробка помилок
+      console.error(error);
     });
 }
 
@@ -97,9 +101,9 @@ function createBookCard(book) {
   }">
 <img 
 class="amazon-img"
-srcset="/img/shopping_list/amazon1x.png 1x,
-/img/shopping_list/amazon2x.png 2x"
-src="/img/shopping_list/amazon1x.png"
+srcset="${amazon1x} 1x,
+${amazon2x} 2x";
+src="${amazon1x}"
 alt="Amazon Shop"
 />
 </a>
@@ -108,7 +112,7 @@ alt="Amazon Shop"
   }">
      <img 
   class="open-book-icon"
-  src="/img/shopping_list/openbook.png"
+  src="${openbook}"
   alt="Open book"
   />
   </a>
