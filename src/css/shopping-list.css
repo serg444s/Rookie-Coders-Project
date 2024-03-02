@@ -1,7 +1,7 @@
 .shopping-list-div {
   margin-top: 104px;
 }
-.shoping_item {
+.shopping_item {
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 40px;
@@ -119,6 +119,15 @@
   gap: 8px;
   align-items: center;
 }
+.icon-basket-shop-list {
+  color: #ffffff;
+}
+.amazon-img {
+  filter: grayscale(100%);
+}
+.open-book-icon {
+  filter: grayscale(100%);
+}
 @media screen and (min-width: 768px) {
   .shopping-list-div {
     margin-top: 112px;
@@ -126,7 +135,6 @@
   .empty-shopping-list-main {
     width: 349px;
     padding-top: 100px;
-
     margin-inline: auto;
   }
 
@@ -167,8 +175,9 @@
     height: 34px;
   }
   .icon-basket-shop-list {
-    width: 28px;
-    height: 28px;
+    width: 18px;
+    height: 18px;
+    margin: auto;
   }
   .shop-list-description {
     width: 508px;
@@ -186,15 +195,15 @@
     height: 30px;
     gap: 16px;
   }
+}
 
-  @media screen and (min-width: 1440px) {
-    .shopping-list-div {
-      margin-left: auto;
-      margin-right: auto;
-      width: 996px;
-    }
-    .shop-list-description {
-      width: 808px;
-    }
+@media screen and (min-width: 1440px) {
+  .shopping-list-div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 996px;
+  }
+  .shop-list-description {
+    width: 808px;
   }
 }
