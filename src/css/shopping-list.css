@@ -108,13 +108,12 @@ letter-spacing: 0.03em;
   background-color: #4f2ee8;
 }
 .shop-list-description {
-  width: 193px;
-  height: 68px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-bottom: 6px;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+ font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.04em;
+  color: #111;
+overflow: hidden;
 }
 .shop-list-downpart {
   width: 193px;
@@ -143,6 +142,7 @@ letter-spacing: 0.03em;
   width: 48px;
 height: 15px;
 }
+
 @media screen and (min-width: 768px) {
   .shopping-list-div {
  
