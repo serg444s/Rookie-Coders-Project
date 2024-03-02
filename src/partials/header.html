@@ -1,6 +1,6 @@
 <header id="header" class="header">
-  <div class="header_container">
-    <a href="/index.html" class="header_logo" aria-label="Logo">
+  <div class="container header_container">
+    <a href="./index.html" class="header_logo" aria-label="Logo">
       <svg class="header_svg" width="24" height="24">
         <use href="./img/header icon/symbol-defs.svg#icon-color_logo"></use>
       </svg>
@@ -13,28 +13,37 @@
       <ul class="navigation_list">
         <li class="navigation_item">
           <a
-            class="navigation_link_home current_page"
-            href="../index.html"
+            class="navigation_link_home"
+            href="./index.html"
             aria-label="Link to home page"
             >Home</a
           >
         </li>
         <li class="navigation_item">
           <a
-            class="navigation_link_shopping current_page_shop"
-            href="./partials/shopping-list.html"
+            class="navigation_link_shopping"
+            href="./shopping-list.html"
             aria-label="Link to Shopping list"
             >Shopping list
-            <svg width="20" height="20">
-              <use href="./img/symbol-defs.svg#icon-shopping"></use></svg
+            <svg class="basket" width="20" height="20">
+              <use
+                href="./img/header icon/symbol-defs.svg#icon-basket"
+              ></use></svg
           ></a>
         </li>
       </ul>
     </nav>
     <div class="header_right">
       <div class="header_togglers">
-            <button type="button" class="btn">CHANGE</button>
-
+        <label for="toggler" class="switch">
+          <input
+            id="toggler"
+            type="checkbox"
+            class="switch_input"
+            aria-label="Toggle menu"
+          />
+          <span class="switch_slider"></span>
+        </label>
         <button
           type="button"
           class="burger"
