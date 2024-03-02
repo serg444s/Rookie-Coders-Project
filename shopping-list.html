@@ -1,10 +1,11 @@
+<!-- ЮЛЯ -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEbSURBVHgBtdU9T8JAHMfx3x1V62J8B25Ozq6+ABeNujpp4mR8A0YT34SDi3Fw0WhinIENFkYWNhYGCAkPLRAIx/0HSGkKvd6f+ybX9PqQT3pDTwRB8CyEeIKjBB1cImJ+4goR0Uk53/35fR+dgdHBYQ7XD/5i7kVvHh3nOu3WFl5fhrBNxeYy/sDJ6TbuHn1sKi/pIiHNhkK1MoFJ9doUQU+ZA9TlzY5eqqn+ml2kdX/eXwnIdS8W/8caGYCTTHuAi6QCXMQI4CDGgC2SCbBBMgNZESsgC+KBESEs4LO0B5O+3kb41iMp6yWKRr+VCz2SYi1RHKHiP8glQClVkFIqWHZ16+PvY7ivT1mbVmq0/YZhqGjAVXMELiNkBrrMfdcCB+zYAAAAAElFTkSuQmCC" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bookshelf</title>
+    <title>Shopping List</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,7 +13,7 @@
       rel="stylesheet"
     />
     
-    <script type="module" crossorigin src="/Rookie-Coders-Project/commonHelpers.js"></script>
+    <script type="module" crossorigin src="/Rookie-Coders-Project/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/Rookie-Coders-Project/assets/styles-90b7f055.js">
     <link rel="modulepreload" crossorigin href="/Rookie-Coders-Project/assets/vendor-8cce9181.js">
     <link rel="stylesheet" href="/Rookie-Coders-Project/assets/styles-6edb001c.css">
@@ -20,7 +21,6 @@
   </head>
   <body>
     <div class="container">
-      <!-- хедер - Наталя -->
       <header id="header" class="header">
   <div class="container header_container">
     <a href="./index.html" class="header_logo" aria-label="Logo">
@@ -83,36 +83,35 @@
 </header>
 
 
-      <main>
-        <div class="main-container">
-          <div class="left-container">
-            <!-- категорії - Даня -->
-            <!-- Даня -->
-
-  <div class="categories-block">
-    <ul class="categories-list_books">
-      <li class="item-list_category"><a href="" class="link_category-book">All categories</a></li>
-    </ul>
-  </div>
-
-            <!-- Ukraine - Даша -->
-            <!-- Даша -->
-
+      <div class="section">
+        <div class="shopping-list-div">
+          <h1 class="shoping_item">
+            Shopping <span class="span-color">List</span>
+          </h1>
+          <div class="empty-shopping-list-main">
+            <p class="empty-shopping-list">
+              This page is empty, add some books and proceed to order.
+            </p>
+            <img
+              class="empty-shopping-img"
+              src="/Rookie-Coders-Project/assets/shoppinglistmobile-a43bd610.png"
+              width="265"
+              height="198"
+            />
           </div>
 
-          <div class="right-container">
-            <!-- книги - Анатолій -->
-            <!-- Анатолій -->
-<div>
-  <ul class="top-categories-list"></ul>
-</div>
+          <div class="js-books-container"></div>
 
-<!--Hello-->
-
+          <div class="shopping-list-loader-container">
+            <div id="shopping-list-loader"></div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
+
+    <!-- тимчасова кнопка -->
+    <button type="button" class="add-book">Add books to local storage</button>
+    <!-- ============== -->
 
     
   </body>
