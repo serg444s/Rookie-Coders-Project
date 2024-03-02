@@ -1,3 +1,10 @@
+.modal {
+    border: 2px solid #111;
+    border-radius: 18px;
+    width: 335px;
+    height: 762px;
+    background-color: #fff;
+}
 .modal-icon {
     width: 24px;
     height: 24px;
@@ -12,12 +19,101 @@
 .modal-icon-closed:hover {
     stroke: #4f2ee8;
 }
+.modal-img {
+    border-radius: 8px;
+    width: 287px;
+    height: 408px;                                                         
+}
+.modal-title {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.125;
+    letter-spacing: -0.04em;
+    color: #111;    
+}
+.modal-author {
+    font-family: "DM Sans", sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: -0.04em;
+    color: #b4afaf;
+}
+.modal-text {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.04em;
+    color: #111;    
+}
+.modal-link {
+    width: 115px;
+    height: 32px;
+}
+.modal-btn {
+    border: 2px solid #4f2ee8;
+    border-radius: 40px;
+    padding: 14px 28px;
+    width: 211px;
+    height: 46px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #111;                       
+}
+.modal-btn:hover,
+.modal-btn:focus {
+    background-color: #4f2ee8;
+    color: #fff;
+}
+.modal-congrat-text {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    text-align: center;
+    color: rgba(17, 17, 17, 0.5);    
+}
 @media screen and (min-width: 768px) {
+    .modal {
+        width: 579px;
+        height: 465px;
+    }
     .modal-icon {
         width: 28px;
         height: 28px;
         position: absolute;
         top: 24px;
         right: 24px;
+    }
+    .modal-img {
+        width: 192px;
+        height: 281px;                                                         
+    }
+    .modal-title {
+        font-size: 24px;
+        line-height: 1.16667;   
+    }
+    .modal-author {
+        font-size: 14px;
+        line-height: 1.28571;
+    }
+    .modal-btn {
+        padding: 20px 173px;
+        width: 499px;
+        height: 64px;
+        font-size: 18px;
+        line-height: 1.33333;                       
+    }
+    .modal-congrat-text {
+        font-size: 12px;
+        line-height: 1.16667; 
     }
 }

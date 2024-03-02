@@ -1,6 +1,6 @@
 export function bookTemplate(book) {
-  const { book_image, title, author } = book;
-  return `<li class="top-book">
+  const { _id, book_image, title, author } = book;
+  return `<li class="top-book" data-id=${_id}>
             <img class="book-image" src="${book_image}" alt="${title}" />
             <h3 class="book-name">${title}</h3>
             <p class="author-name">${author}</p>
