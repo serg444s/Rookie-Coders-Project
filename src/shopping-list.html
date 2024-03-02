@@ -48,6 +48,48 @@
     <button type="button" class="add-book">Add books to local storage</button>
     <!-- ============== -->
 
+<div class="book-list">
+<img class="book-card-img" src="https://storage.googleapis.com/du-prd/books/images/9780735211292.jpg" alt="${title}" />
+<div class="shop-card-info">
+            <div class="shop-card-hero">
+                <div class="shop-list-title-name">
+                <h3 class="shop-list-title">title<h3>
+                <p class="shop-list-list-name">list_name</p>
+                </div>
+            <button class="remove-shop-list-book" data-bookid="id">
+            <svg class="icon-basket-shop-list" width="28" height="26" data-bookid="id">
+             <use data-name="icon-removebook" href="/img/symbol-defs.svg#icon-removebook"></use>
+            </svg>
+            </button>
+            </div>
+<p class="shop-list-description">description</p>
+<div class="shop-list-downpart">
+<p class="shop-list-author"> Author: author</p>
+<div class="shop-list-links">
+<a class="amazon-link" target="_blank" href="https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299?tag=NYTBSREV-20">
+<img 
+class="amazon-img"
+srcset="/img/shopping_list/amazon1x.png 1x,
+/img/shopping_list/amazon2x.png 2x"
+src="/img/shopping_list/amazon1x.png"
+alt="Amazon Shop"
+/>
+</a>
+<a class="openbooks-link" target="_blank" href="https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299?tag=NYTBSREV-20">
+     <img 
+  class="open-book-icon"
+  src="/img/shopping_list/openbook.png"
+  alt="Open book"
+  />
+  </a>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
     <script type="module" src="./js/shop_list.js"></script>
   </body>
 </html>
