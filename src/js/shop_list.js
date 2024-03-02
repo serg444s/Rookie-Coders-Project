@@ -1,6 +1,6 @@
 import { loaderOn, loaderOff } from './loader';
 import axios from 'axios';
-export renderBooks 
+
 //функція Анатолія для отримання книги за id (поки тут, але потім її треба буде просто імпортувати)
 export async function getBookById(bookId) {
   const resp = await axios.get(
@@ -22,7 +22,7 @@ function startFunction() {
   loaderOn(shoppingListLoader);
 }
 
-function renderBooks() {
+export function renderBooks() {
   addBooks()
     .then(result => {
       const savedBooks = result;
