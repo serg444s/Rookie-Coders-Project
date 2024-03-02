@@ -1,3 +1,4 @@
+import { loaderOn, loaderOff } from './loader';
 import axios from 'axios';
 //функція Анатолія для отримання книги за id (поки тут, але потім її треба буде просто імпортувати)
 export async function getBookById(bookId) {
@@ -5,6 +6,41 @@ export async function getBookById(bookId) {
     `https://books-backend.p.goit.global/books/${bookId}`
   );
   return resp.data;
+}
+
+const booksContainer = document.querySelector('.js-books-container');
+const emptyListImg = document.querySelector('.empty-shopping-list-main'); //тут був неправильний селектор
+const shoppingListLoader = document.querySelector('#shopping-list-loader');
+
+startFunction();
+renderBooks();
+
+function startFunction() {
+  booksContainer.innerHTML = '';
+  emptyListImg.style.display = 'none';
+  loaderOn(shoppingListLoader);
+}
+
+function renderBooks() {
+  addBooks()
+    .then(result => {
+      const savedBooks = result;
+      if (savedBooks.length === 0) {
+        loaderOff(shoppingListLoader);
+        emptyListImg.style.display = 'block';
+        booksContainer.innerHTML = '';
+      } else {
+        const booksMarkup = savedBooks
+          .map(book => createBookCard(book))
+          .join('');
+        loaderOff(shoppingListLoader);
+        booksContainer.innerHTML = booksMarkup;
+        emptyListImg.style.display = 'none'; //тепер це працює
+      }
+    })
+    .catch(error => {
+      console.error(error); // Обробка помилок
+    });
 }
 
 //функція отримує масив id збережених у сховищі і повертає масив промісів на книги
@@ -48,7 +84,7 @@ function createBookCard(book) {
 </div>
 <button class="remove-shop-list-book" data-bookid="${_id}">
 <svg class="icon-basket-shop-list" width="28" height="26" data-bookid="${_id}">
- <use data-name="icon-removebook" href="../img/symbol-defs.svg#icon-removebook"></use>
+ <use data-name="icon-removebook" href="./img/symbol-defs.svg#icon-removebook"></use>
 </svg>
 </button>
 </div>
@@ -61,9 +97,9 @@ function createBookCard(book) {
   }">
 <img 
 class="amazon-img"
-srcset="../img/shopping_list/amazon1x.png 1x,
-../img/shopping_list/amazon2x.png 2x"
-src="../img/shopping_list/amazon1x.png"
+srcset="./img/shopping_list/amazon1x.png 1x,
+./img/shopping_list/amazon2x.png 2x"
+src="./img/shopping_list/amazon1x.png"
 alt="Amazon Shop"
 />
 </a>
@@ -72,7 +108,7 @@ alt="Amazon Shop"
   }">
      <img 
   class="open-book-icon"
-  src="../img/shopping_list/openbook.png"
+  src="./img/shopping_list/openbook.png"
   alt="Open book"
   />
   </a>
@@ -80,31 +116,6 @@ alt="Amazon Shop"
 </div>
 </div>
 </div>`;
-}
-
-function renderBooks() {
-  const booksContainer = document.querySelector('.js-books-container');
-  const emptyListImg = document.querySelector('.shopping-list-div');
-
-  addBooks()
-    .then(result => {
-      const savedBooks = result;
-      if (savedBooks.length === 0) {
-        //Цей блок перевіряє довжину масиву savedBooks. Якщо він дорівнює 0, це означає, що список книг порожній, і зображення з повідомленням про порожній список відображається, а контейнер книг очищається (booksContainer.innerHTML = '';). У протилежному випадку, якщо в savedBooks є книги, відбувається наступне:
-        emptyListImg.style.display = 'block';
-        booksContainer.innerHTML = '';
-      } else {
-        const booksMarkup = savedBooks
-          .map(book => createBookCard(book))
-          .join('');
-        booksContainer.innerHTML = booksMarkup;
-        //закоментувала, бо з цим чомусь не працює, треба розбиратися
-        // emptyListImg.style.display = 'none';
-      }
-    })
-    .catch(error => {
-      console.error(error); // Обробка помилок
-    });
 }
 
 //функція видаляє книгу, тут треба ще додати виклик функції removeBookIdFromStorage і передати їй id книги, яку треба видалити з local storage
@@ -125,9 +136,6 @@ function removeBook(event) {
 
 //поки закоментувала видалення книжок
 // document.addEventListener('click', removeBook);
-
-// Викликаємо функцію renderBooks, щоб вона відобразила книги, які збережені у локальному сховищі, при завантаженні сторінки
-renderBooks();
 
 ////книги в localStorage - тимчасова кнопка додавання книжок
 const addButton = document.querySelector('.add-book');
