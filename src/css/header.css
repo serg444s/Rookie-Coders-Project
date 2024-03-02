@@ -3,12 +3,20 @@ svg {
   padding: 0;
   display: block;
 }
-
-.dark-mode {
-  background-color: #242424;
-  color: rgba(255, 255, 255, 0.6);
+body {
+  position: relative;
+  transition: all 0.3s ease 0s;
+  html.dark-mode & {
+    border: 1.5px solid #fff;
+    color: #9a9a9a;
+    background-color: #202024;
+  }
 }
+//=============================================================
 
+//  Для зміни любого стилю при темній темі додайте:   html.dark-mode & {}  Приямо в класі де потрібні зміни і пропешіть в лапках шо змінюємо
+
+//=============================================================
 .header {
   z-index: 999;
   width: 100%;
@@ -20,18 +28,21 @@ svg {
   top: 0;
   left: 0;
   margin-bottom: 40px;
-  padding: 0 20px;
+  html.dark-mode & {
+    background-color: #111;
+    border: 1.5px solid #fff;
+  }
 }
 
 .header_container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 375px;
 }
 
 .header_logo {
   gap: 8px;
-  margin-right: auto;
   padding-top: 18px;
   padding-bottom: 18px;
   display: flex;
@@ -39,6 +50,9 @@ svg {
 }
 .header_svg {
   fill: #000;
+  html.dark-mode & {
+    fill: #fff;
+  }
 }
 
 .header_logo span {
@@ -49,19 +63,7 @@ svg {
 .navigation {
   display: none;
 }
-/* .navigation_list {
-}
-.navigation_item {
-}
-.navigation_link_home {
-}
-.current_page {
-    
-}
-.navigation_link_shopping {
-}
-.current_page_shop {
-} */
+
 .header_right {
   justify-content: center;
   align-items: center;
@@ -124,25 +126,30 @@ svg {
   border: none;
   padding: 0;
   display: flex;
+  html.dark-mode & {
+    stroke: #fff;
+  }
 }
-
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 768px) {
   .header_container {
-    width: 375px;
+    width: 768px;
+    justify-content: normal;
   }
-  .current_page {
-    width: 72px;
-    height: 34px;
-    background-color: var(--secondary-accent-cl);
-    border-radius: 36px;
-    padding: 8px 16px;
-    font-weight: 700;
+  .navigation {
+    margin-left: 40px;
+    display: flex;
   }
 
-  .navigator_link_home {
+  .navigation_list {
+    align-items: center;
+    gap: 16px;
+    display: flex;
+  }
+
+  .navigation_link_home {
     letter-spacing: -0.04em;
     text-transform: uppercase;
-    color: var(--main-text-cl-light-theme);
+    color: #111;
     padding-top: 26px;
     padding-bottom: 26px;
     font-family: DM Sans;
@@ -150,17 +157,100 @@ svg {
     font-style: normal;
     font-weight: 500;
     line-height: 1.29;
-    display: block;
+    display: flex;
+    html.dark-mode & {
+      color: #fff;
+    }
+  }
+  .navigation_link_home:hover {
+    width: 72px;
+    height: 34px;
+    background: #eac645;
+    border-radius: 36px;
+    padding: 8px 16px;
+    font-weight: 700;
+    border: none;
+    html.dark-mode & {
+      color: #111;
+    }
+  }
+  .navigation_link_home:focus {
+    width: 72px;
+    height: 34px;
+    background: #eac645;
+    border-radius: 36px;
+    padding: 8px 16px;
+    font-weight: 700;
+    border: none;
+    html.dark-mode & {
+      color: #111;
+    }
+  }
+  .navigation_link_shopping {
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #111;
+    align-items: center;
+    gap: 7px;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.29;
+    display: flex;
+    html.dark-mode & {
+      color: #fff;
+    }
+  }
+  .navigation_link_shopping:hover {
+    background: #eac645;
+    border-radius: 36px;
+    padding: 7px 16px;
+    width: 156px;
+    height: 34px;
+    font-weight: 700;
+    border: none;
+    html.dark-mode & {
+      color: #111;
+    }
+  }
+  .navigation_link_shopping:focus {
+    background: #eac645;
+    border-radius: 36px;
+    padding: 7px 16px;
+    width: 156px;
+    height: 34px;
+    font-weight: 700;
+    border: none;
+    html.dark-mode & {
+      color: #111;
+    }
+  }
+  .basket {
+    html.dark-mode & {
+      fill: #fff;
+      html.dark-mode & {
+        fill: #111;
+      }
+    }
+  }
+
+  .header_right {
+    margin-left: auto;
+  }
+  .burger {
+    display: none;
   }
 }
 
-@media screen and (min-width: 768px) {
-  .header_container {
-    width: 768px;
-  }
-}
 @media screen and (min-width: 1440px) {
   .header_container {
     width: 100%;
+  }
+  .navigation {
+    margin-left: 75px;
+    gap: 24px;
   }
 }

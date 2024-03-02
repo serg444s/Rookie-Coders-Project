@@ -1,24 +1,4 @@
-// const btn = document.querySelector('.switch_input');
-// const localStorageKey = 'dark-mode';
 
-// btn.addEventListener('click', onBtnClick);
-
-// function onBtnClick() {
-//   const body = document.body;
-//   const isDarkMode = localStorage.getItem(localStorageKey) === 'true';
-//   body.classList.toggle('dark-mode', !isDarkMode);
-//   localStorage.setItem(localStorageKey, !isDarkMode);
-//   console.log(localStorage.getItem(localStorageKey));
-// }
-
-// export function onLoad() {
-//   const body = document.body;
-//   body.classList.toggle(
-//     'dark-mode',
-//     localStorage.getItem(localStorageKey) === 'true'
-//   );
-// }
-//==============================================
 export function onLoad() {
   const theme = localStorage.getItem('theme');
   if (theme === 'dark-mode') {
