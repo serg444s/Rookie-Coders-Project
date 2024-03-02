@@ -47,8 +47,8 @@ function createBookCard(book) {
 <p class="shop-list-list-name>${list_name}"></p>
 </div>
 <button class="remove-shop-list-book" data-bookid="${_id}">
-<svg class="icon-basket-shop-list" width="28" height="25" data-bookid="${_id}">
- <use data-name="icon-basket-shop" href="../img/symbol-defs.svg#icon-basket"></use>
+<svg class="icon-basket-shop-list" width="28" height="26" data-bookid="${_id}">
+ <use data-name="icon-removebook" href="../img/symbol-defs.svg#icon-removebook"></use>
 </svg>
 </button>
 </div>
@@ -70,9 +70,11 @@ alt="Amazon Shop"
 <a class="openbooks-link" target="_blank" href="${
     buy_links.find(buyLink => buyLink.name === 'Apple Books').url
   }">
-    <svg class="open-book-icon" width="28" height="27" data-bookid="${_id}">
-   <use data-name="icon-open-book" href="../img/symbol-defs.svg#icon-image-1"></use>
-   </svg>
+     <img 
+  class="open-book-icon"
+  src="../img/shopping_list/openbook.png"
+  alt="Open book"
+  />
   </a>
 </div>
 </div>
