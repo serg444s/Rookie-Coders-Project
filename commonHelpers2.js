@@ -4,7 +4,7 @@ import"./assets/styles-ce0cdb9a.js";import{a as k}from"./assets/vendor-8cce9181.
 <div class="shop-card-hero">
 <div class="shop-list-title-name">
 <h3 class="shop-list-title">${t}<h3>
-<p class="shop-list-list-name>${a}"></p>
+<p class="shop-list-list-name">${a}></p>
 </div>
 <button class="remove-shop-list-book" data-bookid="${p}">
 <svg class="icon-basket-shop-list" width="28" height="26" data-bookid="${p}">
@@ -35,5 +35,5 @@ alt="Amazon Shop"
 </div>
 </div>
 </div>
-</div>`}function y(o){if(o.target.classList.contains("remove-shop-list-book")||o.target.classList.contains("icon-basket-shop-list")||o.target.dataset.name==="remove-shop-list-book"){const s=o.target.getAttribute("data-bookid");L(s)}}function L(o){let s=localStorage.getItem("books");if(s){s=JSON.parse(s);const t=s.indexOf(o);t!==-1&&s.splice(t,1),localStorage.setItem("books",JSON.stringify(s)),b()}}document.addEventListener("click",y);const S=document.querySelector(".add-book");S.addEventListener("click",o=>{const s=["643282b1e85766588626a080","643282b1e85766588626a0ba","643282b1e85766588626a0dc","643282b2e85766588626a0fc","643282b2e85766588626a118","643282b1e85766588626a085","643282b1e85766588626a0b2"];localStorage.setItem("books",JSON.stringify(s))});
+</div>`}function y(o){if(o.target.classList.contains("remove-shop-list-book")||o.target.classList.contains("icon-basket-shop-list")||o.target.dataset.bookid==="remove-shop-list-book"){const s=o.target.getAttribute("data-bookid");L(s)}}function L(o){let s=localStorage.getItem("books");if(s){s=JSON.parse(s);const t=s.indexOf(o);t!==-1&&s.splice(t,1),localStorage.setItem("books",JSON.stringify(s)),b()}}document.addEventListener("click",y);const S=document.querySelector(".add-book");S.addEventListener("click",o=>{const s=["643282b1e85766588626a080","643282b1e85766588626a0ba","643282b1e85766588626a0dc","643282b2e85766588626a0fc","643282b2e85766588626a118","643282b1e85766588626a085","643282b1e85766588626a0b2"];localStorage.setItem("books",JSON.stringify(s))});
 //# sourceMappingURL=commonHelpers2.js.map
