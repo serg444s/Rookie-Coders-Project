@@ -12,11 +12,11 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <div class="container">
-      <load ="./header.html" />
+      <load ="./partials/header.html" />
 
       <div class="section">
         <div class="shopping-list-div">
@@ -29,23 +29,25 @@
             </p>
             <img
               class="empty-shopping-img"
-              src="../img/shopping_list/shoppinglistmobile.png"
+              src="./img/shopping_list/shoppinglistmobile.png"
               width="265"
               height="198"
             />
           </div>
 
-          <!-- тимчасові елементи -->
-          <button type="button" class="add-book">
-            Add books to local storage
-          </button>
-          <!-- ============== -->
-
           <div class="js-books-container"></div>
+
+          <div class="shopping-list-loader-container">
+            <div id="shopping-list-loader"></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <script type="module" src="../js/shop_list.js"></script>
+    <!-- тимчасова кнопка -->
+    <button type="button" class="add-book">Add books to local storage</button>
+    <!-- ============== -->
+
+    <script type="module" src="./js/shop_list.js"></script>
   </body>
 </html>
