@@ -1,5 +1,8 @@
 import { loaderOn, loaderOff } from './loader';
 import axios from 'axios';
+import amazon1x from '../img/shopping_list/amazon1x.png';
+import amazon2x from '../img/shopping_list/amazon1x.png';
+import openbook from '../img/shopping_list/openbook.png';
 
 //функція Анатолія для отримання книги за id (поки тут, але потім її треба буде просто імпортувати)
  async function getBookById(bookId) {
@@ -98,9 +101,11 @@ function createBookCard(book) {
   }">
 <img 
 class="amazon-img"
-srcset="../img/shopping_list/amazon1x.png 1x,
-../img/shopping_list/amazon2x.png 2x"
-src="../img/shopping_list/amazon1x.png"
+srcset="
+${amazon1x} 1x,
+${amazon2x} 2x
+"
+src="${amazon1x}"
 alt="Amazon Shop"
 />
 </a>
@@ -124,7 +129,7 @@ function removeBook(event) {
   if (
     event.target.classList.contains('remove-shop-list-book') || 
     event.target.classList.contains('icon-basket-shop-list') || 
-    event.target.dataset.bookid === 'remove-shop-list-book' 
+    event.target.dataset.name === 'remove-shop-list-book' 
   ) {
    const bookId = event.target.getAttribute('data-bookid');
     removeBookFromList(bookId);
