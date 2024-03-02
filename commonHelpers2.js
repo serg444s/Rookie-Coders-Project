@@ -8,7 +8,7 @@ import"./assets/styles-90b7f055.js";import{a as b}from"./assets/vendor-8cce9181.
 </div>
 <button class="remove-shop-list-book" data-bookid="${d}">
 <svg class="icon-basket-shop-list" width="28" height="26" data-bookid="${d}">
- <use data-name="icon-removebook" href="./img/symbol-defs.svg#icon-removebook"></use>
+ <use data-name="icon-removebook" href="/img/symbol-defs.svg#icon-removebook"></use>
 </svg>
 </button>
 </div>
@@ -19,16 +19,16 @@ import"./assets/styles-90b7f055.js";import{a as b}from"./assets/vendor-8cce9181.
 <a class="amazon-link" target="_blank" href="${i.find(l=>l.name==="Amazon").url}">
 <img 
 class="amazon-img"
-srcset="./img/shopping_list/amazon1x.png 1x,
-./img/shopping_list/amazon2x.png 2x"
-src="./img/shopping_list/amazon1x.png"
+srcset="/img/shopping_list/amazon1x.png 1x,
+/img/shopping_list/amazon2x.png 2x"
+src="/img/shopping_list/amazon1x.png"
 alt="Amazon Shop"
 />
 </a>
 <a class="openbooks-link" target="_blank" href="${i.find(l=>l.name==="Apple Books").url}">
      <img 
   class="open-book-icon"
-  src="./img/shopping_list/openbook.png"
+  src="/img/shopping_list/openbook.png"
   alt="Open book"
   />
   </a>
