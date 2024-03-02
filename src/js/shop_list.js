@@ -118,24 +118,44 @@ alt="Amazon Shop"
 </div>`;
 }
 
-//функція видаляє книгу, тут треба ще додати виклик функції removeBookIdFromStorage і передати їй id книги, яку треба видалити з local storage
 function removeBook(event) {
+ 
   if (
-    event.target.classList.contains('remove-shop-list-book') ||
-    event.target.classList.contains('icon-basket-shop-list') ||
-    event.target.dataset.name === 'remove-shop-list-book'
+    event.target.classList.contains('remove-shop-list-book') || 
+    event.target.classList.contains('icon-basket-shop-list') || 
+    event.target.dataset.name === 'remove-shop-list-book' 
   ) {
-    const bookId = event.target.getAttribute('data-bookid');
+   const bookId = event.target.getAttribute('data-bookid');
     removeBookFromList(bookId);
   }
 }
 
-// document.addEventListener('DOMContentLoaded', renderBooks);
+
+function removeBookFromList(bookId) {
+ let savedInShopList = localStorage.getItem('books');
+  
+  if (savedInShopList) {
+    savedInShopList = JSON.parse(savedInShopList);
+    const indexToRemove = savedInShopList.indexOf(bookId);
+    
+    // Видаляємо книгу з масиву за її індексом
+    if (indexToRemove !== -1) {
+      savedInShopList.splice(indexToRemove, 1);
+    }
+    
+    // Зберігаємо оновлений масив книг в localStorage
+    localStorage.setItem('books', JSON.stringify(savedInShopList));
+    
+    // Оновлюємо список книг на сторінці
+    renderBooks();
+  }
+}
+
 
 // document.addEventListener('DOMContentLoaded', renderBooks); //коли веб-сторінка буде повністю завантажена, функція renderBooks буде викликана автоматично. Це часто використовується для початкового відображення даних на сторінці, коли всі елементи DOM вже доступні для маніпуляції.
 
 //поки закоментувала видалення книжок
-// document.addEventListener('click', removeBook);
+document.addEventListener('click', removeBook);
 
 ////книги в localStorage - тимчасова кнопка додавання книжок
 const addButton = document.querySelector('.add-book');
