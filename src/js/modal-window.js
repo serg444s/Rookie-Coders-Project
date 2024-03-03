@@ -2,6 +2,7 @@ import * as basicLightbox from 'basiclightbox';
 import { addBookIdToStorage } from './addBookIdToStorage';
 import { removeBookIdFromStorage } from './removeBookIdFromStorage';
 
+
 const bookList = document.querySelector('.top-categories-list');
 const modalIcon = document.querySelector('.modal-icon');
 const backdrop = document.querySelector('.backdrop');

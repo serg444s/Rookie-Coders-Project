@@ -5,6 +5,8 @@ import amazon1x from '../img/shopping_list/amazon1x.png';
 import amazon2x from '../img/shopping_list/amazon2x.png';
 import openbook from '../img/shopping_list/openbook.png';
 import trash from '../img/shopping_list/trash.png';
+import Pagination from 'tui-pagination';
+
 
 //функція Анатолія для отримання книги за id (поки тут, але потім її треба буде просто імпортувати)
 async function getBookById(bookId) {
@@ -13,6 +15,90 @@ async function getBookById(bookId) {
   );
   return resp.data;
 }
+
+let currentPage = 1;
+let itemsPerPage;
+let visiblePages;
+let pagination; // Змінна для зберігання об'єкта пагінації
+
+
+cartListEl.addEventListener('click', deleteCard);
+window.addEventListener('resize', changePagOptionsByScreenWidth);
+document.addEventListener('DOMContentLoaded', firstPageLoaded)
+function firstPageLoaded() {
+  // Викликається при завантаженні сторінки
+  // Ініціалізуємо початкові параметри пагінації та відображаємо першу сторінку
+  itemsPerPage = calculateItemsPerPage();
+  visiblePages = calculateVisiblePages();
+  renderBooksPerPage(currentPage);
+  setupPagination();
+}
+
+function setupPagination() {
+  const paginationContainer = document.getElementById('pagination-container');
+  pagination = new Pagination(paginationContainer, {
+    totalItems: totalBooksCount, // Загальна кількість книг
+    itemsPerPage: itemsPerPage,
+    visiblePages: visiblePages,
+    page: currentPage,
+    centerAlign: true,
+  });
+
+  pagination.on('beforeMove', (event) => {
+    currentPage = event.page;
+    renderBooksPerPage(currentPage);
+  });
+}
+
+function changePagOptionsByScreenWidth() {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    itemsPerPage = calculateItemsPerPage();
+    visiblePages = calculateVisiblePages();
+    pagination.reset({
+      itemsPerPage: itemsPerPage,
+      visiblePages: visiblePages,
+    });
+    pagination.movePage(currentPage); // Переміщуємо на поточну сторінку після зміни параметрів пагінації
+  }, 200);
+}
+
+function changePagOptionsByScreenWidth() {
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 768) {
+    visiblePages = 1;
+    itemsPerPage = 4;
+    clearTimeout(resizeTimeout);
+
+    resizeTimeout = setTimeout(function () {
+      createShoppingList();
+    }, 200);
+  } else if (screenWidth >= 768) {
+    itemsPerPage = 3;
+    visiblePages = 3;
+    clearTimeout(resizeTimeout);
+
+    resizeTimeout = setTimeout(function () {
+      createShoppingList();
+    }, 200);
+  }
+}
+
+// Функція зміни кількості відображення карток на сторінці в залежності від ширини екрану при першої загрузці сторінки
+function firstPageLoaded() {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth < 768) {
+    visiblePages = 1;
+    itemsPerPage = 4;
+    createShoppingList();
+  } else if (screenWidth >= 768) {
+    itemsPerPage = 3;
+    visiblePages = 3;
+    createShoppingList();
+  }
+}
+
 
 const booksContainer = document.querySelector('.js-books-container');
 const emptyListImg = document.querySelector('.empty-shopping-list-main');
