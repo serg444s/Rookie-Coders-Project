@@ -114,8 +114,12 @@ const swiper = new Swiper('.swiper', {
 let isNext = false;
 
 const btn = document.querySelector('.supporters__btn');
+const svgIcon = document.querySelector('.supporters__btn-icon');
+
 btn.addEventListener('click', () => {
   swiper.slideTo(isNext ? 0 : 6, 100);
+
+  svgIcon.style.transform = isNext ? '' : 'rotate(180deg)';
 
   isNext = !isNext;
 });

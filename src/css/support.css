@@ -84,7 +84,7 @@
   align-items: center;
   margin-bottom: 20px;
   width: 159px;
-  height: 32px;
+  height: 32px; 
 }
 
 /*svg {
@@ -118,13 +118,13 @@
 
 .supporters_list {
 }
-.support_line {
-}
+.support_line {}
 .support_line span {
-  margin-right: 16px;
+   margin-right: 16px; 
 }
 
 @media screen and (min-width: 768px) {
+ 
 }
 
 @media screen and (min-width: 1440px) {
