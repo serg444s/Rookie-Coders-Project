@@ -3,9 +3,9 @@ import { onLoad } from './js/dark-mode.js';
 import { startLoad } from './js/startLoad.js';
 import { fetchOneCategori } from './js/fetchOneCategori.js';
 
-import { onOpenModal , onCloseModal} from './js/burger.js';
+import { onOpenModal, onCloseModal } from './js/burger.js';
 
-// import { charities } from './js/support';
+import { charities } from './js/support';
 
 import { showModal } from './js/modal-window.js';
 
@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', onLoad);
 bookList.addEventListener('click', showModal);
 
 startLoad();
-
 
 openModalBtn.addEventListener('click', onOpenModal);
 closeModalBtn.addEventListener('click', onCloseModal);
