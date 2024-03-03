@@ -15,64 +15,6 @@ async function getBookById(bookId) {
   return resp.data;
 }
 
-let currentPage = 1;
-let itemsPerPage;
-let visiblePages;
-let pagination; // Змінна для зберігання об'єкта пагінації
-
-cartListEl.addEventListener('click', deleteCard);
-window.addEventListener('resize', changePagOptionsByScreenWidth);
-document.addEventListener('DOMContentLoaded', firstPageLoaded);
-
-function firstPageLoaded() {
-  // Викликається при завантаженні сторінки
-  // Ініціалізуємо початкові параметри пагінації та відображаємо першу сторінку
-  itemsPerPage = calculateItemsPerPage();
-  visiblePages = calculateVisiblePages();
-  renderBooksPerPage(currentPage);
-  setupPagination();
-}
-
-function setupPagination() {
-  const paginationContainer = document.getElementById('pagination-container');
-  pagination = new Pagination(paginationContainer, {
-    totalItems: totalBooksCount, // Загальна кількість книг
-    itemsPerPage: itemsPerPage,
-    visiblePages: visiblePages,
-    page: currentPage,
-    centerAlign: true,
-  });
-
-  pagination.on('beforeMove', event => {
-    currentPage = event.page;
-    renderBooksPerPage(currentPage);
-  });
-}
-
-function changePagOptionsByScreenWidth() {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => {
-    itemsPerPage = calculateItemsPerPage();
-    visiblePages = calculateVisiblePages();
-    pagination.reset({
-      itemsPerPage: itemsPerPage,
-      visiblePages: visiblePages,
-    });
-    pagination.movePage(currentPage); // Переміщуємо на поточну сторінку після зміни параметрів пагінації
-  }, 200);
-}
-
-function calculateItemsPerPage() {
-  const screenWidth = window.innerWidth;
-  return screenWidth < 768 ? 4 : 3;
-}
-
-function calculateVisiblePages() {
-  const screenWidth = window.innerWidth;
-  return screenWidth < 768 ? 1 : 3;
-}
-
-
 const booksContainer = document.querySelector('.js-books-container');
 const emptyListImg = document.querySelector('.empty-shopping-list-main');
 const shoppingListLoader = document.querySelector('#shopping-list-loader');
@@ -238,4 +180,12 @@ addButton.addEventListener('click', e => {
     '643282b1e85766588626a0b2',
   ];
   localStorage.setItem('books', JSON.stringify(booksIdArray));
+});
+
+// це щоб подивитися як працює перемикач для пагінації. його треба буде створювати при рендері і задавати відповідні значення
+const pagination2 = new Pagination(document.getElementById('pagination2'), {
+  totalItems: 25,
+  itemsPerPage: 3,
+  visiblePages: 5,
+  centerAlign: true,
 });
