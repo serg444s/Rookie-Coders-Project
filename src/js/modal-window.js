@@ -1,6 +1,8 @@
 import * as basicLightbox from 'basiclightbox';
+
 import { addBookIdToStorage } from './addBookIdToStorage';
 import { removeBookIdFromStorage } from './removeBookIdFromStorage';
+import { getTopListBooks } from './getTopListBooks';
 
 const bookList = document.querySelector('.top-categories-list');
 const modalIcon = document.querySelector('.modal-icon');
@@ -11,22 +13,22 @@ const modalCongratText = document.querySelector('.modal-congrat-text');
 bookList.addEventListener('click', showModal);
 
 let instance;
-export function showModal(event) {
+export async function showModal(event) {
   event.preventDefault();
   if (event.target.nodeName !== 'IMG') return;
-  const liBook = event.target.closest('li');
-  const id = +liBook.dataset._id;
-  const book = bookList.find(book => book._id === id);
+  const books = await getTopListBooks(); 
+  const liElem = event.target.closest('li');
+  const id = liElem.dataset._id;
+  const book = books.find(book => book._id == id);
   const {
     book_image,
     title,
     author,
     description,
-    buy_links: { url, name },
+    // buy_links: { name, url },
   } = book;
   instance = basicLightbox.create(
-       `
-        <div class="modal">
+       `<div class="modal">
         <button type="button" class="modal-icon">
         <svg class="modal-icon-closed"><use href="../img/symbol-defs.svg#icon-closed"></use></svg>
         </button>
@@ -35,19 +37,19 @@ export function showModal(event) {
         <p class="modal-author">${author}</p> 
         <p class="modal-text">${description}</p>
         <ul>
-        <li class="modal-link"><a href="${buy_links[url]}">${buy_links[name]}</a></li>
         <button class="modal-btn" type="button">ADD TO SHOPPING LIST</button>
         <p class="modal-congrat-text"></p>
     </div>`,
     {
       onShow: () => {
         document.addEventListener('keydown', onImageKeydown);
-        modalBtn.addEventListener('click', addToShoppingList);
+        // modalBtn.addEventListener('click', addToShoppingList);
       },
       onClose: () => {
         document.removeEventListener('keydown', onImageKeydown);
-        modalIcon.addEventListener('click', onModalIconClick);
-        backdrop.addEventListener('click', onBackdropClick);
+        // modalBtn.removeEventListener('click', addToShoppingList);
+        // modalIcon.addEventListener('click', onModalIconClick);
+        // backdrop.addEventListener('click', onBackdropClick);
       },
     }
   );
@@ -73,11 +75,16 @@ function onBackdropClick(event) {
 
 function addToShoppingList(event) {
   event.preventDefault();
+  addBookIdToStorage(bookId);
   modalBtn.textContent = 'REMOVE FROM THE SHOPPING LIST';
   modalCongratText.textContent =
     'Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".';
-  addBookIdToStorage();
+  if (modalBtn.textContent === 'REMOVE FROM THE SHOPPING LIST') {
   modalBtn.addEventListener('click', () => {
-    removeBookIdFromStorage();
+    removeBookIdFromStorage(bookIdToRemove);
   });
 }
+}
+
+
+{/* <li class="modal-link"><a href="${buy_links[url]}">${buy_links[name]}</a></li> */}
