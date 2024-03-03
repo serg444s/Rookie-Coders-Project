@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { onError } from './iziToasts';
+import { startLoad } from './startLoad.js';
+
 
 // для перевірки розкоментуй виклик фукнції
-// fetchOneCategori('Advice How-To and Miscellaneous');
 
 export async function fetchOneCategori(category) {
   const categories = document.querySelector('.top-categories-list');
@@ -26,8 +27,8 @@ export async function fetchOneCategori(category) {
 }
 
 async function makeCategoryPage(category, data) {
-  return ` 
-  <h3 class="book-categoty-title">${category}</h3> 
+  return `
+  <h3 class="book-categoty-title">${category}</h3>
   <ul class='list-books'>${await makeListBook(data)}</ul>`;
 }
 
@@ -37,13 +38,14 @@ async function makeListBook(data) {
 }
 
 function makeMarcup({ author, book_image, title, description, _id }) {
-  return `<li class="category-item" id=${_id}>  
-    <div class="book-wrap"> 
-    <img class="book-img" src="${book_image}"  alt="${description}"/> 
-    </div > 
-    <div class="book-info">  
-    <p class="info-title">${title}</p>  
-    <p class="info-author">${author}</p>  
-    </div>  
+  return `<li class="category-item" id=${_id}>
+    <div class="book-wrap">
+    <img class="book-img" src="${book_image}"  alt="${description}"/>
+    </div >
+    <div class="book-info">
+    <p class="info-title">${title}</p>
+    <p class="info-author">${author}</p>
+    </div>
     </li>`;
+
 }

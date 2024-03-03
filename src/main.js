@@ -7,7 +7,6 @@ import { showModal } from './js/modal-window.js';
 const bookList = document.querySelector('.top-categories-list');
 
 
-
 getCategoriesAPI();
 
 document.addEventListener('DOMContentLoaded', onLoad);
