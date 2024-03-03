@@ -15,9 +15,9 @@
     
   
     <script type="module" crossorigin src="/Rookie-Coders-Project/commonHelpers2.js"></script>
-    <link rel="modulepreload" crossorigin href="/Rookie-Coders-Project/assets/dark-mode-4a4f986e.js">
+    <link rel="modulepreload" crossorigin href="/Rookie-Coders-Project/assets/dark-mode-c5d1a4b1.js">
     <link rel="modulepreload" crossorigin href="/Rookie-Coders-Project/assets/vendor-352bdbf3.js">
-    <link rel="stylesheet" href="/Rookie-Coders-Project/assets/dark-mode-8ede63f9.css">
+    <link rel="stylesheet" href="/Rookie-Coders-Project/assets/dark-mode-ff659484.css">
     <link rel="stylesheet" href="/Rookie-Coders-Project/assets/vendor-e5212ee8.css">
   </head>
   <body>
@@ -26,10 +26,10 @@
   <div class="container header_container">
     <a href="./index.html" class="header_logo" aria-label="Logo">
       <svg class="header_svg" width="24" height="24">
-        <use href="/Rookie-Coders-Project/assets/symbol-defs-b9d6c098.svg#icon-color_logo"></use>
+        <use href="/Rookie-Coders-Project/assets/symbol-defs-406116a7.svg#icon-logook"></use>
       </svg>
       <svg class="header_svg" width="77" height="14">
-        <use href="/Rookie-Coders-Project/assets/symbol-defs-b9d6c098.svg#icon-Bookshelf"></use>
+        <use href="/Rookie-Coders-Project/assets/symbol-defs-406116a7.svg#icon-Bookshelf"></use>
       </svg>
       <span>Logo</span>
     </a>
@@ -51,7 +51,7 @@
             >Shopping list
             <svg class="basket" width="20" height="20">
               <use
-                href="/Rookie-Coders-Project/assets/symbol-defs-b9d6c098.svg#icon-basket"
+                href="/Rookie-Coders-Project/assets/symbol-defs-406116a7.svg#icon-basket"
               ></use></svg
           ></a>
         </li>
@@ -68,17 +68,52 @@
           />
           <span class="switch_slider"></span>
         </label>
-        <button
+        <button 
           type="button"
           class="burger"
           data-action="open-modal"
           aria-label="Toggle color theme"
+          style=""
         >
-          <svg width="28" height="28">
+          <svg class="burger_button" width="28" height="28">
             <use href="/Rookie-Coders-Project/assets/symbol-defs-c92dc0c2.svg#icon-burger"></use>
           </svg>
         </button>
+         <button class="burger_close" type="button" data-action="close-modal"
+      aria-label="Close modal" style=""/>
+        <svg class="header_icon_close" width="28" height="28">
+          <use href="/Rookie-Coders-Project/assets/symbol-defs-406116a7.svg#icon-closeok"></use>
+        </svg>
+      </button>
       </div>
+    </div>
+  </div>
+   <div class=" backdrop">
+    <div class="header_navigation_window">
+      <nav class="modal__nav">
+       <ul class="nav__List-menu">
+        <li class="home__item">
+          <a
+            class="nav__link--current"
+            href="./index.html"
+            aria-label="Link to home page"
+            >Home</a
+          >
+        </li>
+        <li class="shop__item">
+          <a
+            class="nav__shopping"
+            href="./shopping-list.html"
+            aria-label="Link to Shopping list"
+            >Shopping list
+            <svg class="nav__basket" width="20" height="20">
+              <use
+                href="/Rookie-Coders-Project/assets/symbol-defs-406116a7.svg#icon-basket"
+              ></use></svg
+          ></a>
+        </li>
+      </ul>
+      </nav>
     </div>
   </div>
 </header>
