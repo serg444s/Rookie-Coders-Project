@@ -2,8 +2,7 @@ import * as basicLightbox from 'basiclightbox';
 
 import { addBookIdToStorage } from './addBookIdToStorage';
 import { removeBookIdFromStorage } from './removeBookIdFromStorage';
-import { getTopListBooks } from './getTopListBooks';
-
+import { getBookById } from './getTopListBooks';
 
 const bookList = document.querySelector('.top-categories-list');
 const modalIcon = document.querySelector('.modal-icon');
@@ -17,19 +16,14 @@ let instance;
 export async function showModal(event) {
   event.preventDefault();
   if (event.target.nodeName !== 'IMG') return;
-  const books = await getTopListBooks(); 
-  const liElem = event.target.closest('li');
-  const id = liElem.dataset._id;
-  const book = books.find(book => book._id == id);
-  const {
-    book_image,
-    title,
-    author,
-    description,
-    // buy_links: { name, url },
-  } = book;
+  const bookId = event.target.dataset.id;
+  const books = await getBookById(bookId);
+  // const liElem = event.target.closest('li');
+  //const id = liElem.dataset.id;
+  //const book = books.find(book => book._id == id);
+  const { book_image, title, author, description, buy_links } = books;
   instance = basicLightbox.create(
-       `<div class="modal">
+    `<div class="modal">
         <button type="button" class="modal-icon">
         <svg class="modal-icon-closed"><use href="../img/symbol-defs.svg#icon-closed"></use></svg>
         </button>
@@ -38,6 +32,7 @@ export async function showModal(event) {
         <p class="modal-author">${author}</p> 
         <p class="modal-text">${description}</p>
         <ul>
+        <li><a href="${buy_links['url']}"></a>${buy_links['name']}</li> 
         <button class="modal-btn" type="button">ADD TO SHOPPING LIST</button>
         <p class="modal-congrat-text"></p>
     </div>`,
@@ -81,11 +76,12 @@ function addToShoppingList(event) {
   modalCongratText.textContent =
     'Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".';
   if (modalBtn.textContent === 'REMOVE FROM THE SHOPPING LIST') {
-  modalBtn.addEventListener('click', () => {
-    removeBookIdFromStorage(bookIdToRemove);
-  });
-}
+    modalBtn.addEventListener('click', () => {
+      removeBookIdFromStorage(bookIdToRemove);
+    });
+  }
 }
 
-
-{/* <li class="modal-link"><a href="${buy_links[url]}">${buy_links[name]}</a></li> */}
+{
+  /* <li class="modal-link"><a href="${buy_links[url]}">${buy_links[name]}</a></li> */
+}

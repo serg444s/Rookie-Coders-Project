@@ -8,7 +8,7 @@ export async function getTopListBooks() {
   return resp.data;
 }
 
-export async function fetchBookById(bookId) {
+export async function getBookById(bookId) {
   const URL_ID = `https://books-backend.p.goit.global/books/${bookId}`;
   const response = await axios.get(URL_ID);
   const bookData = response.data;
