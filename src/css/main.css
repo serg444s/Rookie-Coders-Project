@@ -4,6 +4,10 @@
 }
 
 .left-container {
+  margin-bottom: 40px;
+  margin-top: 104px;
+  display: flex;
+  flex-direction: column;
 }
 
 .right-container {
