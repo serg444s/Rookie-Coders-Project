@@ -1,0 +1,116 @@
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Інші стилі */
+}
+
+.for__support {
+  width: 335px;
+  border-radius: 16px;
+}
+
+.supporters {
+  box-sizing: border-box;
+  width: 335px;
+  max-height: 460px;
+  background: radial-gradient(
+    183.6% 183.01% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #fff 100%
+  );
+  border-radius: 16px;
+  flex-direction: column;
+  padding: 24px 40px 20px;
+  display: flex;
+}
+
+.supporters__title {
+  gap: 12px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.supporters__heading {
+  letter-spacing: -0.04em;
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.supporters__icon {
+  fill: #fff;
+  width: 20px;
+  height: 32px;
+}
+
+.supporters__btn {
+  cursor: pointer;
+  width: 32px;
+  min-height: 32px;
+  background-color: #fff;
+  border: none;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  transform: rotateX(0);
+}
+
+.supporters__btn span {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+/*svg {
+  margin: 0;
+  padding: 0;
+  display: block;
+}*/
+.supporters__number {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+.supporters__img {
+  filter: brightness(0) invert(1);
+}
+
+.support_line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 159px;
+  height: 32px;
+}
+
+.supporters_list {
+  display: flex;
+  flex-direction: column;
+}
+.support_line span {
+  margin-right: 16px;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1440px) {
+}

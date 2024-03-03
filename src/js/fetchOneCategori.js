@@ -3,12 +3,16 @@ import { onError } from './iziToasts';
 import { startLoad } from './startLoad.js';
 
 
-// для перевірки розкоментуй виклик фукнції
+
+// для перевірки розкоментуй виклик фукнції на main.js
+// fetchOneCategori('Advice How-To and Miscellaneous');
+
 
 export async function fetchOneCategori(category) {
   const categories = document.querySelector('.top-categories-list');
   console.log(categories);
   categories.innerHTML = '';
+
   try {
     const resp = await axios.get(
       `https://books-backend.p.goit.global/books/category?category=${category}`

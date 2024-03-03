@@ -10,7 +10,7 @@
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 40px;
-  margin-top: 40px;
+  margin-top: 85px;
 }
 .span-color {
   color: #4f2ee8;
@@ -108,13 +108,12 @@ letter-spacing: 0.03em;
   background-color: #4f2ee8;
 }
 .shop-list-description {
-  width: 193px;
-  height: 68px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-bottom: 6px;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+ font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.04em;
+  color: #111;
+overflow: hidden;
 }
 .shop-list-downpart {
   width: 193px;
@@ -123,11 +122,11 @@ letter-spacing: 0.03em;
   align-items: center;
 }
 .shop-list-links {
-  width: 80px;
+  width: 56px;
   height: 16px;
   display: flex;
   justify-content: space-between;
-  gap: 8px;
+  gap: 2px;
   align-items: center;
 }
 .icon-basket-shop-list {
@@ -143,6 +142,7 @@ letter-spacing: 0.03em;
   width: 48px;
 height: 15px;
 }
+
 @media screen and (min-width: 768px) {
   .shopping-list-div {
  
@@ -206,8 +206,8 @@ height: 15px;
     width: auto;
   }
   .shop-list-links {
-    width: 140px;
-    height: 30px;
+    width: 92px;
+    height: 27px;
     gap: 16px;
   }
 }
@@ -224,7 +224,12 @@ height: 15px;
   .shopping_item {
     font-size: 32px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 85px;
     margin-top: 40px;
+  }
+  .shop-list-links{
+    width: 92px;
+    height: 27px;
+    gap: 16px;
   }
 }

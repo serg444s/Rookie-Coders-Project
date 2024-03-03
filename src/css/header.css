@@ -4,46 +4,38 @@ svg {
   display: block;
 }
 body {
+  background-color:#fff;
   position: relative;
   transition: all 0.3s ease 0s;
   html.dark-mode & {
-    border: 1.5px solid #fff;
     color: #9a9a9a;
     background-color: #202024;
-  }
-}
-//=============================================================
-
-//  Для зміни любого стилю при темній темі додайте:   html.dark-mode & {}  Приямо в класі де потрібні зміни і пропешіть в лапках шо змінюємо
-
-//=============================================================
+  } 
+} 
 .header {
-  z-index: 999;
-  width: 100%;
-  background-color: #fff;
-
-  transition: all 0.3s;
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin-bottom: 40px;
-  html.dark-mode & {
-    background-color: #111;
-    border: 1.5px solid #fff;
+    z-index: auto;
+    width: 100%;
+    background-color: #fff;
+    border: 1.5px solid #111;
+    border-radius: 0 0 8px 8px;
+    transition: all .3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display:flex;
+      html.dark-mode & {
+  background-color: #111;
+  border: 1.5px solid #fff;
   }
 }
+
 
 .header_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 375px;
-    border: 1.5px solid #111;
-  border-radius: 0 0 8px 8px;
-    html.dark-mode & {
-    background-color: #111;
-    border: 1.5px solid #fff;
-  }
+
 }
 
 .header_logo {
@@ -68,20 +60,6 @@ body {
 .navigation {
   display: none;
 }
-
-.navigation_list {
-}
-.navigation_item {
-}
-.navigation_link_home {
-}
-.current_page {
-
-}
-.navigation_link_shopping {
-}
-.current_page_shop {
-} 
 
 .header_right {
   justify-content: center;
@@ -250,9 +228,6 @@ body {
   .basket {
     html.dark-mode & {
       fill: #fff;
-      html.dark-mode & {
-        fill: #111;
-      }
     }
   }
 

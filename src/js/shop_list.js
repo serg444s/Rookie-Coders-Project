@@ -3,7 +3,6 @@ import axios from 'axios';
 import amazon1x from '../img/shopping_list/amazon1x.png';
 import amazon2x from '../img/shopping_list/amazon1x.png';
 import openbook from '../img/shopping_list/openbook.png';
-import removeicon from '../img/shopping_list/removeicon.svg';
 
 //функція Анатолія для отримання книги за id (поки тут, але потім її треба буде просто імпортувати)
  async function getBookById(bookId) {
@@ -84,12 +83,12 @@ function createBookCard(book) {
 <div class="shop-card-info">
 <div class="shop-card-hero">
 <div class="shop-list-title-name">
-<h3 class="shop-list-title">${title}<h3>
-<p class="shop-list-list-name">${list_name}></p>
+<h3 class="shop-list-title">${title}</h3>
+<p class="shop-list-list-name">${list_name}</p>
 </div>
 <button class="remove-shop-list-book" data-bookid="${_id}">
 <svg class="icon-basket-shop-list" width="28" height="26" data-bookid="${_id}">
- <use data-name="icon-removebook" href="${removeicon}"></use>
+ <use data-name="icon-removebook" href="../img/symbol-defs.svg#icon-removebook"></use>
 </svg>
 </button>
 </div>

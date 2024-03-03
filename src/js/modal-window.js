@@ -9,16 +9,14 @@ const modalBtn = document.querySelector('.modal-btn');
 const modalCongratText = document.querySelector('.modal-congrat-text');
 
 bookList.addEventListener('click', showModal);
-///закоментував і переніс цей рядок на 47
-// modalBtn.addEventListener('click', addToShoppingList);
 
 let instance;
 export function showModal(event) {
   event.preventDefault();
   if (event.target.nodeName !== 'IMG') return;
   const liBook = event.target.closest('li');
-  const id = +liBook.dataset.id;
-  const book = bookList.find(el => el.id === id);
+  const id = +liBook.dataset._id;
+  const book = bookList.find(book => book._id === id);
   const {
     book_image,
     title,
@@ -27,17 +25,17 @@ export function showModal(event) {
     buy_links: { url, name },
   } = book;
   instance = basicLightbox.create(
-    `
-    <div class="modal">
-    <button type="button" class="modal-icon">
-    <svg class="modal-icon-closed"><use href="../img/symbol-defs.svg#icon-closed"></use></svg>
-    </button>
-        <img src="${book_image}" width="330" height="485"/>
-        <h3>${title}</h3>
-        <p>${author}</p>
-        <p>${description}</p>
+       `
+        <div class="modal">
+        <button type="button" class="modal-icon">
+        <svg class="modal-icon-closed"><use href="../img/symbol-defs.svg#icon-closed"></use></svg>
+        </button>
+        <img class="modal-img" src="${book_image}" width="330" height="485"/>
+        <h3 class="modal-title">${title}</h3>
+        <p class="modal-author">${author}</p> 
+        <p class="modal-text">${description}</p>
         <ul>
-        <li><a href="${buy_links[url]}">${buy_links[name]}</a></li>
+        <li class="modal-link"><a href="${buy_links[url]}">${buy_links[name]}</a></li>
         <button class="modal-btn" type="button">ADD TO SHOPPING LIST</button>
         <p class="modal-congrat-text"></p>
     </div>`,
