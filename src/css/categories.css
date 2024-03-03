@@ -42,7 +42,6 @@ a.link_category-book:active {
   .categories-block {
     display: flex;
     margin-top: 40px;
-    position: fixed;
   }
   ul.categories-list_books {
     gap: 20px;
@@ -55,10 +54,9 @@ a.link_category-book:active {
   }
 }
 @media screen and (min-width: 768px) {
-  categories-block {
+  .categories-block {
     display: flex;
     margin-top: 40px;
-    position: fixed;
   }
   ul.categories-list_books {
     gap: 20px;
