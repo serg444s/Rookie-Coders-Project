@@ -1,6 +1,7 @@
 .main-container {
   /* display: flex;
   gap: 50px; */
+  
 }
 
 .left-container {
@@ -8,9 +9,33 @@
   margin-top: 104px;
   display: flex;
   flex-direction: column;
+  width: 325px;
 }
 
 .right-container {
-  margin-left: 400px;
-  margin-top: 100px;
+ 
+}
+
+@media screen and (min-width: 768px) {
+  .left-container{
+    width: 337px;
+    padding-right: 40px;
+    display: flex;
+  }
+
+
+}
+@media screen and (min-width: 1440px){
+
+  .left-container{
+    width: 356px;
+    padding-right: 40px;
+  }
+  .right-container{
+    width: 996px;
+    margin-top: 112px;
+  }
+  .together-container{
+    display: flex;
+  }
 }
