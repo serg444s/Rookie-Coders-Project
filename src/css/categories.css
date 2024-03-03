@@ -42,23 +42,21 @@ a.link_category-book:active {
   .categories-block {
     display: flex;
     margin-top: 40px;
-    position: fixed;
   }
   ul.categories-list_books {
     gap: 20px;
     height: 228px;
   }
   a.link_category-book {
-    font: 400 16px / 1.125 "DM Sans", sans-serif;
+    font: 400 16px / 1.125 'DM Sans', sans-serif;
     letter-spacing: -0.02em;
     color: rgba(17, 17, 17, 0.6);
   }
 }
 @media screen and (min-width: 768px) {
-  categories-block {
+  .categories-block {
     display: flex;
     margin-top: 40px;
-    position: fixed;
   }
   ul.categories-list_books {
     gap: 20px;

@@ -72,6 +72,11 @@ export const charities = [
   },
 ];
 
+
+// export { charities };
+const ul = document.querySelector('.supporters_list');
+
+
 const ul = document.querySelector('.supporters_list');
 console.log(ul);
 charities.forEach(function (charity, index) {
