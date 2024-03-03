@@ -1,11 +1,13 @@
 import { loaderOn, loaderOff } from './loader';
 import axios from 'axios';
+import { onLoad } from '../js/dark-mode.js';
 import amazon1x from '../img/shopping_list/amazon1x.png';
-import amazon2x from '../img/shopping_list/amazon1x.png';
+import amazon2x from '../img/shopping_list/amazon2x.png';
 import openbook from '../img/shopping_list/openbook.png';
+import trash from '../img/shopping_list/trash.png';
 
 //функція Анатолія для отримання книги за id (поки тут, але потім її треба буде просто імпортувати)
- async function getBookById(bookId) {
+async function getBookById(bookId) {
   const resp = await axios.get(
     `https://books-backend.p.goit.global/books/${bookId}`
   );
@@ -15,7 +17,7 @@ import openbook from '../img/shopping_list/openbook.png';
 const booksContainer = document.querySelector('.js-books-container');
 const emptyListImg = document.querySelector('.empty-shopping-list-main');
 const shoppingListLoader = document.querySelector('#shopping-list-loader');
-
+onLoad();
 startFunction();
 renderBooks();
 
@@ -39,11 +41,11 @@ export function renderBooks() {
           .join('');
         loaderOff(shoppingListLoader);
         booksContainer.innerHTML = booksMarkup;
-        emptyListImg.style.display = 'none'; 
+        emptyListImg.style.display = 'none';
       }
     })
     .catch(error => {
-      console.error(error); 
+      console.error(error);
     });
 }
 
@@ -87,9 +89,12 @@ function createBookCard(book) {
 <p class="shop-list-list-name">${list_name}</p>
 </div>
 <button class="remove-shop-list-book" data-bookid="${_id}">
-<svg class="icon-basket-shop-list" width="28" height="26" data-bookid="${_id}">
- <use data-name="icon-removebook" href="../img/symbol-defs.svg#icon-removebook"></use>
-</svg>
+<img 
+  class="icon-basket-shop-list"
+  data-bookid="${_id}"
+  src="${trash}"
+  alt="Delete book"
+  />
 </button>
 </div>
 <p class="shop-list-description">${description}<p>
@@ -100,7 +105,7 @@ function createBookCard(book) {
     buy_links.find(buyLink => buyLink.name === 'Amazon').url
   }">
 <img 
-class="amazon-img"
+class="amazon-img  html.dark-mode & {}"
 srcset="
 ${amazon1x} 1x,
 ${amazon2x} 2x
@@ -125,38 +130,35 @@ alt="Amazon Shop"
 }
 
 function removeBook(event) {
- 
   if (
-    event.target.classList.contains('remove-shop-list-book') || 
-    event.target.classList.contains('icon-basket-shop-list') || 
-    event.target.dataset.name === 'remove-shop-list-book' 
+    event.target.classList.contains('remove-shop-list-book') ||
+    event.target.classList.contains('icon-basket-shop-list') ||
+    event.target.dataset.name === 'remove-shop-list-book'
   ) {
-   const bookId = event.target.getAttribute('data-bookid');
+    const bookId = event.target.getAttribute('data-bookid');
     removeBookFromList(bookId);
   }
 }
 
-
 function removeBookFromList(bookId) {
- let savedInShopList = localStorage.getItem('books');
-  
+  let savedInShopList = localStorage.getItem('books');
+
   if (savedInShopList) {
     savedInShopList = JSON.parse(savedInShopList);
     const indexToRemove = savedInShopList.indexOf(bookId);
-    
+
     // Видаляємо книгу з масиву за її індексом
     if (indexToRemove !== -1) {
       savedInShopList.splice(indexToRemove, 1);
     }
-    
+
     // Зберігаємо оновлений масив книг в localStorage
     localStorage.setItem('books', JSON.stringify(savedInShopList));
-    
+
     // Оновлюємо список книг на сторінці
     renderBooks();
   }
 }
-
 
 // document.addEventListener('DOMContentLoaded', renderBooks); //коли веб-сторінка буде повністю завантажена, функція renderBooks буде викликана автоматично. Це часто використовується для початкового відображення даних на сторінці, коли всі елементи DOM вже доступні для маніпуляції.
 
