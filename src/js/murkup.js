@@ -1,16 +1,23 @@
 import { makeListOfBooks } from './makeListOfBooks';
-
-export async function murkup(data) {
+import { fetchOneCategori } from './fetchOneCategori.js';
+export async function murkup(categories) {
   const promiseAll = await Promise.all(
-    data.map(async ({ list_name, books }) => {
+    categories.map(async ({ list_name, books }) => {
       return `
     <div class="container-books">
     <h3 class="book-categoty-title">${list_name}</h3>
     <ul class='list-books'>${await makeListOfBooks(books)}</ul>
-    <button class="book-button" data-js="${list_name}">See more</button>
+    <button class="book-button" data-category="${list_name}">See more</button>
     </div>
     `;
     })
   );
+
   return promiseAll.join('');
 }
+document.addEventListener('click', async (event) => {
+  if (event.target.classList.contains('book-button')) {
+    const categoryListBooks = event.target.dataset.category;
+    await fetchOneCategori(categoryListBooks);
+  }
+});
