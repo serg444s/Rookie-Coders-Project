@@ -82,21 +82,6 @@ function changePagOptionsByScreenWidth() {
 //   }
 // }
 
-// Функція зміни кількості відображення карток на сторінці в залежності від ширини екрану при першої загрузці сторінки
-function firstPageLoaded() {
-  const screenWidth = window.innerWidth;
-
-  if (screenWidth < 768) {
-    visiblePages = 1;
-    itemsPerPage = 4;
-    createShoppingList();
-  } else if (screenWidth >= 768) {
-    itemsPerPage = 3;
-    visiblePages = 3;
-    createShoppingList();
-  }
-}
-
 const booksContainer = document.querySelector('.js-books-container');
 const emptyListImg = document.querySelector('.empty-shopping-list-main');
 const shoppingListLoader = document.querySelector('#shopping-list-loader');
