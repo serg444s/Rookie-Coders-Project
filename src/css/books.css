@@ -1,9 +1,17 @@
+.top-categories-list {
+}
+
 .categories-title {
-  font-weight: 700;
+  /* font-weight: 700;
   font-size: 48px;
   line-height: 1.08;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.04em; */
   color: black;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.19;
+  letter-spacing: -0.04em;
+  margin-bottom: 40px;
 }
 
 .categories-title span {
@@ -14,8 +22,15 @@
 }
 
 .container-books {
-  width: 996px;
-  height: 426px;
+  max-width: 335px;
+  /* max-width: 996px; */
+  /* width: 996px; */
+  /* height: 426px; */
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* align-items: center;
+  justify-content: center; */
 }
 
 .book-categoty-title {
@@ -28,16 +43,18 @@
 }
 
 .list-books {
-  width: 996px;
-  height: 306px;
+  max-width: 335px;
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 54px;
 }
 
 .book-button {
   border: 2px solid rgb(144, 75, 144);
   border-radius: 40px;
-  padding: 14px 28px;
+  padding: 14px auto;
   width: 124px;
   height: 46px;
   font-weight: 700;
@@ -46,21 +63,33 @@
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: black;
-  margin-bottom: 46px;
+  margin-bottom: 40px;
+  margin-top: 8px;
+  margin-left: auto;
+  transition: all 0.2s ease;
+}
+
+.book-button:hover {
+  background-color: blue;
+  color: aliceblue;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.15);
 }
 
 .books-item-about {
-  width: 180px;
-  height: 306px;
+  max-width: 100%;
+  /* width: 180px; */
+  /* height: 306px; */
 }
 
 .book-wrap {
+  max-width: 100%;
+  /* width: 180px; */
+  /* height: 256px; */
 }
 
 .book-img {
   border-radius: 8px;
-  width: 180px;
-  height: 256px;
+  max-width: 100%;
   object-fit: cover;
   cursor: pointer;
 }
@@ -91,4 +120,41 @@
   line-height: 1.17;
   letter-spacing: -0.04em;
   color: #b4afaf;
+}
+
+@media screen and (min-width: 768px) {
+  .top-categories-list {
+  }
+
+  .books-item-about {
+    /* max-width: 218px; */
+  }
+
+  .container-books {
+    /* flex-direction: row; */
+    max-width: 704px;
+  }
+
+  .book-wrap {
+    /* max-width: 218px; */
+  }
+
+  .list-books {
+    max-width: 100%;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 25px;
+    align-items: center;
+    justify-content: center; */
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .categories-title {
+    margin-top: 50px;
+  }
 }

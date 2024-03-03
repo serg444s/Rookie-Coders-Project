@@ -42,7 +42,7 @@ a.link_category-book:active {
   .categories-block {
     display: flex;
     margin-top: 40px;
-    position: fixed;
+    /* position: fixed; */
   }
   ul.categories-list_books {
     gap: 20px;
@@ -58,7 +58,7 @@ a.link_category-book:active {
   categories-block {
     display: flex;
     margin-top: 40px;
-    position: fixed;
+    /* position: fixed; */
   }
   ul.categories-list_books {
     gap: 20px;

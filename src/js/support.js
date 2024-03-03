@@ -63,7 +63,7 @@ const charities = [
     img3x: '../img/support/serhiy-prytula-charity-foundation@3x-min.png',
   },
 ];
-export { charities };
+// export { charities };
 const ul = document.querySelector('.supporters_list');
 
 charities.forEach(function (charity, index) {

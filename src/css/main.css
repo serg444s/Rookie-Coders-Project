@@ -1,13 +1,14 @@
 .main-container {
-  margin-top: 110px;
+  /* margin-top: 110px; */
   display: flex;
+  flex-direction: column;
   gap: 50px;
 }
 
 .left-container {
   display: flex;
   flex-direction: column;
-  gap: 90px;
+  gap: 40px;
 }
 
 .right-container {
@@ -17,4 +18,22 @@
 }
 
 .support-wrap {
+}
+
+@media screen and (min-width: 768px) {
+  .left-container {
+    flex-direction: row;
+    max-width: 704px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .left-container {
+    flex-direction: column;
+    max-width: 704px;
+  }
+
+  .main-container {
+    flex-direction: row;
+  }
 }
