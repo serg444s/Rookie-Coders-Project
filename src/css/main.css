@@ -1,16 +1,20 @@
 .main-container {
-  /* display: flex;
-  gap: 50px; */
+  margin-top: 110px;
+  display: flex;
+  gap: 50px;
 }
 
 .left-container {
-  margin-bottom: 40px;
-  margin-top: 104px;
   display: flex;
   flex-direction: column;
+  gap: 90px;
 }
 
 .right-container {
-  margin-left: 400px;
-  margin-top: 100px;
+}
+
+.category-wrap {
+}
+
+.support-wrap {
 }
