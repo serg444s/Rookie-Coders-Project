@@ -4,13 +4,10 @@
 }
 
 .left-container {
-<<<<<<< Updated upstream
   margin-bottom: 40px;
   margin-top: 104px;
-=======
   display: flex;
   flex-direction: column;
->>>>>>> Stashed changes
 }
 
 .right-container {
