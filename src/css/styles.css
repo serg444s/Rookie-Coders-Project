@@ -12,6 +12,7 @@
 @import url('./categories.css');
 @import url('./shopping-list.css');
 @import url('./support.css');
+@import url('./modal-window.css');
 @import url('./main.css');
 
 .loader {

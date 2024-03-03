@@ -65,7 +65,9 @@
     line-height: 1.28571;
     letter-spacing: -0.01em;
     text-transform: uppercase;
-    color: #111;                       
+    color: #111;
+    display: block;
+    margin: 0 auto;                      
 }
 .modal-btn:hover,
 .modal-btn:focus {
