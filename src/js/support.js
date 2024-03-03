@@ -1,12 +1,10 @@
-// core version + navigation, pagination modules:
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
-// import Swiper and modules styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+// import Swiper from 'swiper';
+// import { Navigation, Pagination } from 'swiper/modules';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
 
-export const charities = [
+const charities = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
@@ -72,19 +70,11 @@ export const charities = [
   },
 ];
 
-
-// export { charities };
 const ul = document.querySelector('.supporters_list');
 
-
-const ul = document.querySelector('.supporters_list');
-console.log(ul);
 charities.forEach(function (charity, index) {
-  const div = document.createElement('div'); // Створення нового div
-  div.className = 'support_line_container'; // Додавання класу до нового div
-
   const li = document.createElement('li');
-  li.className = 'support_line ';
+  li.className = 'support_line';
 
   const span = document.createElement('span');
   span.className = 'supporters__number';
@@ -106,8 +96,7 @@ charities.forEach(function (charity, index) {
   a.appendChild(img);
 
   li.appendChild(a);
-  div.appendChild(li); // Додавання li в div
-  ul.appendChild(div); // Додавання div в ul
+  ul.appendChild(li);
 });
 
 // const swiper = new Swiper('.swiper', {
@@ -121,16 +110,15 @@ charities.forEach(function (charity, index) {
 //   },
 // });
 
-//////////////////////////////////////////////////////////////
-let isNext = false; // Змінна для визначення напрямку прокручування слайдера
+// let isNext = false;
 
-const btn = document.querySelector('.supporters__btn');
-btn.addEventListener('click', () => {
-  if (!isNext) {
-    swiper.slideTo(8, 0); // Показати 9 організацію
-  } else {
-    swiper.slideTo(5, 0); // Показати 4 організацію
-  }
+// const btn = document.querySelector('.supporters__btn');
+// btn.addEventListener('click', () => {
+//   if (!isNext) {
+//     swiper.slideTo(8, 0);
+//   } else {
+//     swiper.slideTo(5, 0);
+//   }
 
-  isNext = !isNext; // Змінити напрямок прокручування на протилежний
-});
+//   isNext = !isNext;
+// });

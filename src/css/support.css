@@ -79,7 +79,6 @@
 
 .support_line_container {
   align-items: center;
-  gap: 16px;
   display: flex;
   margin-bottom: 20px;
   /* display: flex;
@@ -110,9 +109,9 @@
 }
 
 .support_line {
-  display: flex;
+  margin-bottom: 20px;
   align-items: center;
-  height: 32px;
+  display: flex;
 }
 
 .supporters_list {
