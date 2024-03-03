@@ -7,7 +7,9 @@ import { showModal } from './js/modal-window.js';
 
 const bookList = document.querySelector('.top-categories-list');
 
+
 // fetchOneCategori('Advice How-To and Miscellaneous');
+
 
 getCategoriesAPI();
 

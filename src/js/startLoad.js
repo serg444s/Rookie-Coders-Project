@@ -1,17 +1,9 @@
 import axios from 'axios';
 import { onError } from './iziToasts';
-import { murkupCategoryList } from './murkupCategoryList';
 import { murkup } from './murkup';
 
 export async function startLoad() {
   const categories = document.querySelector('.top-categories-list');
-  // try {
-  //   const response = await axios.get('https://books-backend.p.goit.global/books/category-list');
-  //   categories.insertAdjacentHTML('beforeend',  murkupCategoryList(response));
-  // } catch (error) {
-  //   console.log(error.message);
-  //   onError();
-  // } Ось цей try...catch не потрібний
   try {
     const resp = await axios.get(
       'https://books-backend.p.goit.global/books/top-books'

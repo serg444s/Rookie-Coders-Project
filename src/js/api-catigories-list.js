@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { fetchOneCategori } from './fetchOneCategori.js';
 
 export async function getCategoriesAPI() {
   const baseURL = `https://books-backend.p.goit.global/books/category-list`;
@@ -16,18 +17,21 @@ export async function renderCategories() {
     categories.forEach(category => {
       const listItem = document.createElement('li');
       listItem.classList.add('item-list_category');
+      listItem.dataset.category= category.list_name;
       const link = document.createElement('a');
       link.textContent = category.list_name;
-      link.href = `${category.list_name}`;
+      link.href = `#${category.list_name}`;
       link.classList.add('link_category-book');
-      // link.addEventListener('click', (e)=>{
-      //   e.preventDefault()
-      //   e.target.style.color = 'blue';
-      //
-      // })
       listItem.appendChild(link);
       categoriesBooks.appendChild(listItem)
+
+      listItem.addEventListener('click', async ()=>{
+        const categoryName = listItem.dataset.category;
+        await fetchOneCategori(categoryName);
+      })
+
     })
+
   } catch (error) {
     console.error('Error rendering categories:', error);
   }
