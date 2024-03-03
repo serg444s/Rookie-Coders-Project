@@ -1,8 +1,8 @@
-// import Swiper from 'swiper';
-// import { Navigation, Pagination } from 'swiper/modules';
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const charities = [
   {
@@ -73,14 +73,18 @@ const ul = document.querySelector('.supporters_list');
 
 charities.forEach(function (charity, index) {
   const li = document.createElement('li');
-  li.className = 'support_line';
+  li.className = 'support_line swiper-slide';
+
+  const container = document.createElement('div');
+  container.className = 'support_line_container';
 
   const span = document.createElement('span');
   span.className = 'supporters__number';
   span.textContent = (index + 1).toString().padStart(2, '0');
-  li.appendChild(span);
+  container.appendChild(span);
 
   const a = document.createElement('a');
+  a.className = 'support_link';
   a.href = charity.url;
   a.title = charity.title;
   a.target = '_blank';
@@ -94,30 +98,23 @@ charities.forEach(function (charity, index) {
   img.alt = charity.title + ' logo';
   a.appendChild(img);
 
-  li.appendChild(a);
+  container.appendChild(a);
+  li.appendChild(container);
   ul.appendChild(li);
 });
 
-// const swiper = new Swiper('.swiper', {
-//   direction: 'vertical',
-//   loop: true,
-//   slidesPerView: 6,
-//   effect: 'slide',
+const swiper = new Swiper('.swiper', {
+  direction: 'vertical',
+  loop: true,
+  slidesPerView: 6,
+  effect: 'slide',
+});
 
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//   },
-// });
+let isNext = false;
 
-// let isNext = false;
+const btn = document.querySelector('.supporters__btn');
+btn.addEventListener('click', () => {
+  swiper.slideTo(isNext ? 0 : 6, 100);
 
-// const btn = document.querySelector('.supporters__btn');
-// btn.addEventListener('click', () => {
-//   if (!isNext) {
-//     swiper.slideTo(8, 0);
-//   } else {
-//     swiper.slideTo(5, 0);
-//   }
-
-//   isNext = !isNext;
-// });
+  isNext = !isNext;
+});
