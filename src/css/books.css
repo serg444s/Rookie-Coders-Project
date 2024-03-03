@@ -141,20 +141,51 @@
 
   .list-books {
     max-width: 100%;
-    flex-direction: row;
-    gap: 25px;
-    align-items: center;
-    justify-content: center;
     /* flex-direction: row;
-    flex-wrap: nowrap;
     gap: 25px;
     align-items: center;
     justify-content: center; */
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .categories-title {
-    margin-top: 50px;
+    /* margin-top: 50px; */
+  }
+
+  .list-books {
+    /* width: 996px;
+    height: 306px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 24px; */
+    width: 996px;
+    height: 306px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 24px;
+  }
+
+  .book-button {
+    /* float: right; */
+    border: 2px solid rgb(144, 75, 144);
+    border-radius: 40px;
+    padding: 14px auto;
+    width: 124px;
+    height: 46px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-left: auto;
+    transition: all 0.2s ease;
   }
 }

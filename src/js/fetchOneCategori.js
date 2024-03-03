@@ -2,11 +2,8 @@ import axios from 'axios';
 import { onError } from './iziToasts';
 import { startLoad } from './startLoad.js';
 
-
-
 // для перевірки розкоментуй виклик фукнції на main.js
 // fetchOneCategori('Advice How-To and Miscellaneous');
-
 
 export async function fetchOneCategori(category) {
   const categories = document.querySelector('.top-categories-list');
@@ -32,7 +29,7 @@ export async function fetchOneCategori(category) {
 
 async function makeCategoryPage(category, data) {
   return `
-  <h3 class="book-categoty-title">${category}</h3>
+  <h3 class="categories-title">${category}</h3>
   <ul class='list-books'>${await makeListBook(data)}</ul>`;
 }
 
@@ -51,5 +48,4 @@ function makeMarcup({ author, book_image, title, description, _id }) {
     <p class="info-author">${author}</p>
     </div>
     </li>`;
-
 }
