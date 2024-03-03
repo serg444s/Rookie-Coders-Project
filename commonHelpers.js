@@ -1,4 +1,4 @@
-import{o as L}from"./assets/dark-mode-a17f1fd0.js";import{i as v,a as c,b as w}from"./assets/vendor-352bdbf3.js";function l(){v.error({message:"Sorry, there are no books matching your search query. Please try again!",position:"topRight"})}async function $(o){return o.map(({author:t,book_image:e,title:s,description:a,_id:n})=>`<li class="books-item-about" data-id="${n}" >  
+import{o as L}from"./assets/dark-mode-34cf531e.js";import{i as v,a as c,b as w}from"./assets/vendor-352bdbf3.js";function l(){v.error({message:"Sorry, there are no books matching your search query. Please try again!",position:"topRight"})}async function $(o){return o.map(({author:t,book_image:e,title:s,description:a,_id:n})=>`<li class="books-item-about" data-id="${n}" >  
     <div class="book-wrap"> 
     <img class="book-img" src="${e}"  alt="${a}" /> 
     </div> 
