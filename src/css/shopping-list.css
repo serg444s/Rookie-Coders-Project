@@ -153,8 +153,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .shopping-list-div {
-  }
   .empty-shopping-list-main {
     width: 349px;
     padding-top: 100px;
