@@ -5,7 +5,7 @@ import { fetchOneCategori } from './js/fetchOneCategori.js';
 
 import { onOpenModal , onCloseModal} from './js/burger.js';
 
-import { charities } from './js/support';
+// import { charities } from './js/support';
 
 import { showModal } from './js/modal-window.js';
 

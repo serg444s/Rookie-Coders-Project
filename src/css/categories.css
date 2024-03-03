@@ -49,7 +49,7 @@ a.link_category-book:active {
     height: 228px;
   }
   a.link_category-book {
-    font: 400 16px / 1.125 "DM Sans", sans-serif;
+    font: 400 16px / 1.125 'DM Sans', sans-serif;
     letter-spacing: -0.02em;
     color: rgba(17, 17, 17, 0.6);
   }
