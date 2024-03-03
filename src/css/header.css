@@ -4,38 +4,45 @@ svg {
   display: block;
 }
 body {
-  background-color:#fff;
+  background-color: #fff;
   position: relative;
   transition: all 0.3s ease 0s;
   html.dark-mode & {
     color: #9a9a9a;
     background-color: #202024;
-  } 
-} 
-.header {
-    z-index: auto;
-    width: 100%;
-    background-color: #fff;
-    border: 1.5px solid #111;
-    border-radius: 0 0 8px 8px;
-    transition: all .3s;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display:flex;
-      html.dark-mode & {
-  background-color: #111;
-  border: 1.5px solid #fff;
   }
 }
+body.show-modal .backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
 
+body.show-modal .modal {
+  transform: scale(1);
+}
+.header {
+  z-index: auto;
+  width: 100%;
+  background-color: #fff;
+  border: 1.5px solid #111;
+  border-radius: 0 0 8px 8px;
+  transition: all 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  html.dark-mode & {
+    background-color: #111;
+    border: 1.5px solid #fff;
+  }
+}
 
 .header_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 375px;
-
 }
 
 .header_logo {
@@ -46,9 +53,10 @@ body {
   align-items: center;
 }
 .header_svg {
-  fill: #000;
+  fill: #111;
   html.dark-mode & {
-    fill: #fff;
+    fill: #f3f3f3;
+    backdrop-color:#111;
   }
 }
 
@@ -116,7 +124,7 @@ body {
   transform: translate(20px);
 }
 .burger {
-  background-color: var(--main-text-cl-dark-theme);
+  background-color: #fff;
   height: 28px;
   width: 28px;
   stroke: #111;
@@ -124,9 +132,106 @@ body {
   padding: 0;
   display: flex;
   html.dark-mode & {
+    background-color: #111;
     stroke: #fff;
   }
 }
+.burger_close{
+  border:none;
+  background-color:#fff;
+   html.dark-mode & {
+    background-color: #111;
+    stroke: #fff;
+  }
+}
+.header_icon_close{
+  background-color: #fff;
+  stroke: #111;
+  border: none;
+  padding: 0;
+  display: flex;
+  html.dark-mode & {
+    background-color: #111;
+    stroke: #fff;
+    border: none;
+  }
+}
+
+
+.header_navigation_window {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/header icon/burgerpicture1.png),
+    radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4f2ee8 18.03%, #fff 100%);
+  transform-origin: 0 0;
+  background-position: 100% 100%, 50%;
+  background-repeat: no-repeat;
+  background-size: 100%, cover;
+  border-radius: 4px;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  transform: scale(1.1);
+  box-shadow: 0 10px 10px #f5f5f71a;
+}
+.modal__nav {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 130px;
+  display: flex;
+}
+.nav__List-menu {
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  gap: 16px;
+}
+.home__item {
+  justify-content: center;
+  display: flex;
+}
+.nav__link--current {
+  background-color: #eac645;
+  letter-spacing: -0.04em;
+  color: #111;
+  border: 0 solid #0003;
+  border-radius: 36px;
+  padding: 8px 16px;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.29;
+}
+.nav__shopping {
+  align-items: center;
+  gap: 4px;
+  margin-top: 15px;
+  display: flex;
+  color: #fff;
+}
+.nav__basket {
+  fill: #fff;
+}
+
+.backdrop {
+  transform-origin: 0 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 64px;
+}
+
 @media screen and (min-width: 768px) {
   .header_container {
     width: 768px;
@@ -140,6 +245,12 @@ body {
   .navigation_list {
     align-items: center;
     gap: 16px;
+    display: flex;
+  }
+
+  .navigation_List-menu {
+    flex-direction: column;
+    justify-content: center;
     display: flex;
   }
 
@@ -235,13 +346,17 @@ body {
     margin-left: auto;
   }
   .burger {
+    opacity: 0;
+    transform: scale(0);
+  }
+  .backdrop {
     display: none;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .header_container {
-    width: 100%;
+    width: 1440px;
   }
   .navigation {
     margin-left: 75px;
