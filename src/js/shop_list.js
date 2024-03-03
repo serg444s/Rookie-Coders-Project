@@ -23,6 +23,7 @@ let pagination; // Змінна для зберігання об'єкта паг
 cartListEl.addEventListener('click', deleteCard);
 window.addEventListener('resize', changePagOptionsByScreenWidth);
 document.addEventListener('DOMContentLoaded', firstPageLoaded);
+
 function firstPageLoaded() {
   // Викликається при завантаженні сторінки
   // Ініціалізуємо початкові параметри пагінації та відображаємо першу сторінку
@@ -61,26 +62,16 @@ function changePagOptionsByScreenWidth() {
   }, 200);
 }
 
-// function changePagOptionsByScreenWidth() {
-//   const screenWidth = window.innerWidth;
-//   if (screenWidth < 768) {
-//     visiblePages = 1;
-//     itemsPerPage = 4;
-//     clearTimeout(resizeTimeout);
+function calculateItemsPerPage() {
+  const screenWidth = window.innerWidth;
+  return screenWidth < 768 ? 4 : 3;
+}
 
-//     resizeTimeout = setTimeout(function () {
-//       createShoppingList();
-//     }, 200);
-//   } else if (screenWidth >= 768) {
-//     itemsPerPage = 3;
-//     visiblePages = 3;
-//     clearTimeout(resizeTimeout);
+function calculateVisiblePages() {
+  const screenWidth = window.innerWidth;
+  return screenWidth < 768 ? 1 : 3;
+}
 
-//     resizeTimeout = setTimeout(function () {
-//       createShoppingList();
-//     }, 200);
-//   }
-// }
 
 const booksContainer = document.querySelector('.js-books-container');
 const emptyListImg = document.querySelector('.empty-shopping-list-main');
