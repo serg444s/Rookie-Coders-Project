@@ -12,24 +12,23 @@
 .modal-icon {
   width: 24px;
   height: 24px;
-  position: absolute;
-  top: 12px;
-  right: 12px;
+  /* position: absolute; */
+  /* top: 6px;
+  right: 6px; */
   background-color: transparent;
   border: none;
 }
+
 .modal-icon-closed {
-  stroke-width: 3px;
-  stroke: #111;
+  color: #111;
+  font-size: 20px;
+  font-weight: bold;
   html.dark-mode & {
-    stroke: #fff;
+    color: #fff;
   }
 }
 .modal-icon-closed:hover {
-  stroke: #4f2ee8;
-  html.dark-mode & {
-    stroke: #4f2ee8;
-  }
+  color: #4f2ee8;
 }
 .modal-content {
   display: flex;

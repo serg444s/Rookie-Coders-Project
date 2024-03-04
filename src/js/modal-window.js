@@ -26,12 +26,14 @@ export async function showModal(event) {
   if (booksIdArray.includes(bookId)) {
     buttonText = 'REMOVE FROM THE SHOPPING LIST';
   }
+  // <svg class="modal-icon-closed" width="18" height="18">
+  //   <use href="../img/symbol-defs.svg#icon-closed"></use>
+  // </svg>;
+
   const { book_image, title, author, description, amazon_product_url } = book;
   instance = basicLightbox.create(
     `<div class="modal">
-        <button type="button" class="modal-icon">
-        <svg class="modal-icon-closed" width="18" height="18"><use href="../img/symbol-defs.svg#icon-closed"></use></svg>
-        </button>
+        <button type="button" class="modal-icon modal-icon-closed">X</button>
         <div class="modal-content">
         <img class="modal-img" src="${book_image}" width="330" height="485"/>
         <div class="modal-content-text">
