@@ -1,4 +1,4 @@
-import{o as u,a as L}from"./assets/dark-mode-c7924e31.js";import{a as i,b as v}from"./assets/vendor-9b4a9007.js";async function l(o){return o.map(({author:t,book_image:e,title:a,description:s,_id:n})=>`<li class="books-item-about" >  
+import{o as u,a as L}from"./assets/dark-mode-d15aed92.js";import{a as i,b as v}from"./assets/vendor-9b4a9007.js";async function l(o){return o.map(({author:t,book_image:e,title:a,description:s,_id:n})=>`<li class="books-item-about" >  
     <div class="book-wrap"> 
     <img class="book-img" src="${e}" data-id="${n}"  alt="${s}" /> 
     </div> 
