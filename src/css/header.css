@@ -56,7 +56,7 @@ body.show-modal .modal {
   fill: #111;
   html.dark-mode & {
     fill: #f3f3f3;
-    backdrop-color:#111;
+    backdrop-color: #111;
   }
 }
 
@@ -136,15 +136,15 @@ body.show-modal .modal {
     stroke: #fff;
   }
 }
-.burger_close{
-  border:none;
-  background-color:#fff;
-   html.dark-mode & {
+.burger_close {
+  border: none;
+  background-color: #fff;
+  html.dark-mode & {
     background-color: #111;
     stroke: #fff;
   }
 }
-.header_icon_close{
+.header_icon_close {
   background-color: #fff;
   stroke: #111;
   border: none;
@@ -156,7 +156,6 @@ body.show-modal .modal {
     border: none;
   }
 }
-
 
 .header_navigation_window {
   width: 100%;
@@ -171,13 +170,11 @@ body.show-modal .modal {
   flex-direction: column;
   transition: transform 0.2s ease-in-out;
   display: flex;
-  transform: scale(1.1);
   box-shadow: 0 10px 10px #f5f5f71a;
 }
 .modal__nav {
   flex-direction: column;
   align-items: center;
-  margin-top: 130px;
   display: flex;
 }
 .nav__List-menu {
@@ -185,9 +182,10 @@ body.show-modal .modal {
   justify-content: center;
   display: flex;
   gap: 16px;
+  margin-top: 183px;
 }
 .home__item {
-  justify-content: center;
+  justify-content: left;
   display: flex;
 }
 .nav__link--current {
@@ -202,6 +200,7 @@ body.show-modal .modal {
   font-style: normal;
   font-weight: 700;
   line-height: 1.29;
+  text-transform: uppercase;
 }
 .nav__shopping {
   align-items: center;
@@ -209,6 +208,10 @@ body.show-modal .modal {
   margin-top: 15px;
   display: flex;
   color: #fff;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
 }
 .nav__basket {
   fill: #fff;
@@ -274,6 +277,7 @@ body.show-modal .modal {
     width: 72px;
     height: 34px;
     background: #eac645;
+    transition: all 0.4s;
     border-radius: 36px;
     padding: 8px 16px;
     font-weight: 700;
@@ -286,6 +290,7 @@ body.show-modal .modal {
     width: 72px;
     height: 34px;
     background: #eac645;
+    transition: all 0.4s;
     border-radius: 36px;
     padding: 8px 16px;
     font-weight: 700;
@@ -314,6 +319,7 @@ body.show-modal .modal {
   }
   .navigation_link_shopping:hover {
     background: #eac645;
+    transition: all 0.4s;
     border-radius: 36px;
     padding: 7px 16px;
     width: 156px;
@@ -326,6 +332,7 @@ body.show-modal .modal {
   }
   .navigation_link_shopping:focus {
     background: #eac645;
+    transition: all 0.4s;
     border-radius: 36px;
     padding: 7px 16px;
     width: 156px;
@@ -352,6 +359,9 @@ body.show-modal .modal {
   .backdrop {
     display: none;
   }
+}
+.burger_close {
+  display: none;
 }
 
 @media screen and (min-width: 1440px) {
