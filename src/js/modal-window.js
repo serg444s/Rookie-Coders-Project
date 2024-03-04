@@ -19,19 +19,21 @@ export async function showModal(event) {
   const bookId = event.target.dataset.id;
   const book = await getBookById(bookId);
   const { book_image, title, author, description, amazon_product_url } = book;
-
   instance = basicLightbox.create(
     `<div class="modal">
         <button type="button" class="modal-icon">
-        <svg class="modal-icon-closed"><use href="../img/symbol-defs.svg#icon-closed"></use></svg>
+        <svg class="modal-icon-closed" width="18" height="18"><use href="../img/symbol-defs.svg#icon-closed"></use></svg>
         </button>
+        <div class="modal-content">
         <img class="modal-img" src="${book_image}" width="330" height="485"/>
+        <div class="modal-content-text">
         <h3 class="modal-title">${title}</h3>
         <p class="modal-author">${author}</p> 
         <p class="modal-text">${description}</p>
         <ul><li class="modal-link"><a href="${amazon_product_url}">Amazon
         </a></li></ul>
-
+        </div>
+        </div>
         <button class="modal-btn" type="button">ADD TO SHOPPING LIST</button>
         <p class="modal-congrat-text"></p>
     </div>`,
@@ -81,7 +83,5 @@ function addToShoppingList(event) {
   }
 }
 
-// const liElem = event.target.closest('li');
-// const id = liElem.dataset._id;
-// const book = books.find(book => book._id == id);
+
 /* <li class="modal-link"><a href="${buy_links[url]}">${buy_links[name]}</a></li> */

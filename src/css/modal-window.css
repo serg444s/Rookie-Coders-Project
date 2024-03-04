@@ -1,9 +1,13 @@
 .modal {
+    padding: 40px;
     border: 2px solid #111;
     border-radius: 18px;
     width: 335px;
     height: 762px;
     background-color: #fff;
+    html.dark-mode & {
+        background-color: #202024;
+      }
 }
 .modal-icon {
     width: 24px;
@@ -11,28 +15,46 @@
     position: absolute;
     top: 12px;
     right: 12px;
+    background-color: transparent;
+    border: none;
 }
 .modal-icon-closed {
     stroke-width: 3px;
     stroke: #111;
+    html.dark-mode & {
+        stroke: #fff;
+      }
 }
 .modal-icon-closed:hover {
     stroke: #4f2ee8;
+    html.dark-mode & {
+        stroke: #4f2ee8;
+      }
+}
+.modal-content {
+    display: flex;
+    flex-direction: column;
 }
 .modal-img {
+    margin-bottom: 14px;
     border-radius: 8px;
     width: 287px;
     height: 408px;                                                         
 }
 .modal-title {
+    margin-bottom: 4px;
     font-family: "DM Sans", sans-serif;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.125;
     letter-spacing: -0.04em;
-    color: #111;    
+    color: #111;
+    html.dark-mode & {
+        color: #fff;
+      }    
 }
 .modal-author {
+    margin-bottom: 18px;
     font-family: "DM Sans", sans-serif;
     font-style: italic;
     font-weight: 400;
@@ -40,24 +62,34 @@
     line-height: 1.16667;
     letter-spacing: -0.04em;
     color: #b4afaf;
+    html.dark-mode & {
+        color: #b4afaf;
+      }
 }
 .modal-text {
+    margin-bottom: 14px;
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.28571;
     letter-spacing: -0.04em;
-    color: #111;    
+    color: #111;
+    html.dark-mode & {
+        color: #fff;
+      }    
 }
 .modal-link {
     width: 115px;
     height: 32px;
+    margin-bottom: 44px;
+    html.dark-mode & {
+        color: #fff;
+      }
 }
 .modal-btn {
     padding: 14px auto;
     border: 2px solid #4f2ee8;
     border-radius: 40px;
-    /* padding: 14px 28px; */
     width: 211px;
     height: 46px;
     font-family: "DM Sans", sans-serif;
@@ -68,12 +100,19 @@
     text-transform: uppercase;
     color: #111;
     display: block;
-    margin: 0 auto;                      
+    margin: 0 auto;
+    html.dark-mode & {
+        color: #fff;
+        background-color: #202024;
+      }                      
 }
 .modal-btn:hover,
 .modal-btn:focus {
     background-color: #4f2ee8;
     color: #fff;
+    html.dark-mode & {
+        background-color: #4f2ee8;
+      }
 }
 .modal-congrat-text {
     font-family: "DM Sans", sans-serif;
@@ -82,7 +121,10 @@
     line-height: 1.2;
     letter-spacing: -0.04em;
     text-align: center;
-    color: rgba(17, 17, 17, 0.5);    
+    color: rgba(17, 17, 17, 0.5);
+    html.dark-mode & {
+        color: rgba(255, 255, 255, 0.5);
+      }    
 }
 @media screen and (min-width: 768px) {
     .modal {
@@ -96,9 +138,19 @@
         top: 24px;
         right: 24px;
     }
+    .modal-content {
+        display: flex;
+        flex-direction: row;
+    }
     .modal-img {
         width: 192px;
-        height: 281px;                                                         
+        height: 281px;
+        margin-bottom: 40px;                                                         
+    }
+    .modal-content-text {
+        display: flex;
+        flex-direction: column;
+        margin-left: 24px;
     }
     .modal-title {
         font-size: 24px;
