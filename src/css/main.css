@@ -7,9 +7,7 @@
 .left-container {
   margin-bottom: 40px;
   margin-top: 104px;
-  display: flex;
-  flex-direction: column;
-  width: 325px;
+width: 335px;
 }
 
 .right-container {
@@ -21,7 +19,9 @@
     width: 337px;
     padding-right: 40px;
     display: flex;
+    gap:32px;
   }
+  
 
 
 }
@@ -30,6 +30,8 @@
   .left-container{
     width: 356px;
     padding-right: 40px;
+    display: flex;
+  flex-direction: column;
   }
   .right-container{
     width: 996px;
