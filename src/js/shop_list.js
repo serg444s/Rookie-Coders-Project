@@ -34,14 +34,16 @@ function startFunction() {
 }
 
 window.addEventListener('resize', () => {
-  itemsPerPage = calculateItemsPerPage();
-  const pagination2 = new Pagination(tuiPagination, {
-    totalItems: savedBooks.length,
-    itemsPerPage: itemsPerPage,
-    visiblePages: 3,
-    centerAlign: true,
-  });
-  renderBooks(1);
+  if (savedBooks.length !== 0) {
+    itemsPerPage = calculateItemsPerPage();
+    const pagination2 = new Pagination(tuiPagination, {
+      totalItems: savedBooks.length,
+      itemsPerPage: itemsPerPage,
+      visiblePages: 3,
+      centerAlign: true,
+    });
+    renderBooks(1);
+  }
 });
 
 function waitForEvent(element, eventType) {

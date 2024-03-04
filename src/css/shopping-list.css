@@ -1,3 +1,6 @@
+.shopping-list-support {
+  display: none;
+}
 .shopping-list-loader-container {
   width: 100%;
   display: flex;
@@ -28,6 +31,11 @@
   margin-bottom: 14px;
   color: rgb(0, 0, 0, 0.6);
 }
+.empty-shopping-list {
+  html.dark-mode & {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
 .empty-shopping-img {
   width: 265px;
   height: 198px;
@@ -39,7 +47,7 @@
   margin-bottom: 20px;
 }
 .book-list {
-  position: relative;
+  /* position: relative; */
   display: flex;
   justify-content: space-between;
   gap: 14px;
@@ -99,7 +107,7 @@
   letter-spacing: 0.03em;
 }
 .remove-shop-list-book {
-  position: absolute;
+  /* position: absolute; */
   padding: 6px;
   right: 14px;
   top: 14px;
@@ -135,7 +143,6 @@
 .icon-basket-shop-list {
   color: #ffffff;
 }
-
 .amazon-img {
   html.dark-mode & {
     filter: invert(100%) brightness(100%) saturate(0%);
@@ -150,9 +157,7 @@
 .amazon-img {
   width: 48px;
   height: 15px;
-}
-
-/* tui-pagination styles */
+} /* tui-pagination styles */
 .tui-pagination {
   height: auto;
   margin: 0;
@@ -197,7 +202,6 @@
 .tui-pagination .tui-last {
   margin-right: 0;
 }
-
 .tui-pagination .tui-is-selected,
 .tui-pagination strong {
   color: #fff;
@@ -237,21 +241,17 @@
 .tui-is-disabled.tui-next:hover,
 .tui-is-disabled.tui-last:hover {
   background: #111;
-}
-/* ================================ */
-
+} /* ================================ */
 @media screen and (min-width: 768px) {
   .empty-shopping-list-main {
     width: 349px;
     padding-top: 100px;
     margin-inline: auto;
   }
-
   .empty-shopping-list {
     font-size: 18px;
     margin-bottom: 20px;
   }
-
   .empty-shopping-list-img {
     width: 322px;
     height: 241px;
@@ -303,15 +303,12 @@
     width: 92px;
     height: 27px;
     gap: 16px;
-  }
-
-  /* tui-pagination styles */
+  } /* tui-pagination styles */
   .tui-pagination .tui-page-btn {
     width: 44px;
     height: 44px;
     margin-right: 10px;
   }
-
   .tui-pagination .tui-first {
     margin-right: 8px;
   }
@@ -323,11 +320,17 @@
   }
   .tui-pagination .tui-next {
     margin-right: 8px;
-  }
-  /* ===================== */
+  } /* ===================== */
 }
-
 @media screen and (min-width: 1440px) {
+  .shopping-list-support {
+    display: block;
+    padding-top: 76px;
+    position: fixed;
+  }
+  .shopping-container-with-support {
+    padding-left: 310px;
+  }
   .shopping-list-div {
     margin-left: auto;
     margin-right: auto;
