@@ -3,19 +3,26 @@ import { addBookIdToStorage } from './addBookIdToStorage';
 import { removeBookIdFromStorage } from './removeBookIdFromStorage';
 // import { fetchBookById } from './getTopListBooks';
 import { getBookById } from './getTopListBooks';
+import { booksIdArray } from './addBookIdToStorage';
 
 const bookList = document.querySelector('.top-categories-list');
 const modalBtn = document.querySelector('.modal-btn');
 const modalCongratText = document.querySelector('.modal-congrat-text');
-
+let bookId;
 bookList.addEventListener('click', showModal);
 
 let instance;
 export async function showModal(event) {
   event.preventDefault();
   if (event.target.nodeName !== 'IMG') return;
-  const bookId = event.target.dataset.id;
+  bookId = event.target.dataset.id;
   const book = await getBookById(bookId);
+  let buttonText;
+  if (!booksIdArray.includes(bookId)) {
+    buttonText = 'ADD TO SHOPPING LIST';
+  } else {
+    buttonText = 'REMOVE FROM THE SHOPPING LIST';
+  }
   const { book_image, title, author, description, amazon_product_url } = book;
   instance = basicLightbox.create(
     `<div class="modal">
@@ -33,28 +40,53 @@ export async function showModal(event) {
         </li></ul>
         </div>
         </div>
-        <button class="modal-btn" type="button">ADD TO SHOPPING LIST</button>
+        <button class="modal-btn" type="button" data-action="add">${buttonText}</button>
         <p class="modal-congrat-text"></p>
     </div>`,
     {
-      onShow: (instance) => {
+      onShow: instance => {
         document.addEventListener('keydown', onImageKeydown);
-        instance.element().querySelector('.modal-icon').onclick = instance.close;
+
+        instance.element().querySelector('.modal-icon').onclick =
+          instance.close;
+
         instance.element().querySelector('.modal-btn').onclick =
-        addBookIdToStorage(bookId);
-        instance.element().querySelector('.modal-btn').onclick = instance.element().querySelector('.modal-btn').innerHTML = 'REMOVE ';
-        instance.element().querySelector('.modal-btn').onclick = instance.element().querySelector('.modal-congrat-text').textContent =
-          'Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".';
-        if (instance.element().querySelector('.modal-btn').textContent === 'REMOVE FROM THE SHOPPING LIST') {
-          instance.element().querySelector('.modal-btn').onclick = removeBookIdFromStorage
+          addBookIdToStorage(bookId);
+
+        // instance.element().querySelector('.modal-btn').onclick = instance
+        //   .element()
+        //   .querySelector('.modal-btn').innerHTML = 'REMOVE Hello';
+
+        instance
+          .element()
+          .querySelector('.modal-btn')
+          .addEventListener('click', changeBookText);
+
+        // instance
+        //   .element()
+        //   .querySelector('.modal-btn')
+        //   .addEventListener('click', changeButtonText);
+
+        // instance.element().querySelector('.modal-btn').onclick = instance
+        //   .element()
+        //   .querySelector('.modal-congrat-text').textContent =
+        //   'Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".';
+
+        if (
+          instance.element().querySelector('.modal-btn').textContent ===
+          'REMOVE FROM THE SHOPPING LIST'
+        ) {
+          instance.element().querySelector('.modal-btn').onclick =
+            removeBookIdFromStorage;
         }
       },
+
       onClose: () => {
         document.removeEventListener('keydown', onImageKeydown);
         // document.modalBtn.removeEventListener('click', addToShoppingList);
         // modalIcon.addEventListener('click', onModalIconClick);
       },
-    },
+    }
     // document.modalBtn.addEventListener('click', addToShoppingList),
   );
   instance.show();
@@ -72,6 +104,42 @@ function onBackdropClick(event) {
   instance.close();
 }
 
+function changeBookText() {
+  if (
+    instance.element().querySelector('.modal-btn').textContent ===
+    'ADD TO SHOPPING LIST'
+  ) {
+    instance.element().querySelector('.modal-btn').onclick = instance
+      .element()
+      .querySelector('.modal-btn').textContent =
+      'REMOVE FROM THE SHOPPING LIST';
+    // instance.element().querySelector('.modal-btn').dataset.action === 'remove';
+    instance.element().querySelector('.modal-congrat-text').textContent =
+      'Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".';
+    addBookIdToStorage(bookId);
+  } else {
+    instance.element().querySelector('.modal-btn').onclick = instance
+      .element()
+      .querySelector('.modal-btn').textContent = 'ADD TO SHOPPING LIST';
+
+    instance.element().querySelector('.modal-congrat-text').textContent = '';
+
+    removeBookIdFromStorage(bookId);
+  }
+}
+
+// function changeButtonText() {
+//   if (
+//     instance.element().querySelector('.modal-btn').dataset.action === 'remove'
+//   ) {
+//     instance.element().querySelector('.modal-btn').onclick = instance
+//       .element()
+//       .querySelector('.modal-btn').textContent = 'ADD TO SHOPPING LIST';
+//     instance.element().querySelector('.modal-btn').dataset.action === 'add';
+//     console.log(instance.element().querySelector('.modal-btn').dataset.action);
+//   }
+// }
+
 // function addToShoppingList(event) {
 //   event.preventDefault();
 //   // showModal(event);
@@ -85,4 +153,3 @@ function onBackdropClick(event) {
 //     });
 //   }
 // }
-
