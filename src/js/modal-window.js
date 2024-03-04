@@ -1,8 +1,8 @@
 import * as basicLightbox from 'basiclightbox';
-
 import { addBookIdToStorage } from './addBookIdToStorage';
 import { removeBookIdFromStorage } from './removeBookIdFromStorage';
 import { fetchBookById } from './getTopListBooks';
+import { getBookById } from './getTopListBooks';
 
 
 const bookList = document.querySelector('.top-categories-list');
@@ -26,8 +26,9 @@ export async function showModal(event) {
     description,
     amazon_product_url,
   } = book;
+  
   instance = basicLightbox.create(
-       `<div class="modal">
+    `<div class="modal">
         <button type="button" class="modal-icon">
         <svg class="modal-icon-closed"><use href="../img/symbol-defs.svg#icon-closed"></use></svg>
         </button>
@@ -37,6 +38,7 @@ export async function showModal(event) {
         <p class="modal-text">${description}</p>
         <ul><li class="modal-link"><a href="${amazon_product_url}">Amazon
         </a></li></ul>
+
         <button class="modal-btn" type="button">ADD TO SHOPPING LIST</button>
         <p class="modal-congrat-text"></p>
     </div>`,
@@ -80,13 +82,17 @@ function addToShoppingList(event) {
   modalCongratText.textContent =
     'Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".';
   if (modalBtn.textContent === 'REMOVE FROM THE SHOPPING LIST') {
-  modalBtn.addEventListener('click', () => {
-    removeBookIdFromStorage(bookIdToRemove);
-  });
+    modalBtn.addEventListener('click', () => {
+      removeBookIdFromStorage(bookIdToRemove);
+    });
+  }
 }
-}
+
 
 
 // const liElem = event.target.closest('li');
 // const id = liElem.dataset._id;
 // const book = books.find(book => book._id == id);
+/* <li class="modal-link"><a href="${buy_links[url]}">${buy_links[name]}</a></li> */
+
+

@@ -152,6 +152,94 @@
   height: 15px;
 }
 
+/* tui-pagination styles */
+.tui-pagination {
+  height: auto;
+  margin: 0;
+  padding-bottom: 40px;
+}
+.tui-pagination .tui-page-btn {
+  border-radius: 100%;
+  width: 38px;
+  height: 38px;
+  padding: 12px 14px;
+  color: #111;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  line-height: 1.22222;
+  border: 1px solid #333333;
+  margin-right: 8px;
+}
+.tui-pagination .tui-page-btn:hover {
+  html.dark-mode & {
+    background-color: #111;
+  }
+}
+.tui-pagination .tui-page-btn {
+  html.dark-mode & {
+    color: #fff;
+    border: 1px solid #fff;
+  }
+}
+.tui-pagination .tui-first {
+  margin-right: 5px;
+}
+.tui-pagination .tui-prev {
+  margin-right: 14px;
+}
+.tui-pagination .tui-last-child {
+  margin-right: 14px;
+}
+.tui-pagination .tui-next {
+  margin-left: 0;
+  margin-right: 5px;
+}
+.tui-pagination .tui-last {
+  margin-right: 0;
+}
+
+.tui-pagination .tui-is-selected,
+.tui-pagination strong {
+  color: #fff;
+  background: #111;
+  border-color: #111;
+}
+.tui-pagination .tui-is-selected,
+.tui-pagination strong {
+  html.dark-mode & {
+    color: #111;
+    background: #fff;
+    border-color: #fff;
+  }
+}
+.tui-pagination .tui-is-selected:hover {
+  background: #111;
+}
+.tui-pagination .tui-is-selected:hover {
+  html.dark-mode & {
+    background: #fff;
+  }
+}
+.tui-first,
+.tui-prev,
+.tui-next,
+.tui-last {
+  background: #eac645;
+}
+.tui-is-disabled.tui-first,
+.tui-is-disabled.tui-prev,
+.tui-is-disabled.tui-next,
+.tui-is-disabled.tui-last {
+  background: #111;
+}
+.tui-is-disabled.tui-first:hover,
+.tui-is-disabled.tui-prev:hover,
+.tui-is-disabled.tui-next:hover,
+.tui-is-disabled.tui-last:hover {
+  background: #111;
+}
+/* ================================ */
+
 @media screen and (min-width: 768px) {
   .empty-shopping-list-main {
     width: 349px;
@@ -216,6 +304,27 @@
     height: 27px;
     gap: 16px;
   }
+
+  /* tui-pagination styles */
+  .tui-pagination .tui-page-btn {
+    width: 44px;
+    height: 44px;
+    margin-right: 10px;
+  }
+
+  .tui-pagination .tui-first {
+    margin-right: 8px;
+  }
+  .tui-pagination .tui-prev {
+    margin-right: 24px;
+  }
+  .tui-pagination .tui-last-child {
+    margin-right: 24px;
+  }
+  .tui-pagination .tui-next {
+    margin-right: 8px;
+  }
+  /* ===================== */
 }
 
 @media screen and (min-width: 1440px) {

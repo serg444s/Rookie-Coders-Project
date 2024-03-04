@@ -6,6 +6,7 @@ import amazon2x from '../img/shopping_list/amazon2x.png';
 import openbook from '../img/shopping_list/openbook.png';
 import trash from '../img/shopping_list/trash.png';
 import Pagination from 'tui-pagination';
+import { onError } from './iziToasts.js';
 
 //функція Анатолія для отримання книги за id (поки тут, але потім її треба буде просто імпортувати)
 async function getBookById(bookId) {
@@ -15,70 +16,16 @@ async function getBookById(bookId) {
   return resp.data;
 }
 
-let currentPage = 1;
-let itemsPerPage;
-let visiblePages;
-let pagination; // Змінна для зберігання об'єкта пагінації
-
-cartListEl.addEventListener('click', deleteCard);
-window.addEventListener('resize', changePagOptionsByScreenWidth);
-document.addEventListener('DOMContentLoaded', firstPageLoaded);
-
-function firstPageLoaded() {
-  // Викликається при завантаженні сторінки
-  // Ініціалізуємо початкові параметри пагінації та відображаємо першу сторінку
-  itemsPerPage = calculateItemsPerPage();
-  visiblePages = calculateVisiblePages();
-  renderBooksPerPage(currentPage);
-  setupPagination();
-}
-
-function setupPagination() {
-  const paginationContainer = document.getElementById('pagination-container');
-  pagination = new Pagination(paginationContainer, {
-    totalItems: totalBooksCount, // Загальна кількість книг
-    itemsPerPage: itemsPerPage,
-    visiblePages: visiblePages,
-    page: currentPage,
-    centerAlign: true,
-  });
-
-  pagination.on('beforeMove', event => {
-    currentPage = event.page;
-    renderBooksPerPage(currentPage);
-  });
-}
-
-function changePagOptionsByScreenWidth() {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => {
-    itemsPerPage = calculateItemsPerPage();
-    visiblePages = calculateVisiblePages();
-    pagination.reset({
-      itemsPerPage: itemsPerPage,
-      visiblePages: visiblePages,
-    });
-    pagination.movePage(currentPage); // Переміщуємо на поточну сторінку після зміни параметрів пагінації
-  }, 200);
-}
-
-function calculateItemsPerPage() {
-  const screenWidth = window.innerWidth;
-  return screenWidth < 768 ? 4 : 3;
-}
-
-function calculateVisiblePages() {
-  const screenWidth = window.innerWidth;
-  return screenWidth < 768 ? 1 : 3;
-}
-
-
 const booksContainer = document.querySelector('.js-books-container');
 const emptyListImg = document.querySelector('.empty-shopping-list-main');
 const shoppingListLoader = document.querySelector('#shopping-list-loader');
+const tuiPagination = document.getElementById('pagination2');
+let savedBooks; //масив книжок отриманих з бекенду
+let itemsPerPage = calculateItemsPerPage(); //одразу перевіряємо розмір екрану і визначаємо кількість карток на сторінці
+
 onLoad();
 startFunction();
-renderBooks();
+getAllBooks();
 
 function startFunction() {
   booksContainer.innerHTML = '';
@@ -86,26 +33,85 @@ function startFunction() {
   loaderOn(shoppingListLoader);
 }
 
-export function renderBooks() {
+window.addEventListener('resize', () => {
+  itemsPerPage = calculateItemsPerPage();
+  const pagination2 = new Pagination(tuiPagination, {
+    totalItems: savedBooks.length,
+    itemsPerPage: itemsPerPage,
+    visiblePages: 3,
+    centerAlign: true,
+  });
+  renderBooks(1);
+});
+
+function waitForEvent(element, eventType) {
+  return new Promise(function (resolve, reject) {
+    function eventHandler(event) {
+      // Після виконання події видаляємо обробник події
+      element.removeEventListener(eventType, eventHandler);
+      // Вирішуємо проміс з даними, які вас цікавлять
+      resolve(event);
+    }
+    // Додаємо обробник події
+    // element.addEventListener(eventType, eventHandler);
+    element.addEventListener(eventType, event => {
+      if (
+        event.target.classList.contains('tui-page-btn') &&
+        !event.target.classList.contains('tui-is-selected') &&
+        !event.target.classList.contains('tui-is-disabled')
+      ) {
+        eventHandler();
+      }
+    });
+  });
+}
+
+function calculateItemsPerPage() {
+  const screenWidth = window.innerWidth;
+  return screenWidth < 768 ? 4 : 3;
+}
+
+function getAllBooks() {
   addBooks()
     .then(result => {
-      const savedBooks = result;
+      savedBooks = result;
       if (savedBooks.length === 0) {
         loaderOff(shoppingListLoader);
         emptyListImg.style.display = 'block';
         booksContainer.innerHTML = '';
+        tuiPagination.innerHTML = '';
       } else {
-        const booksMarkup = savedBooks
-          .map(book => createBookCard(book))
-          .join('');
         loaderOff(shoppingListLoader);
-        booksContainer.innerHTML = booksMarkup;
-        emptyListImg.style.display = 'none';
+
+        const pagination2 = new Pagination(tuiPagination, {
+          totalItems: savedBooks.length,
+          itemsPerPage: itemsPerPage,
+          visiblePages: 3,
+          centerAlign: true,
+        });
+        renderBooks(1);
       }
     })
-    .catch(error => {
-      console.error(error);
+    .catch(() => {
+      onError();
     });
+}
+
+function renderBooks(pageNumber) {
+  const transitionalBooksArray = [...savedBooks];
+  let booksOnPage = transitionalBooksArray.splice(
+    itemsPerPage * (pageNumber - 1),
+    itemsPerPage
+  );
+  const booksMarkup = booksOnPage.map(book => createBookCard(book)).join('');
+  booksContainer.innerHTML = booksMarkup;
+  emptyListImg.style.display = 'none';
+
+  // Викликаємо функцію, що очікує подію 'click' і повертає проміс
+  waitForEvent(tuiPagination, 'click').then(function (event) {
+    // Цей код буде виконаний після того, як подія 'click' відбудеться
+    renderBooks(parseInt(document.getElementsByTagName('strong')[0].innerHTML));
+  });
 }
 
 //функція отримує масив id збережених у сховищі і повертає масив промісів на книги
@@ -215,11 +221,9 @@ function removeBookFromList(bookId) {
     localStorage.setItem('books', JSON.stringify(savedInShopList));
 
     // Оновлюємо список книг на сторінці
-    renderBooks();
+    getAllBooks();
   }
 }
-
-// document.addEventListener('DOMContentLoaded', renderBooks); //коли веб-сторінка буде повністю завантажена, функція renderBooks буде викликана автоматично. Це часто використовується для початкового відображення даних на сторінці, коли всі елементи DOM вже доступні для маніпуляції.
 
 //поки закоментувала видалення книжок
 document.addEventListener('click', removeBook);
@@ -239,3 +243,11 @@ addButton.addEventListener('click', e => {
   ];
   localStorage.setItem('books', JSON.stringify(booksIdArray));
 });
+
+// це щоб подивитися як працює перемикач для пагінації. його треба буде створювати при рендері і задавати відповідні значення
+// const pagination2 = new Pagination(tuiPagination, {
+//   totalItems: 25,
+//   itemsPerPage: 3,
+//   visiblePages: 5,
+//   centerAlign: true,
+// });
