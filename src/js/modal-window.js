@@ -4,6 +4,8 @@ import { removeBookIdFromStorage } from './removeBookIdFromStorage';
 // import { fetchBookById } from './getTopListBooks';
 import { getBookById } from './getTopListBooks';
 import { booksIdArray } from './addBookIdToStorage';
+import amazon1x from '../img/shopping_list/amazon1x.png';
+import openbook from '../img/shopping_list/openbook.png';
 
 const bookList = document.querySelector('.top-categories-list');
 const modalBtn = document.querySelector('.modal-btn');
@@ -20,7 +22,8 @@ export async function showModal(event) {
   let buttonText;
   if (!booksIdArray.includes(bookId)) {
     buttonText = 'ADD TO SHOPPING LIST';
-  } else {
+  }
+  if (booksIdArray.includes(bookId)) {
     buttonText = 'REMOVE FROM THE SHOPPING LIST';
   }
   const { book_image, title, author, description, amazon_product_url } = book;
@@ -35,8 +38,8 @@ export async function showModal(event) {
         <h3 class="modal-title">${title}</h3>
         <p class="modal-author">${author}</p> 
         <p class="modal-text">${description}</p>
-        <ul><li class="modal-link-icons"><a class="modal-link" href="${amazon_product_url}" target="_blank"><img src="../img/shopping_list/amazon1x.png" alt="applebook" target="_blank" /></a>
-        <img class="modal-link-img" src="../img/shopping_list/openbook.png" />
+        <ul><li class="modal-link-icons"><a class="modal-link" href="${amazon_product_url}" target="_blank"><img src="${amazon1x}" alt="applebook" target="_blank" /></a>
+        <img class="modal-link-img" src="${openbook}" />
         </li></ul>
         </div>
         </div>
@@ -50,8 +53,8 @@ export async function showModal(event) {
         instance.element().querySelector('.modal-icon').onclick =
           instance.close;
 
-        instance.element().querySelector('.modal-btn').onclick =
-          addBookIdToStorage(bookId);
+        // instance.element().querySelector('.modal-btn').onclick =
+        //   addBookIdToStorage(bookId);
 
         // instance.element().querySelector('.modal-btn').onclick = instance
         //   .element()
