@@ -2,7 +2,7 @@ import * as basicLightbox from 'basiclightbox';
 
 import { addBookIdToStorage } from './addBookIdToStorage';
 import { removeBookIdFromStorage } from './removeBookIdFromStorage';
-import { getTopListBooks } from './getTopListBooks';
+import { fetchBookById } from './getTopListBooks';
 
 
 const bookList = document.querySelector('.top-categories-list');
@@ -17,16 +17,14 @@ let instance;
 export async function showModal(event) {
   event.preventDefault();
   if (event.target.nodeName !== 'IMG') return;
-  const books = await getTopListBooks(); 
-  const liElem = event.target.closest('li');
-  const id = liElem.dataset._id;
-  const book = books.find(book => book._id == id);
+  const bookId = event.target.dataset.id; 
+  const book = await fetchBookById(bookId); 
   const {
     book_image,
     title,
     author,
     description,
-    // buy_links: { name, url },
+    amazon_product_url,
   } = book;
   instance = basicLightbox.create(
        `<div class="modal">
@@ -37,7 +35,8 @@ export async function showModal(event) {
         <h3 class="modal-title">${title}</h3>
         <p class="modal-author">${author}</p> 
         <p class="modal-text">${description}</p>
-        <ul>
+        <ul><li class="modal-link"><a href="${amazon_product_url}">Amazon
+        </a></li></ul>
         <button class="modal-btn" type="button">ADD TO SHOPPING LIST</button>
         <p class="modal-congrat-text"></p>
     </div>`,
@@ -88,4 +87,6 @@ function addToShoppingList(event) {
 }
 
 
-{/* <li class="modal-link"><a href="${buy_links[url]}">${buy_links[name]}</a></li> */}
+// const liElem = event.target.closest('li');
+// const id = liElem.dataset._id;
+// const book = books.find(book => book._id == id);
