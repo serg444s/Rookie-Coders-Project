@@ -1,4 +1,3 @@
-import { makeListOfBooks } from './makeListOfBooks';
 import { fetchOneCategori } from './fetchOneCategori.js';
 import { sliceBooks } from './sliceBooksData.js';
 
