@@ -1,9 +1,8 @@
 import * as basicLightbox from 'basiclightbox';
 import { addBookIdToStorage } from './addBookIdToStorage';
 import { removeBookIdFromStorage } from './removeBookIdFromStorage';
-import { fetchBookById } from './getTopListBooks';
+// import { fetchBookById } from './getTopListBooks';
 import { getBookById } from './getTopListBooks';
-
 
 const bookList = document.querySelector('.top-categories-list');
 const modalIcon = document.querySelector('.modal-icon');
@@ -17,16 +16,10 @@ let instance;
 export async function showModal(event) {
   event.preventDefault();
   if (event.target.nodeName !== 'IMG') return;
-  const bookId = event.target.dataset.id; 
-  const book = await fetchBookById(bookId); 
-  const {
-    book_image,
-    title,
-    author,
-    description,
-    amazon_product_url,
-  } = book;
-  
+  const bookId = event.target.dataset.id;
+  const book = await getBookById(bookId);
+  const { book_image, title, author, description, amazon_product_url } = book;
+
   instance = basicLightbox.create(
     `<div class="modal">
         <button type="button" class="modal-icon">
@@ -88,11 +81,7 @@ function addToShoppingList(event) {
   }
 }
 
-
-
 // const liElem = event.target.closest('li');
 // const id = liElem.dataset._id;
 // const book = books.find(book => book._id == id);
 /* <li class="modal-link"><a href="${buy_links[url]}">${buy_links[name]}</a></li> */
-
-
