@@ -26,7 +26,10 @@
 .empty-shopping-list {
   text-align: center;
   margin-bottom: 14px;
-  color: rgb(0, 0, 0, 0.6);
+  color: #111;
+  html.dark-mode & {
+    color: rgba(255, 255, 255, 0.6);
+  }
 }
 .empty-shopping-img {
   width: 265px;

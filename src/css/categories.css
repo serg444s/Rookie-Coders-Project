@@ -14,19 +14,35 @@ a.link_category-book {
   font: 400 18px / 1.33333 'DM Sans', sans-serif;
   letter-spacing: -0.02em;
   color: rgba(17, 17, 17, 0.6);
+  html.dark-mode & {
+ color: rgba(255, 255, 255, 0.6);
 }
+}
+
 a.link_category-book:hover {
   color: #4f2ee8;
+   font-weight: bold;
+  text-transform: uppercase;
+   html.dark-mode & {
+    color:#eac645;
+   }
 }
 a.link_category-book:focus {
-  color: blue;
+  text-transform: uppercase;
+  color: #4f2ee8;
   font-weight: bold;
+  html.dark-mode & {
+    color:#eac645;
+   }
 }
 a.link_category-book:active {
-  color: blue;
+  color: #4f2ee8;
   text-transform: uppercase;
   font: 700 18px / 1.33333 'DM Sans', sans-serif;
   letter-spacing: -0.02em;
+  html.dark-mode & {
+    color:#eac645;
+   }
 }
 .categories-list_books::-webkit-scrollbar {
   width: 8px;
