@@ -231,20 +231,20 @@ function removeBookFromList(bookId) {
 document.addEventListener('click', removeBook);
 
 ////книги в localStorage - тимчасова кнопка додавання книжок
-const addButton = document.querySelector('.add-book');
+// const addButton = document.querySelector('.add-book');
 
-addButton.addEventListener('click', e => {
-  const booksIdArray = [
-    '643282b1e85766588626a080',
-    '643282b1e85766588626a0ba',
-    '643282b1e85766588626a0dc',
-    '643282b2e85766588626a0fc',
-    '643282b2e85766588626a118',
-    '643282b1e85766588626a085',
-    '643282b1e85766588626a0b2',
-  ];
-  localStorage.setItem('books', JSON.stringify(booksIdArray));
-});
+// addButton.addEventListener('click', e => {
+//   const booksIdArray = [
+//     '643282b1e85766588626a080',
+//     '643282b1e85766588626a0ba',
+//     '643282b1e85766588626a0dc',
+//     '643282b2e85766588626a0fc',
+//     '643282b2e85766588626a118',
+//     '643282b1e85766588626a085',
+//     '643282b1e85766588626a0b2',
+//   ];
+//   localStorage.setItem('books', JSON.stringify(booksIdArray));
+// });
 
 // це щоб подивитися як працює перемикач для пагінації. його треба буде створювати при рендері і задавати відповідні значення
 // const pagination2 = new Pagination(tuiPagination, {
