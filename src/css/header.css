@@ -136,6 +136,13 @@ body.show-modal .modal {
     stroke: #fff;
   }
 }
+.burger:hover {
+  stroke: #4f2ee8;
+}
+.burger:focus {
+  stroke: #4f2ee8;
+}
+
 .burger_close {
   border: none;
   background-color: #fff;
@@ -144,6 +151,7 @@ body.show-modal .modal {
     stroke: #fff;
   }
 }
+
 .header_icon_close {
   background-color: #fff;
   stroke: #111;
@@ -156,7 +164,12 @@ body.show-modal .modal {
     border: none;
   }
 }
-
+.header_icon_close:hover {
+  stroke: #4f2ee8;
+}
+.header_icon_close:focus {
+  stroke: #4f2ee8;
+}
 .header_navigation_window {
   width: 100%;
   height: 100%;
@@ -274,19 +287,18 @@ body.show-modal .modal {
     }
   }
   .navigation_link_home:hover {
-    width: 72px;
-    height: 34px;
-    background: #eac645;
-    transition: all 0.4s;
-    border-radius: 36px;
-    padding: 8px 16px;
-    font-weight: 700;
-    border: none;
+    color: #4f2ee8;
     html.dark-mode & {
-      color: #111;
+      color: #eac645;
     }
   }
   .navigation_link_home:focus {
+    color: #4f2ee8;
+    html.dark-mode & {
+      color: #eac645;
+    }
+  }
+  .navigation_link_home:active {
     width: 72px;
     height: 34px;
     background: #eac645;
@@ -299,6 +311,7 @@ body.show-modal .modal {
       color: #111;
     }
   }
+
   .navigation_link_shopping {
     letter-spacing: -0.04em;
     text-transform: uppercase;
@@ -317,20 +330,19 @@ body.show-modal .modal {
       color: #fff;
     }
   }
-  .navigation_link_shopping:hover {
-    background: #eac645;
-    transition: all 0.4s;
-    border-radius: 36px;
-    padding: 7px 16px;
-    width: 156px;
-    height: 34px;
-    font-weight: 700;
-    border: none;
+.navigation_link_shopping:hover {
+    color: #4f2ee8;
     html.dark-mode & {
-      color: #111;
+      color: #eac645;
     }
   }
   .navigation_link_shopping:focus {
+    color: #4f2ee8;
+    html.dark-mode & {
+      color: #eac645;
+    }
+  }
+  .navigation_link_shopping:active{
     background: #eac645;
     transition: all 0.4s;
     border-radius: 36px;
@@ -343,12 +355,30 @@ body.show-modal .modal {
       color: #111;
     }
   }
+
   .basket {
     html.dark-mode & {
       fill: #fff;
     }
   }
-
+ .basket:focus {
+fill:#4f2ee8;
+html.dark-mode & {
+      fill:#eac645
+    }
+ }
+  .basket:hover {
+fill:#4f2ee8;
+html.dark-mode & {
+      fill:#eac645
+    }
+ }
+  .basket:active {
+fill:#4f2ee8;
+html.dark-mode & {
+      fill:#111;
+    }
+ }
   .header_right {
     margin-left: auto;
   }
