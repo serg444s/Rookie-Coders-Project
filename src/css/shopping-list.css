@@ -75,7 +75,6 @@
 }
 .shop-card-hero {
   display: flex;
-  gap: 18px;
   justify-content: space-between;
   align-items: center;
 }
@@ -160,7 +159,9 @@
 .amazon-img {
   width: 48px;
   height: 15px;
-} /* tui-pagination styles */
+}
+
+/* tui-pagination styles */
 .tui-pagination {
   height: auto;
   margin: 0;
@@ -329,11 +330,12 @@
   .shopping-list-support {
     display: block;
     padding-top: 76px;
-    position: fixed;
-    z-index: -1;
   }
   .shopping-container-with-support {
-    padding-left: 310px;
+    display: flex;
+    justify-content: space-around;
+
+    /* padding-left: 310px; */
   }
   .shopping-list-div {
     margin-left: auto;
