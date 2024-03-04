@@ -16,9 +16,6 @@ a.link_category-book {
   color: rgba(17, 17, 17, 0.6);
 }
 a.link_category-book:hover {
-  font: 700 18px / 1.33333 'DM Sans', sans-serif;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
   color: #4f2ee8;
 }
 a.link_category-book:focus {
@@ -27,7 +24,9 @@ a.link_category-book:focus {
 }
 a.link_category-book:active {
   color: blue;
-  font-weight: bold;
+  text-transform: uppercase;
+  font: 700 18px / 1.33333 'DM Sans', sans-serif;
+  letter-spacing: -0.02em;
 }
 .categories-list_books::-webkit-scrollbar {
   width: 8px;

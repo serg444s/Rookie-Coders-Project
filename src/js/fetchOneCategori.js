@@ -29,7 +29,7 @@ export async function fetchOneCategori(category) {
 
 async function makeCategoryPage(category, data) {
   return `
-  <h3 class="book-categoty-title">${category}</h3>
+  <h3 class="categories-title">${category}</h3>
   <ul class='list-books'>${await makeListBook(data)}</ul>`;
 }
 
