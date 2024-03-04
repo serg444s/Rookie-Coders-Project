@@ -327,6 +327,7 @@
     display: block;
     padding-top: 76px;
     position: fixed;
+    z-index: -1;
   }
   .shopping-container-with-support {
     padding-left: 310px;
