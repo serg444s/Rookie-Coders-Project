@@ -14,7 +14,7 @@
 
 .supporters {
   box-sizing: border-box;
-  width: 335px;
+  width: 330px;
   height: 460px;
   background: radial-gradient(
     183.6% 183.01% at 59.76% -23.42%,
@@ -125,7 +125,14 @@
 }
 
 @media screen and (min-width: 768px) {
+  .supporters{
+    width: 335px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  .supporters{
+    width: 310px;
+    height: 460px;
+  }
 }
