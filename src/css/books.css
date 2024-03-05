@@ -11,8 +11,7 @@
   color: rgb(144, 75, 144);
 }
 
-.category-item {
-}
+.category-item {}
 
 .container-books {
   width: 996px;
@@ -34,10 +33,9 @@
   height: 535px;
   display: flex;
   flex-direction: column;
-  
-}
-.book-button{
+  }
 
+.book-button{
 border: 2px solid rgb(144, 75, 144);
 border-radius: 40px;
 padding: 14px auto;
@@ -56,10 +54,11 @@ transition: all 0.2s ease;
 }
 
 .book-button:hover {
-background-color: blue;
-color: aliceblue;
-box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.15);
+  background-color: blue;
+  color: aliceblue;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.15);
 }
+
 .books-item-about {
   width: 180px;
   height: 306px;
@@ -68,6 +67,7 @@ box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.15);
 .book-wrap {
   width: 180px;
   position: relative;
+  overflow: hidden;
 
 }
 
@@ -79,7 +79,8 @@ box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.15);
   cursor: pointer;
   margin-bottom: 40px;
 }
-.book_cover{
+
+.book_cover {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,13 +90,18 @@ box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.15);
   position: absolute;
   top: 77.5%;
   left: 0;
-  border-radius: 0 0 8px 8px ;
-}
-.book-overlay {
+  border-radius: 0 0 8px 8px;
+  transform: translateY(100%);
+  transition: transform 300ms;
 }
 
-.book-text {
+.books-item-about:hover .book_cover {
+  transform: translateY(0);
 }
+
+.book-overlay {}
+
+.book-text {}
 
 .book-info {
   margin-top: 14px;
@@ -118,14 +124,14 @@ box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.15);
   letter-spacing: -0.04em;
   color: #b4afaf;
 }
+
 @media screen and (min-width: 768px) {
-  .container-books{
+ .container-books{
    width: 704px;
-  
   }
-  .top-categories-list{
-   
-    margin-top: 100px;
+  
+  .top-categories-list {
+   margin-top: 100px;
   }
   
     .list-books {
@@ -135,26 +141,26 @@ box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.15);
       margin-bottom: 140px;
     }
 
-.book-img{
+.book-img {
  width: 218px;
   height: 366px;;
 }
 
-
 }
-@media screen and (min-width: 1440px){
+
+@media screen and (min-width: 1440px) {
   .list-books {
     width: 996px;
     height: 306px;
     display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-gap: 24px;
-      margin-bottom: 100px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 24px;
+    margin-bottom: 100px;
 
-    }
+  }
 
-.book-img{
-  width: 180px;
-height: 306px;
-}
+  .book-img {
+    width: 180px;
+    height: 306px;
+  }
 }
