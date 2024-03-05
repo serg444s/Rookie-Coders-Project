@@ -1,13 +1,17 @@
 import { loaderOn, loaderOff } from './loader';
 import axios from 'axios';
 import { onLoad } from '../js/dark-mode.js';
+import { onOpenModal, onCloseModal } from '../js/burger.js';
 import amazon1x from '../img/shopping_list/amazon1x.png';
 import amazon2x from '../img/shopping_list/amazon2x.png';
 import openbook from '../img/shopping_list/openbook.png';
 import trash from '../img/shopping_list/trash.png';
 import Pagination from 'tui-pagination';
 import { onError } from './iziToasts.js';
-
+const openModalBtn = document.querySelector('[data-action="open-modal"]');
+const closeModalBtn = document.querySelector('[data-action="close-modal"]');
+openModalBtn.addEventListener('click', onOpenModal);
+closeModalBtn.addEventListener('click', onCloseModal);
 //функція Анатолія для отримання книги за id (поки тут, але потім її треба буде просто імпортувати)
 async function getBookById(bookId) {
   const resp = await axios.get(
@@ -229,6 +233,14 @@ function removeBookFromList(bookId) {
 
 //поки закоментувала видалення книжок
 document.addEventListener('click', removeBook);
+function currentStyle() {
+  const home = document.querySelector('.navigation_link_shopping');
+  const basket = document.querySelector('.basket');
+  home.classList.add('active');
+  basket.classList.add('active')
+}
+currentStyle();
+
 
 ////книги в localStorage - тимчасова кнопка додавання книжок
 // const addButton = document.querySelector('.add-book');
