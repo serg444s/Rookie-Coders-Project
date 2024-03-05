@@ -12,14 +12,14 @@ import { loadMain } from './startLoad.js';
 export async function fetchOneCategori(category) {
   loaderOn(loadMain);
   const categories = document.querySelector('.top-categories-list');
-  console.log(categories);
+  // console.log(categories);
   categories.innerHTML = '';
 
   try {
     const resp = await axios.get(
       `https://books-backend.p.goit.global/books/category?category=${category}`
     );
-    console.log(resp);
+    // console.log(resp);
     const data = resp.data;
 
     categories.insertAdjacentHTML(
