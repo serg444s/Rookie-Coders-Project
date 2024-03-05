@@ -3,13 +3,7 @@ import { onLoad } from './js/dark-mode.js';
 import { startLoad } from './js/startLoad.js';
 import { fetchOneCategori } from './js/fetchOneCategori.js';
 
-// import { onOpenModal, onCloseModal } from './js/burger.js';
-
-import {
-  onOpenModal,
-  onCloseModal,
-  handleNavigationClick,
-} from './js/burger.js';
+import { onOpenModal, onCloseModal } from './js/burger.js';
 
 // import { charities } from './js/support';
 
@@ -29,3 +23,9 @@ startLoad();
 
 openModalBtn.addEventListener('click', onOpenModal);
 closeModalBtn.addEventListener('click', onCloseModal);
+
+function currentStyle() {
+  const home = document.querySelector('.navigation_link_home');
+  home.classList.add('active');
+}
+currentStyle();
