@@ -23,6 +23,7 @@
   color: #111;
   font-size: 20px;
   font-weight: bold;
+  transition: all 0.2s ease;
   html.dark-mode & {
     color: #fff;
   }
@@ -118,6 +119,8 @@
   color: #111;
   display: block;
   margin: 0 auto;
+  transition: all 0.2s ease;
+
   html.dark-mode & {
     color: #fff;
     background-color: #202024;

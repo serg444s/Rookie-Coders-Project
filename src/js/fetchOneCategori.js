@@ -2,11 +2,15 @@ import axios from 'axios';
 import { onError } from './iziToasts';
 import { startLoad } from './startLoad.js';
 import { sliceBooks } from './sliceBooksData.js';
+import { loaderOn } from './loader.js';
+import { loaderOff } from './loader.js';
+import { loadMain } from './startLoad.js';
 
 // для перевірки розкоментуй виклик фукнції на main.js
 // fetchOneCategori('Advice How-To and Miscellaneous');
 
 export async function fetchOneCategori(category) {
+  loaderOn(loadMain);
   const categories = document.querySelector('.top-categories-list');
   console.log(categories);
   categories.innerHTML = '';
@@ -22,6 +26,7 @@ export async function fetchOneCategori(category) {
       'afterbegin',
       await makeCategoryPage(category, data)
     );
+    loaderOff(loadMain);
   } catch (error) {
     console.log(error.message);
     onError();
