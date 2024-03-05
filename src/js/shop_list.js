@@ -235,11 +235,13 @@ function removeBookFromList(bookId) {
 document.addEventListener('click', removeBook);
 function currentStyle() {
   const home = document.querySelector('.navigation_link_shopping');
-  const basket = document.querySelector('.navigation_link_shopping');
+  const basket = document.querySelector('.basket');
   home.classList.add('active');
   basket.classList.add('active')
 }
 currentStyle();
+
+
 ////книги в localStorage - тимчасова кнопка додавання книжок
 // const addButton = document.querySelector('.add-book');
 
