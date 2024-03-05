@@ -23,3 +23,8 @@ startLoad();
 
 openModalBtn.addEventListener('click', onOpenModal);
 closeModalBtn.addEventListener('click', onCloseModal);
+function currentStyle(){
+    const home = document.querySelector('.navigation_link_home');
+    home.classList.add('active');
+}
+ currentStyle();
