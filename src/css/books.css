@@ -1,3 +1,7 @@
+.books-loader {
+  margin: 0 auto;
+}
+
 .categories-title {
   font-weight: 700;
   font-size: 48px;
@@ -11,7 +15,8 @@
   color: rgb(144, 75, 144);
 }
 
-.category-item {}
+.category-item {
+}
 
 .container-books {
   width: 996px;
@@ -33,24 +38,24 @@
   height: 535px;
   display: flex;
   flex-direction: column;
-  }
+}
 
-.book-button{
-border: 2px solid rgb(144, 75, 144);
-border-radius: 40px;
-padding: 14px auto;
-width: 124px;
-height: 46px;
-font-weight: 700;
-font-size: 14px;
-line-height: 1.29;
-letter-spacing: -0.01em;
-text-transform: uppercase;
-color: black;
-margin-bottom: 40px;
-margin-top: 40px;
-margin-left: auto;
-transition: all 0.2s ease;
+.book-button {
+  border: 2px solid rgb(144, 75, 144);
+  border-radius: 40px;
+  padding: 14px auto;
+  width: 124px;
+  height: 46px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: black;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-left: auto;
+  transition: all 0.2s ease;
 }
 
 .book-button:hover {
@@ -68,7 +73,6 @@ transition: all 0.2s ease;
   width: 180px;
   position: relative;
   overflow: hidden;
-
 }
 
 .book-img {
@@ -77,7 +81,7 @@ transition: all 0.2s ease;
   height: 535px;
   object-fit: cover;
   cursor: pointer;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 
 .book_cover {
@@ -88,7 +92,7 @@ transition: all 0.2s ease;
   height: 70px;
   background: #eac645;
   position: absolute;
-  top: 77.5%;
+  top: 79%;
   left: 0;
   border-radius: 0 0 8px 8px;
   transform: translateY(100%);
@@ -99,9 +103,11 @@ transition: all 0.2s ease;
   transform: translateY(0);
 }
 
-.book-overlay {}
+.book-overlay {
+}
 
-.book-text {}
+.book-text {
+}
 
 .book-info {
   margin-top: 14px;
@@ -126,26 +132,25 @@ transition: all 0.2s ease;
 }
 
 @media screen and (min-width: 768px) {
- .container-books{
-   width: 704px;
+  .container-books {
+    width: 704px;
   }
-  
+
   .top-categories-list {
-   margin-top: 100px;
+    margin-top: 100px;
   }
-  
-    .list-books {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* Тепер книги будуть по три в ряд */
-      grid-gap: 40px;
-      margin-bottom: 140px;
-    }
 
-.book-img {
- width: 218px;
-  height: 366px;;
-}
+  .list-books {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Тепер книги будуть по три в ряд */
+    grid-gap: 40px;
+    margin-bottom: 140px;
+  }
 
+  .book-img {
+    width: 218px;
+    height: 366px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -156,7 +161,6 @@ transition: all 0.2s ease;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 24px;
     margin-bottom: 100px;
-
   }
 
   .book-img {
