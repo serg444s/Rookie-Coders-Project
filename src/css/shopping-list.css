@@ -25,6 +25,7 @@
 }
 .empty-shopping-list-main {
   padding: 80px 55px;
+  display: none;
 }
 .empty-shopping-list {
   text-align: center;
