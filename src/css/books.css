@@ -140,11 +140,11 @@
   transition: border-color .3s, transform .7s, opacity .5s;
   position: fixed;
   bottom: 50px;
-  left: 50px;
+  right: 50px;
 }
 
 scroll-up-js:hover {
-  border-color: var(--logo-bg);
+  background-color: hsl(251, 38%, 11%);
   transform: scale(1.2);
 }
 
@@ -161,7 +161,6 @@ scroll-up-js:hover {
 
 .scroll-up-js.show {
   display: block;
-  /* Показываем кнопку */
   opacity: 1;
 }
 
