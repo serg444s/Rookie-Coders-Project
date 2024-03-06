@@ -42,7 +42,7 @@
 }
 
 .book-button {
-  margin: 0 auto;
+  float: right;
   border: 2px solid rgb(144, 75, 144);
   border-radius: 40px;
   /* padding: 14px auto; */
