@@ -55,7 +55,6 @@ body.show-modal .modal {
   fill: #111;
   html.dark-mode & {
     fill: #f3f3f3;
-    backdrop-color: #111;
   }
 }
 
@@ -137,37 +136,43 @@ body.show-modal .modal {
 }
 .burger:hover {
   stroke: #4f2ee8;
+    html.dark-mode & {
+    stroke: #eac645;
+}
 }
 .burger:focus {
   stroke: #4f2ee8;
+  html.dark-mode & {
+    stroke: #eac645;
 }
-
+}
 .burger_close {
   border: none;
   background-color: #fff;
   html.dark-mode & {
     background-color: #111;
-    stroke: #fff;
   }
 }
 
 .header_icon_close {
-  background-color: #fff;
   stroke: #111;
-  border: none;
   padding: 0;
   display: flex;
   html.dark-mode & {
-    background-color: #111;
     stroke: #fff;
-    border: none;
   }
 }
 .header_icon_close:hover {
   stroke: #4f2ee8;
+  html.dark-mode & {
+   stroke: #eac645;
+  } 
 }
 .header_icon_close:focus {
   stroke: #4f2ee8;
+    html.dark-mode & {
+   stroke: #eac645;
+  } 
 }
 .header_navigation_window {
   width: 100%;
@@ -207,9 +212,7 @@ body.show-modal .modal {
   border: 0 solid #0003;
   border-radius: 36px;
   padding: 8px 16px;
-  font-family: DM Sans;
   font-size: 14px;
-  font-style: normal;
   font-weight: 700;
   line-height: 1.29;
   text-transform: uppercase;
@@ -275,9 +278,7 @@ body.show-modal .modal {
     color: #111;
     padding-top: 26px;
     padding-bottom: 26px;
-    font-family: DM Sans;
     font-size: 14px;
-    font-style: normal;
     font-weight: 500;
     line-height: 1.29;
     display: flex;
@@ -297,19 +298,6 @@ body.show-modal .modal {
       color: #eac645;
     }
   }
-  .active{
-    width: 72px;
-    height: 34px;
-    background: #eac645;
-    transition: all 0.4s;
-    border-radius: 36px;
-    padding: 8px 16px;
-    font-weight: 700;
-    border: none;
-    html.dark-mode & {
-      color: #111;
-    }
-  }
 
   .navigation_link_shopping {
     letter-spacing: -0.04em;
@@ -319,9 +307,7 @@ body.show-modal .modal {
     gap: 7px;
     padding-top: 26px;
     padding-bottom: 26px;
-    font-family: DM Sans;
     font-size: 14px;
-    font-style: normal;
     font-weight: 500;
     line-height: 1.29;
     display: flex;
@@ -337,8 +323,17 @@ body.show-modal .modal {
   }
   .navigation_link_shopping:focus {
     color: #4f2ee8;
- 
+  html.dark-mode & {
+      color: #eac645;
+    }
   }
+  .navigation_link_shopping:active {
+    color: #4f2ee8;
+  html.dark-mode & {
+      color: #eac645;
+    }
+  }
+
   .active{
     background: #eac645;
     transition: all 0.4s;
@@ -350,9 +345,27 @@ body.show-modal .modal {
     border: none;
     html.dark-mode & {
       color: #111;
+      svg{
+       fill:#111;
+      };
+      svg:hover{
+        fill:#4f2ee8
+       }
+      
     }
   }
-  .active:hover{
+
+  .active:hover { 
+     html.dark-mode & {
+      color:#4f2ee8;
+    }
+  }
+    .active:focus {
+     html.dark-mode & {
+      color:#4f2ee8;
+    }
+  }
+    .active:active {
      html.dark-mode & {
       color:#4f2ee8;
     }
@@ -390,9 +403,7 @@ fill:#4f2ee8;
     opacity: 0;
     transform: scale(0);
   }
-  .backdrop {
-    display: none;
-  }
+
 }
 .burger_close {
   display: none;
