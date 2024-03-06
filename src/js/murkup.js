@@ -22,3 +22,23 @@ document.addEventListener('click', async event => {
     await fetchOneCategori(categoryListBooks);
   }
 });
+
+
+window.addEventListener('scroll', function() {
+  const scrollButton = document.querySelector('.scroll-up-js');
+  if (window.scrollY > 2000) { 
+      scrollButton.classList.remove('js-scroll-up-hidden');
+  } else {
+      scrollButton.classList.add('js-scroll-up-hidden');
+  }
+});
+
+
+// Scroll to top when button is clicked
+document.querySelector('.scroll-up-js').addEventListener('click', function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
