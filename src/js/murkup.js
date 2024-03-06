@@ -22,6 +22,11 @@ document.addEventListener('click', async event => {
     await fetchOneCategori(categoryListBooks);
   }
 });
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 window.addEventListener('scroll', function() {
   const scrollButton = document.querySelector('.scroll-up-js');
   if (window.scrollY > 2000) { 
