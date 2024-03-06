@@ -9,9 +9,9 @@
   letter-spacing: -0.04em;
   color: black;
   margin-bottom: 40px;
-   html.dark-mode & {
-      color:#fff;
-    }
+  html.dark-mode & {
+    color: #fff;
+  }
 }
 
 .categories-title span {
@@ -52,21 +52,20 @@
   color: #111;
   background-color: #fff;
   transition: all 0.2s ease;
-     html.dark-mode & {
-      color:#fff;
-      background-color: #202024;
-    }
-  
+  html.dark-mode & {
+    color: #fff;
+    background-color: #202024;
+  }
 }
 
 .book-button:hover {
   background-color: #4f2ee8;
-  color:#fff;
+  color: #fff;
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.15);
 }
 .book-button:focus {
   background-color: #4f2ee8;
-  color:#fff;
+  color: #fff;
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.15);
 }
 .book-wrap {
@@ -81,7 +80,6 @@
   height: 535px;
   object-fit: cover;
   cursor: pointer;
-
 }
 
 .book_cover {
@@ -101,7 +99,7 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   overflow: auto;
   background: #eac645;
-  color:#111;
+  color: #111;
 }
 
 .books-item-about:hover .book_cover {
@@ -119,9 +117,9 @@
   letter-spacing: -0.04em;
   color: #111;
   text-transform: uppercase;
-       html.dark-mode & {
-        color:#fff;
-       }
+  html.dark-mode & {
+    color: #fff;
+  }
 }
 
 .info-author {
@@ -137,20 +135,32 @@
   opacity: 1;
   width: 54px;
   height: 54px;
-  color: #0000;
-  background-color: #4f2ee8;
   cursor: pointer;
-  border: 5px solid #0000;
   border-radius: 50%;
-  transition: border-color 0.3s, transform 0.7s, opacity 0.5s;
+  border: 2px solid #4f2ee8;
+  transition: all 0.7s ease;
   position: fixed;
   bottom: 50px;
   right: 50px;
+  background-color: transparent;
 }
 
-scroll-up-js:hover {
-  background-color: hsl(251, 38%, 11%);
+.scroll-up {
+  stroke: #4f2ee8;
+  margin: 0 auto;
+}
+
+.scroll-up:hover {
+  stroke: white;
+}
+
+.scroll-up-js:hover {
+  background-color: #4f2ee8;
   transform: scale(1.2);
+}
+
+.scroll-up-js:hover .scroll-up {
+  stroke: white;
 }
 
 .js-scroll-up-hidden {

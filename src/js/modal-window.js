@@ -29,13 +29,20 @@ export async function showModal(event) {
   //   <use href="../img/symbol-defs.svg#icon-closed"></use>
   // </svg>;
 
-  const { book_image, title, author, description, amazon_product_url, buy_links } = book;
+  const {
+    book_image,
+    title,
+    author,
+    description,
+    amazon_product_url,
+    buy_links,
+  } = book;
   instance = basicLightbox.create(
     `<div class="modal">
         <button type="button" class="modal-icon">
-        <svg class="icon modal-icon-closed" width="18" height="18">
-        <use xmlns:href="${symbol}"></use>
-      </svg>
+        <svg class="modal-icon-closed" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+  <path d="M21 7L7 21M7 7L21 21" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
         </button>
         <div class="modal-content">
         <img class="modal-img" src="${book_image}" width="330" height="485"/>
@@ -47,7 +54,9 @@ export async function showModal(event) {
             <a target="_blank" href="${amazon_product_url}">
             <img class="modal-link-amazon" srcset="${amazon1x} 1x,${amazon2x} 2x" src="${amazon1x}" alt="Amazon Shop" />
             </a>
-            <a target="_blank" href="${buy_links.find(buyLink => buyLink.name === 'Apple Books').url}">
+            <a target="_blank" href="${
+              buy_links.find(buyLink => buyLink.name === 'Apple Books').url
+            }">
             <img class="modal-link-applebook" src="${openbook}" alt="Open book" />
             </a>
         </div>
@@ -63,7 +72,7 @@ export async function showModal(event) {
         instance.element().querySelector('.modal-icon').onclick =
           instance.close;
 
-        document.querySelector('body').style.overflow = "hidden";
+        document.querySelector('body').style.overflow = 'hidden';
 
         instance
           .element()
@@ -82,12 +91,12 @@ export async function showModal(event) {
       onClose: () => {
         document.removeEventListener('keydown', onImageKeydown);
 
-        document.querySelector('body').style.overflow = "auto";
-    
+        document.querySelector('body').style.overflow = 'auto';
+
         instance
-        .element()
-        .querySelector('.modal-btn')
-        .removeEventListener('click', changeBookText);
+          .element()
+          .querySelector('.modal-btn')
+          .removeEventListener('click', changeBookText);
       },
     }
   );

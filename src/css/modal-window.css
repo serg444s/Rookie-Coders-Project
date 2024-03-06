@@ -7,6 +7,7 @@
   background-color: #fff;
   html.dark-mode & {
     background-color: #202024;
+    border-color: white;
   }
 }
 .modal-icon {
@@ -20,18 +21,17 @@
 }
 
 .modal-icon-closed {
-  color: #111;
+  stroke: #111;
   font-size: 20px;
-  font-weight: bold;
   transition: all 0.2s ease;
   html.dark-mode & {
-    color: #fff;
+    stroke: #fff;
   }
 }
 .modal-icon-closed:hover {
-  color: #4f2ee8;
+  stroke: #4f2ee8;
   html.dark-mode & {
-    color: #4f2ee8;
+    stroke: #4f2ee8;
   }
 }
 .modal-content {
