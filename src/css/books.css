@@ -15,12 +15,11 @@
   color: rgb(144, 75, 144);
 }
 
-.category-item {
-}
+.category-item {}
 
 .container-books {
-  width: 996px;
-  height: 426px;
+  /* width: 996px;
+  height: 426px; */
 }
 
 .book-categoty-title {
@@ -35,7 +34,7 @@
 
 .list-books {
   max-width: 335px;
-  height: 535px;
+  /* height: 535px; */
   display: flex;
   flex-direction: column;
 }
@@ -65,12 +64,12 @@
 }
 
 .books-item-about {
-  width: 180px;
-  height: 306px;
+  /* width: 180px;
+  height: 306px; */
 }
 
 .book-wrap {
-  width: 180px;
+  /* width: 180px; */
   position: relative;
   overflow: hidden;
 }
@@ -103,11 +102,9 @@
   transform: translateY(0);
 }
 
-.book-overlay {
-}
+.book-overlay {}
 
-.book-text {
-}
+.book-text {}
 
 .book-info {
   margin-top: 14px;
@@ -130,7 +127,8 @@
   letter-spacing: -0.04em;
   color: #b4afaf;
 }
-.scroll-up-js{
+
+.scroll-up-js {
   opacity: 1;
   width: 54px;
   height: 54px;
@@ -144,22 +142,26 @@
   bottom: 50px;
   left: 50px;
 }
+
 scroll-up-js:hover {
   border-color: var(--logo-bg);
   transform: scale(1.2);
 }
+
 .js-scroll-up-hidden {
   pointer-events: none;
   opacity: 0;
 }
 
-.scroll-up-blue{
+.scroll-up-blue {
   width: 19px;
   height: 11px;
- margin:  auto;
+  margin: auto;
 }
+
 .scroll-up-js.show {
-  display: block; /* Показываем кнопку */
+  display: block;
+  /* Показываем кнопку */
   opacity: 1;
 }
 
@@ -173,8 +175,10 @@ scroll-up-js:hover {
   }
 
   .list-books {
+    max-width: 704px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Тепер книги будуть по три в ряд */
+    grid-template-columns: repeat(3, 1fr);
+    /* Тепер книги будуть по три в ряд */
     grid-gap: 40px;
     margin-bottom: 140px;
   }
@@ -186,9 +190,13 @@ scroll-up-js:hover {
 }
 
 @media screen and (min-width: 1440px) {
-  .list-books {
+  .container-books {
     width: 996px;
-    height: 306px;
+  }
+
+  .list-books {
+    max-width: 996px;
+    /* height: 306px; */
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 24px;
