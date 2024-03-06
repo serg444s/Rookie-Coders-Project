@@ -1,18 +1,17 @@
 import * as basicLightbox from 'basiclightbox';
 import { addBookIdToStorage } from './addBookIdToStorage';
 import { removeBookIdFromStorage } from './removeBookIdFromStorage';
-// import { fetchBookById } from './getTopListBooks';
 import { getBookById } from './getTopListBooks';
 import { booksIdArray } from './addBookIdToStorage';
 import amazon1x from '../img/shopping_list/amazon1x.png';
+import amazon2x from '../img/shopping_list/amazon2x.png';
 import openbook from '../img/shopping_list/openbook.png';
+import symbol from '../img/symbol-defs.svg#icon-closed';
 
 const bookList = document.querySelector('.top-categories-list');
-const modalBtn = document.querySelector('.modal-btn');
-const modalCongratText = document.querySelector('.modal-congrat-text');
-let bookId;
 bookList.addEventListener('click', showModal);
 
+let bookId;
 let instance;
 export async function showModal(event) {
   event.preventDefault();
@@ -30,19 +29,28 @@ export async function showModal(event) {
   //   <use href="../img/symbol-defs.svg#icon-closed"></use>
   // </svg>;
 
-  const { book_image, title, author, description, amazon_product_url } = book;
+  const { book_image, title, author, description, amazon_product_url, buy_links } = book;
   instance = basicLightbox.create(
     `<div class="modal">
-        <button type="button" class="modal-icon modal-icon-closed">X</button>
+        <button type="button" class="modal-icon">
+        <svg class="icon modal-icon-closed" width="18" height="18">
+        <use xmlns:href="${symbol}"></use>
+      </svg>
+        </button>
         <div class="modal-content">
         <img class="modal-img" src="${book_image}" width="330" height="485"/>
         <div class="modal-content-text">
         <h3 class="modal-title">${title}</h3>
         <p class="modal-author">${author}</p> 
         <p class="modal-text">${description}</p>
-        <ul><li class="modal-link-icons"><a class="modal-link" href="${amazon_product_url}" target="_blank"><img src="${amazon1x}" alt="applebook" target="_blank" /></a>
-        <img class="modal-link-img" src="${openbook}" />
-        </li></ul>
+        <div class="modal-link-icons">
+            <a target="_blank" href="${amazon_product_url}">
+            <img class="modal-link-amazon" srcset="${amazon1x} 1x,${amazon2x} 2x" src="${amazon1x}" alt="Amazon Shop" />
+            </a>
+            <a target="_blank" href="${buy_links.find(buyLink => buyLink.name === 'Apple Books').url}">
+            <img class="modal-link-applebook" src="${openbook}" alt="Open book" />
+            </a>
+        </div>
         </div>
         </div>
         <button class="modal-btn" type="button" data-action="add">${buttonText}</button>
@@ -55,27 +63,12 @@ export async function showModal(event) {
         instance.element().querySelector('.modal-icon').onclick =
           instance.close;
 
-        // instance.element().querySelector('.modal-btn').onclick =
-        //   addBookIdToStorage(bookId);
-
-        // instance.element().querySelector('.modal-btn').onclick = instance
-        //   .element()
-        //   .querySelector('.modal-btn').innerHTML = 'REMOVE Hello';
+        document.querySelector('body').style.overflow = "hidden";
 
         instance
           .element()
           .querySelector('.modal-btn')
           .addEventListener('click', changeBookText);
-
-        // instance
-        //   .element()
-        //   .querySelector('.modal-btn')
-        //   .addEventListener('click', changeButtonText);
-
-        // instance.element().querySelector('.modal-btn').onclick = instance
-        //   .element()
-        //   .querySelector('.modal-congrat-text').textContent =
-        //   'Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".';
 
         if (
           instance.element().querySelector('.modal-btn').textContent ===
@@ -88,11 +81,15 @@ export async function showModal(event) {
 
       onClose: () => {
         document.removeEventListener('keydown', onImageKeydown);
-        // document.modalBtn.removeEventListener('click', addToShoppingList);
-        // modalIcon.addEventListener('click', onModalIconClick);
+
+        document.querySelector('body').style.overflow = "auto";
+    
+        instance
+        .element()
+        .querySelector('.modal-btn')
+        .removeEventListener('click', changeBookText);
       },
     }
-    // document.modalBtn.addEventListener('click', addToShoppingList),
   );
   instance.show();
 }
@@ -104,11 +101,6 @@ function onImageKeydown(event) {
   }
 }
 
-function onBackdropClick(event) {
-  event.preventDefault();
-  instance.close();
-}
-
 function changeBookText() {
   if (
     instance.element().querySelector('.modal-btn').textContent ===
@@ -118,7 +110,6 @@ function changeBookText() {
       .element()
       .querySelector('.modal-btn').textContent =
       'REMOVE FROM THE SHOPPING LIST';
-    // instance.element().querySelector('.modal-btn').dataset.action === 'remove';
     instance.element().querySelector('.modal-congrat-text').textContent =
       'Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".';
     addBookIdToStorage(bookId);
@@ -132,29 +123,3 @@ function changeBookText() {
     removeBookIdFromStorage(bookId);
   }
 }
-
-// function changeButtonText() {
-//   if (
-//     instance.element().querySelector('.modal-btn').dataset.action === 'remove'
-//   ) {
-//     instance.element().querySelector('.modal-btn').onclick = instance
-//       .element()
-//       .querySelector('.modal-btn').textContent = 'ADD TO SHOPPING LIST';
-//     instance.element().querySelector('.modal-btn').dataset.action === 'add';
-//     console.log(instance.element().querySelector('.modal-btn').dataset.action);
-//   }
-// }
-
-// function addToShoppingList(event) {
-//   event.preventDefault();
-//   // showModal(event);
-//   addBookIdToStorage();
-//   showModal.modalBtn.textContent = 'REMOVE FROM THE SHOPPING LIST';
-//   showModal.modalCongratText.textContent =
-//     'Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".';
-//   if (modalBtn.textContent === 'REMOVE FROM THE SHOPPING LIST') {
-//     modalBtn.addEventListener('click', () => {
-//       removeBookIdFromStorage(bookIdToRemove);
-//     });
-//   }
-// }
