@@ -9,10 +9,8 @@
 .shopping-list-div {
   color: #111;
 }
-.shopping-list-div {
-  html.dark-mode & {
-    color: #fff;
-  }
+html.dark-mode .shopping-list-div {
+  color: #fff;
 }
 .shopping_item {
   font-size: 32px;
@@ -27,18 +25,14 @@
   padding: 80px 55px;
   display: none;
 }
-.empty-shopping-list {
+html.dark-mode .empty-shopping-list {
   text-align: center;
   margin-bottom: 14px;
   color: #111;
-  html.dark-mode & {
-    color: rgba(255, 255, 255, 0.6);
-  }
+  color: rgba(255, 255, 255, 0.6);
 }
-.empty-shopping-list {
-  html.dark-mode & {
-    color: rgba(255, 255, 255, 0.6);
-  }
+html.dark-mode .empty-shopping-list {
+  color: rgba(255, 255, 255, 0.6);
 }
 .empty-shopping-img {
   width: 265px;
@@ -146,10 +140,8 @@
 .icon-basket-shop-list {
   color: #ffffff;
 }
-.amazon-img {
-  html.dark-mode & {
-    filter: invert(100%) brightness(100%) saturate(0%);
-  }
+html.dark-mode .amazon-img {
+  filter: invert(100%) brightness(100%) saturate(0%);
 }
 .amazon-img {
   filter: grayscale(100%);
@@ -180,16 +172,12 @@
   border: 1px solid #333333;
   margin-right: 8px;
 }
-.tui-pagination .tui-page-btn:hover {
-  html.dark-mode & {
-    background-color: #111;
-  }
+html.dark-mode .tui-pagination .tui-page-btn:hover {
+  background-color: #111;
 }
-.tui-pagination .tui-page-btn {
-  html.dark-mode & {
-    color: #fff;
-    border: 1px solid #fff;
-  }
+html.dark-mode .tui-pagination .tui-page-btn {
+  color: #fff;
+  border: 1px solid #fff;
 }
 .tui-pagination .tui-first {
   margin-right: 5px;
@@ -213,21 +201,17 @@
   background: #111;
   border-color: #111;
 }
-.tui-pagination .tui-is-selected,
-.tui-pagination strong {
-  html.dark-mode & {
-    color: #111;
-    background: #fff;
-    border-color: #fff;
-  }
+html.dark-mode .tui-pagination .tui-is-selected,
+html.dark-mode .tui-pagination strong {
+  color: #111;
+  background: #fff;
+  border-color: #fff;
 }
 .tui-pagination .tui-is-selected:hover {
   background: #111;
 }
-.tui-pagination .tui-is-selected:hover {
-  html.dark-mode & {
-    background: #fff;
-  }
+html.dark-mode .tui-pagination .tui-is-selected:hover {
+  background: #fff;
 }
 .tui-first,
 .tui-prev,
