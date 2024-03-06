@@ -4,7 +4,6 @@ ul.categories-list_books {
   justify-content: flex-start;
   flex-direction: column;
   gap: 32px;
-
   width: 328px;
   height: 452px;
   overflow-y: scroll;
@@ -14,38 +13,24 @@ a.link_category-book {
   font: 400 18px / 1.33333 'DM Sans', sans-serif;
   letter-spacing: -0.02em;
   color: rgba(17, 17, 17, 0.6);
-  html.dark-mode & {
-    color: rgba(255, 255, 255, 0.6);
-  }
 }
-
+html.dark-mode a.link_category-book {
+  color: rgba(255, 255, 255, 0.6);
+}
 a.link_category-book:hover {
   color: #4f2ee8;
-  /* font-weight: bold; */
-  /* text-transform: uppercase; */
-  html.dark-mode & {
-    color: #eac645;
-  }
+}
+html.dark-mode a.link_category-book:hover {
+  color: #eac645;
 }
 a.link_category-book:focus {
   text-transform: uppercase;
   color: #4f2ee8;
   font-weight: bold;
-  html.dark-mode & {
-    color: #eac645;
-  }
 }
-
-/* a.link_category-book:active {
-  color: #4f2ee8;
-  text-transform: uppercase;
-  font: 700 18px / 1.33333 'DM Sans', sans-serif;
-  letter-spacing: -0.02em;
-  html.dark-mode & {
-    color: #eac645;
-  }
-} */
-
+html.dark-mode a.link_category-book:focus {
+  color: #eac645;
+}
 .categories-list_books::-webkit-scrollbar {
   width: 8px;
 }
@@ -69,6 +54,7 @@ a.link_category-book:focus {
     color: rgba(17, 17, 17, 0.6);
   }
 }
+
 @media screen and (min-width: 768px) {
   .categories-block {
     display: flex;

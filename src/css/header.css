@@ -6,17 +6,16 @@ svg {
 body {
   background-color: #fff;
   transition: all 0.3s ease 0s;
-  html.dark-mode & {
-    color: #9a9a9a;
-    background-color: #202024;
-  }
+}
+html.dark-mode body {
+  color: #9a9a9a;
+  background-color: #202024;
 }
 body.show-modal .backdrop {
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
 }
-
 body.show-modal .modal {
   transform: scale(1);
 }
@@ -31,19 +30,17 @@ body.show-modal .modal {
   top: 0;
   left: 0;
   display: flex;
-  html.dark-mode & {
-    background-color: #111;
-    border: 1.5px solid #fff;
-  }
 }
-
+html.dark-mode .header {
+  background-color: #111;
+  border: 1.5px solid #fff;
+}
 .header_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 375px;
 }
-
 .header_logo {
   gap: 8px;
   padding-top: 18px;
@@ -53,11 +50,10 @@ body.show-modal .modal {
 }
 .header_svg {
   fill: #111;
-  html.dark-mode & {
-    fill: #f3f3f3;
-  }
 }
-
+html.dark-mode .header_svg {
+  fill: #f3f3f3;
+}
 .header_logo span {
   visibility: hidden;
   width: 0;
@@ -66,7 +62,6 @@ body.show-modal .modal {
 .navigation {
   display: none;
 }
-
 .header_right {
   justify-content: center;
   align-items: center;
@@ -84,13 +79,11 @@ body.show-modal .modal {
   display: flex;
   position: relative;
 }
-
 .switch_input {
   height: 0;
   width: 0;
   opacity: 0;
 }
-
 .switch_slider {
   cursor: pointer;
   background: linear-gradient(#4f2ee8 0%, #dcdcdc 100%);
@@ -100,7 +93,6 @@ body.show-modal .modal {
   inset: 0;
   box-shadow: inset 1px 1px 2px #0000001a;
 }
-
 .switch_slider:before {
   content: '';
   cursor: pointer;
@@ -129,55 +121,54 @@ body.show-modal .modal {
   border: none;
   padding: 0;
   display: flex;
-  html.dark-mode & {
-    background-color: #111;
-    stroke: #fff;
-  }
+}
+html.dark-mode .burger {
+  background-color: #111;
+  stroke: #fff;
 }
 .burger:hover {
   stroke: #4f2ee8;
-    html.dark-mode & {
-    stroke: #eac645;
 }
+html.dark-mode .burger:hover {
+  stroke: #eac645;
 }
 .burger:focus {
   stroke: #4f2ee8;
-  html.dark-mode & {
-    stroke: #eac645;
 }
+html.dark-mode .burger:focus {
+  stroke: #eac645;
 }
 .burger_close {
   border: none;
   background-color: #fff;
-  html.dark-mode & {
-    background-color: #111;
-  }
 }
-
+html.dark-mode .burger_close {
+  background-color: #111;
+}
 .header_icon_close {
   stroke: #111;
   padding: 0;
   display: flex;
-  html.dark-mode & {
-    stroke: #fff;
-  }
+}
+html.dark-mode .header_icon_close {
+  stroke: #fff;
 }
 .header_icon_close:hover {
   stroke: #4f2ee8;
-  html.dark-mode & {
-   stroke: #eac645;
-  } 
+}
+html.dark-mode .header_icon_close:hover {
+  stroke: #eac645;
 }
 .header_icon_close:focus {
   stroke: #4f2ee8;
-    html.dark-mode & {
-   stroke: #eac645;
-  } 
+}
+html.dark-mode .header_icon_close:focus {
+  stroke: #eac645;
 }
 .header_navigation_window {
   width: 100%;
   height: 100%;
-  background-image: url(../img/header icon/burgerpicture1.png),
+  background-image: url(../img/header-icon/burgerpicture1.png),
     radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4f2ee8 18.03%, #fff 100%);
   transform-origin: 0 0;
   background-position: 100% 100%, 50%;
@@ -231,7 +222,6 @@ body.show-modal .modal {
 .nav__basket {
   fill: #fff;
 }
-
 .backdrop {
   transform-origin: 0 0;
   width: 100%;
@@ -259,19 +249,16 @@ body.show-modal .modal {
     margin-left: 40px;
     display: flex;
   }
-
   .navigation_list {
     align-items: center;
     gap: 16px;
     display: flex;
   }
-
   .navigation_List-menu {
     flex-direction: column;
     justify-content: center;
     display: flex;
   }
-
   .navigation_link_home {
     letter-spacing: -0.04em;
     text-transform: uppercase;
@@ -282,21 +269,21 @@ body.show-modal .modal {
     font-weight: 500;
     line-height: 1.29;
     display: flex;
-    html.dark-mode & {
-      color: #fff;
-    }
+  }
+  html.dark-mode .navigation_link_home {
+    color: #fff;
   }
   .navigation_link_home:hover {
     color: #4f2ee8;
-    html.dark-mode & {
-      color: #eac645;
-    }
+  }
+  html.dark-mode .navigation_link_home:hover {
+    color: #eac645;
   }
   .navigation_link_home:focus {
     color: #4f2ee8;
-    html.dark-mode & {
-      color: #eac645;
-    }
+  }
+  html.dark-mode .navigation_link_home:focus {
+    color: #eac645;
   }
 
   .navigation_link_shopping {
@@ -311,30 +298,30 @@ body.show-modal .modal {
     font-weight: 500;
     line-height: 1.29;
     display: flex;
-    html.dark-mode & {
-      color: #fff;
-    }
   }
-.navigation_link_shopping:hover {
+  html.dark-mode .navigation_link_shopping {
+    color: #fff;
+  }
+  .navigation_link_shopping:hover {
     color: #4f2ee8;
-    html.dark-mode & {
-      color: #eac645;
-    }
+  }
+  html.dark-mode .navigation_link_shopping:hover {
+    color: #eac645;
   }
   .navigation_link_shopping:focus {
     color: #4f2ee8;
-  html.dark-mode & {
-      color: #eac645;
-    }
+  }
+  html.dark-mode .navigation_link_shopping:focus {
+    color: #eac645;
   }
   .navigation_link_shopping:active {
     color: #4f2ee8;
-  html.dark-mode & {
-      color: #eac645;
-    }
+  }
+  html.dark-mode .navigation_link_shopping:active {
+    color: #eac645;
   }
 
-  .active{
+  .active {
     background: #eac645;
     transition: all 0.4s;
     border-radius: 36px;
@@ -343,59 +330,53 @@ body.show-modal .modal {
     height: 34px;
     font-weight: 700;
     border: none;
-    html.dark-mode & {
-      color: #111;
-      svg{
-       fill:#111;
-      };
-      svg:hover{
-        fill:#4f2ee8
-       }
-      
-    }
+  }
+  html.dark-mode .active {
+    color: #111;
+  }
+  html.dark-mode .active svg {
+    fill: #111;
+  }
+  html.dark-mode .active svg:hover {
+    fill: #4f2ee8;
   }
 
-  .active:hover { 
-     html.dark-mode & {
-      color:#4f2ee8;
-    }
+  html.dark-mode .active:hover {
+    color: #4f2ee8;
   }
-    .active:focus {
-     html.dark-mode & {
-      color:#4f2ee8;
-    }
+
+  html.dark-mode .active:focus {
+    color: #4f2ee8;
   }
-    .active:active {
-     html.dark-mode & {
-      color:#4f2ee8;
-    }
+
+  html.dark-mode .active:active {
+    color: #4f2ee8;
   }
 
   .basket {
-    fill:#111;
-    html.dark-mode & {
-      fill: #fff;
-    }
+    fill: #111;
   }
- .basket:focus {
-fill:#4f2ee8;
- html.dark-mode & {
-      fill: #eac645;
-    
- }
- }
+  html.dark-mode .basket {
+    fill: #fff;
+  }
+  .basket:focus {
+    fill: #4f2ee8;
+  }
+  html.dark-mode .basket:focus {
+    fill: #eac645;
+  }
   .basket:hover {
     fill: #4f2ee8;
-    html.dark-mode & {
-      fill: #eac645;
-    }
- }
+  }
+  html.dark-mode .basket:hover {
+    fill: #eac645;
+  }
   .basket:active {
-fill:#4f2ee8;
-  html.dark-mode & {
-      fill: #eac645;
-    }
- }
+    fill: #4f2ee8;
+  }
+  html.dark-mode .basket:active {
+    fill: #eac645;
+  }
   .header_right {
     margin-left: auto;
   }
@@ -403,7 +384,6 @@ fill:#4f2ee8;
     opacity: 0;
     transform: scale(0);
   }
-
 }
 .burger_close {
   display: none;

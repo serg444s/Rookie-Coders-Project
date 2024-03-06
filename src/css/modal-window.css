@@ -5,10 +5,10 @@
   width: 335px;
   height: 762px;
   background-color: #fff;
-  html.dark-mode & {
-    background-color: #202024;
-    border-color: white;
-  }
+}
+html.dark-mode .modal {
+  background-color: #202024;
+  border-color: white;
 }
 .modal-icon {
   width: 24px;
@@ -24,15 +24,15 @@
   stroke: #111;
   font-size: 20px;
   transition: all 0.2s ease;
-  html.dark-mode & {
-    stroke: #fff;
-  }
+}
+html.dark-mode .modal-icon-closed {
+  stroke: #fff;
 }
 .modal-icon-closed:hover {
   stroke: #4f2ee8;
-  html.dark-mode & {
-    stroke: #4f2ee8;
-  }
+}
+html.dark-mode .modal-icon-closed:hover {
+  stroke: #4f2ee8;
 }
 .modal-content {
   display: flex;
@@ -52,9 +52,9 @@
   line-height: 1.125;
   letter-spacing: -0.04em;
   color: #111;
-  html.dark-mode & {
-    color: #fff;
-  }
+}
+html.dark-mode .modal-title {
+  color: #fff;
 }
 .modal-author {
   margin-bottom: 18px;
@@ -65,9 +65,9 @@
   line-height: 1.16667;
   letter-spacing: -0.04em;
   color: #b4afaf;
-  html.dark-mode & {
-    color: #b4afaf;
-  }
+}
+html.dark-mode .modal-author {
+  color: #b4afaf;
 }
 .modal-text {
   margin-bottom: 14px;
@@ -77,9 +77,9 @@
   line-height: 1.28571;
   letter-spacing: -0.04em;
   color: #111;
-  html.dark-mode & {
-    color: #fff;
-  }
+}
+html.dark-mode .modal-text {
+  color: #fff;
 }
 .modal-link-icons {
   display: flex;
@@ -92,9 +92,9 @@
   height: 19px;
   mix-blend-mode: luminosity;
   filter: grayscale(100%);
-  html.dark-mode & {
-    filter: brightness(0) invert(1);
-  }
+}
+html.dark-mode .modal-link-amazon {
+  filter: brightness(0) invert(1);
 }
 .modal-link-applebook {
   align-items: center;
@@ -105,15 +105,15 @@
 }
 .modal-link-amazon:hover {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0.35));
-  html.dark-mode & {
-    filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
-  }
+}
+html.dark-mode .modal-link-amazon:hover {
+  filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 .modal-link-applebook:hover {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0.35));
-  html.dark-mode & {
-    filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
-  }
+}
+html.dark-mode .modal-link-applebook:hover {
+  filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 .modal-btn {
   padding: 14px auto;
@@ -131,18 +131,17 @@
   display: block;
   margin: 0 auto;
   transition: all 0.2s ease;
-
-  html.dark-mode & {
-    color: #fff;
-    background-color: #202024;
-  }
+}
+html.dark-mode .modal-btn {
+  color: #fff;
+  background-color: #202024;
 }
 .modal-btn:hover {
   background-color: #4f2ee8;
   color: #fff;
-  html.dark-mode & {
-    background-color: #4f2ee8;
-  }
+}
+html.dark-mode .modal-btn:hover {
+  background-color: #4f2ee8;
 }
 .modal-congrat-text {
   margin-top: 14px;
@@ -154,9 +153,9 @@
   letter-spacing: -0.04em;
   text-align: center;
   color: rgba(17, 17, 17, 0.5);
-  html.dark-mode & {
-    color: rgba(255, 255, 255, 0.5);
-  }
+}
+html.dark-mode .modal-congrat-text {
+  color: rgba(255, 255, 255, 0.5);
 }
 @media screen and (min-width: 768px) {
   .modal {

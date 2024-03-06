@@ -29,7 +29,6 @@ html.dark-mode .empty-shopping-list {
   text-align: center;
   margin-bottom: 14px;
   color: #111;
-  color: rgba(255, 255, 255, 0.6);
 }
 html.dark-mode .empty-shopping-list {
   color: rgba(255, 255, 255, 0.6);
@@ -45,7 +44,6 @@ html.dark-mode .empty-shopping-list {
   margin-bottom: 20px;
 }
 .book-list {
-  /* position: relative; */
   display: flex;
   justify-content: space-between;
   gap: 14px;
@@ -104,7 +102,6 @@ html.dark-mode .empty-shopping-list {
   letter-spacing: 0.03em;
 }
 .remove-shop-list-book {
-  /* position: absolute; */
   padding: 6px;
   right: 14px;
   top: 14px;
@@ -156,16 +153,16 @@ html.dark-mode .amazon-img {
 
 .amazon-img:hover {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0.35));
-  html.dark-mode & {
-    filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
-  }
+}
+html.dark-mode .amazon-img:hover {
+  filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 
 .openbooks-link:hover {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0.35));
-  html.dark-mode & {
-    filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
-  }
+}
+html.dark-mode .openbooks-link:hover {
+  filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 
 /* tui-pagination styles */
@@ -333,8 +330,6 @@ html.dark-mode .tui-pagination .tui-is-selected:hover {
   .shopping-container-with-support {
     display: flex;
     justify-content: space-around;
-
-    /* padding-left: 310px; */
   }
   .shopping-list-div {
     margin-left: auto;
