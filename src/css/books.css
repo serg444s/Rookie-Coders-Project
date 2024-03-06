@@ -130,6 +130,38 @@
   letter-spacing: -0.04em;
   color: #b4afaf;
 }
+.scroll-up-js{
+  opacity: 1;
+  width: 54px;
+  height: 54px;
+  color: #0000;
+  background-color: #4F2EE8;
+  cursor: pointer;
+  border: 5px solid #0000;
+  border-radius: 50%;
+  transition: border-color .3s, transform .7s, opacity .5s;
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+}
+scroll-up-js:hover {
+  border-color: var(--logo-bg);
+  transform: scale(1.2);
+}
+.js-scroll-up-hidden {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.scroll-up-blue{
+  width: 19px;
+  height: 11px;
+ margin:  auto;
+}
+.scroll-up-js.show {
+  display: block; /* Показываем кнопку */
+  opacity: 1;
+}
 
 @media screen and (min-width: 768px) {
   .container-books {
