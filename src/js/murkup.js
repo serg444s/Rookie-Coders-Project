@@ -1,5 +1,6 @@
 import { fetchOneCategori } from './fetchOneCategori.js';
 import { sliceBooks } from './sliceBooksData.js';
+import { makeListOfBooks } from './makeListOfBooks.js';
 
 export async function murkup(categories) {
   const promiseAll = await Promise.all(
@@ -7,7 +8,7 @@ export async function murkup(categories) {
       return `
     <div class="container-books">
     <h3 class="book-categoty-title">${list_name}</h3>
-    <ul class='list-books'>${await sliceBooks(books)}</ul>
+    <ul class='list-books'>${await makeListOfBooks(books)}</ul>
     <button class="book-button" data-category="${list_name}">See more</button>
     </div>
     `;
@@ -23,22 +24,19 @@ document.addEventListener('click', async event => {
   }
 });
 
-
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   const scrollButton = document.querySelector('.scroll-up-js');
-  if (window.scrollY > 2000) { 
-      scrollButton.classList.remove('js-scroll-up-hidden');
+  if (window.scrollY > 2000) {
+    scrollButton.classList.remove('js-scroll-up-hidden');
   } else {
-      scrollButton.classList.add('js-scroll-up-hidden');
+    scrollButton.classList.add('js-scroll-up-hidden');
   }
 });
 
-
 // Scroll to top when button is clicked
-document.querySelector('.scroll-up-js').addEventListener('click', function() {
+document.querySelector('.scroll-up-js').addEventListener('click', function () {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: 'smooth',
   });
 });
-

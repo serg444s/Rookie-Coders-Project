@@ -1,43 +1,37 @@
 .main-container {
   /* display: flex;
   gap: 50px; */
-  
 }
 
 .left-container {
   margin-bottom: 40px;
-  margin-top: 104px;
-width: 335px;
+  margin-top: 72px;
+  width: 335px;
 }
 
 .right-container {
- 
 }
 
 @media screen and (min-width: 768px) {
-  .left-container{
+  .left-container {
     width: 337px;
     padding-right: 40px;
     display: flex;
-    gap:32px;
+    gap: 32px;
   }
-  
-
-
 }
-@media screen and (min-width: 1440px){
-
-  .left-container{
+@media screen and (min-width: 1440px) {
+  .left-container {
     width: 356px;
     padding-right: 40px;
     display: flex;
-  flex-direction: column;
+    flex-direction: column;
   }
-  .right-container{
+  .right-container {
     width: 996px;
     margin-top: 112px;
   }
-  .together-container{
+  .together-container {
     display: flex;
   }
 }

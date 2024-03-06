@@ -5,6 +5,7 @@ import { sliceBooks } from './sliceBooksData.js';
 import { loaderOn } from './loader.js';
 import { loaderOff } from './loader.js';
 import { loadMain } from './startLoad.js';
+import { murkup } from './murkup.js';
 
 // для перевірки розкоментуй виклик фукнції на main.js
 // fetchOneCategori('Advice How-To and Miscellaneous');
@@ -41,11 +42,10 @@ async function makeCategoryPage(category, data) {
   const updatedString = words.join(' ');
   return `
   <h3 class="categories-title">${updatedString}</h3>
-  <ul class='list-books'>${await sliceBooks(data)}</ul>`;
+  <ul class='list-books'>${await makeListBook(data)}</ul>`;
 }
 
 async function makeListBook(data) {
-  console.log(data);
   return data.map(makeMarcup).join('');
 }
 
