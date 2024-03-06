@@ -9,18 +9,16 @@
   letter-spacing: -0.04em;
   color: black;
   margin-bottom: 40px;
+   html.dark-mode & {
+      color:#fff;
+    }
 }
 
 .categories-title span {
-  color: rgb(144, 75, 144);
-}
-
-.category-item {
+  color: #4f2ee8;
 }
 
 .container-books {
-  /* width: 996px;
-  height: 426px; */
   margin-bottom: 40px;
 }
 
@@ -35,7 +33,6 @@
 
 .list-books {
   max-width: 335px;
-  /* height: 535px; */
   display: flex;
   flex-direction: column;
   margin-bottom: 8px;
@@ -43,9 +40,8 @@
 
 .book-button {
   float: right;
-  border: 2px solid rgb(144, 75, 144);
+  border: 2px solid #4f2ee8;
   border-radius: 40px;
-  /* padding: 14px auto; */
   width: 124px;
   height: 46px;
   font-weight: 700;
@@ -53,23 +49,27 @@
   line-height: 1.29;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: black;
+  color: #111;
+  background-color: #fff;
   transition: all 0.2s ease;
+     html.dark-mode & {
+      color:#fff;
+      background-color: #202024;
+    }
+  
 }
 
 .book-button:hover {
-  background-color: blue;
-  color: aliceblue;
+  background-color: #4f2ee8;
+  color:#fff;
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.15);
 }
-
-.books-item-about {
-  /* width: 180px;
-  height: 306px; */
+.book-button:focus {
+  background-color: #4f2ee8;
+  color:#fff;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.15);
 }
-
 .book-wrap {
-  /* width: 180px; */
   margin-top: 18px;
   position: relative;
   overflow: hidden;
@@ -81,7 +81,7 @@
   height: 535px;
   object-fit: cover;
   cursor: pointer;
-  /* margin-bottom: 40px; */
+
 }
 
 .book_cover {
@@ -90,10 +90,10 @@
   position: absolute;
   bottom: 0;
   left: 0;
+  border-radius: 8px;
   padding-top: 26px;
   padding-bottom: 26px;
   text-align: center;
-  /* padding: 26 auto; */
   width: 100%;
   transform: translateY(100%);
   transition-property: transform;
@@ -101,16 +101,11 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   overflow: auto;
   background: #eac645;
+  color:#111;
 }
 
 .books-item-about:hover .book_cover {
   transform: translateY(0);
-}
-
-.book-overlay {
-}
-
-.book-text {
 }
 
 .book-info {
@@ -122,8 +117,11 @@
   font-size: 16px;
   line-height: 1.12;
   letter-spacing: -0.04em;
-  color: black;
+  color: #111;
   text-transform: uppercase;
+       html.dark-mode & {
+        color:#fff;
+       }
 }
 
 .info-author {
@@ -182,17 +180,12 @@ scroll-up-js:hover {
     display: block;
   }
 
-  .top-categories-list {
-    /* margin-top: 100px; */
-  }
-
   .list-books {
     max-width: 704px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* Тепер книги будуть по три в ряд */
     grid-gap: 40px;
-    /* margin-bottom: 140px; */
   }
 
   .book-img {
@@ -216,11 +209,9 @@ scroll-up-js:hover {
 
   .list-books {
     max-width: 996px;
-    /* height: 306px; */
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 24px;
-    /* margin-bottom: 100px; */
   }
 
   .book-img {
