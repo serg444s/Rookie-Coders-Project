@@ -6,23 +6,13 @@
 .support_line_container {
   align-items: center;
   display: flex;
-  /* margin-bottom: 20px; */
-  /* width: 159px; */
-  /* height: 32px; */
-}
-.support_line {
-}
-.supporters_list {
 }
 .for__support {
   margin-top: 40px;
-  /* width: 335px;
-  border-radius: 16px; */
 }
 
 .supporters {
   box-sizing: border-box;
-  /* width: 335px; */
   height: 460px;
   background: radial-gradient(
     183.6% 183.01% at 59.76% -23.42%,

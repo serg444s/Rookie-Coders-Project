@@ -1,7 +1,6 @@
 .display-book:not(:first-child) {
   display: none;
 }
-
 .categories-title {
   font-weight: 700;
   font-size: 48px;
@@ -9,19 +8,16 @@
   letter-spacing: -0.04em;
   color: black;
   margin-bottom: 40px;
-  html.dark-mode & {
-    color: #fff;
-  }
 }
-
+html.dark-mode .categories-title {
+  color: #fff;
+}
 .categories-title span {
   color: #4f2ee8;
 }
-
 .container-books {
   margin-bottom: 40px;
 }
-
 .book-categoty-title {
   font-weight: 400;
   font-size: 14px;
@@ -30,14 +26,12 @@
   text-transform: uppercase;
   color: #b4afaf;
 }
-
 .list-books {
   max-width: 335px;
   display: flex;
   flex-direction: column;
   margin-bottom: 8px;
 }
-
 .book-button {
   float: right;
   border: 2px solid #4f2ee8;
@@ -52,12 +46,11 @@
   color: #111;
   background-color: #fff;
   transition: all 0.2s ease;
-  html.dark-mode & {
-    color: #fff;
-    background-color: #202024;
-  }
 }
-
+html.dark-mode .book-button {
+  color: #fff;
+  background-color: #202024;
+}
 .book-button:hover {
   background-color: #4f2ee8;
   color: #fff;
@@ -73,7 +66,6 @@
   position: relative;
   overflow: hidden;
 }
-
 .book-img {
   border-radius: 8px;
   width: 335px;
@@ -81,7 +73,6 @@
   object-fit: cover;
   cursor: pointer;
 }
-
 .book_cover {
   font-weight: 600;
   font-size: 14px;
@@ -101,15 +92,12 @@
   background: #eac645;
   color: #111;
 }
-
 .books-item-about:hover .book_cover {
   transform: translateY(0);
 }
-
 .book-info {
   margin-top: 14px;
 }
-
 .info-title {
   font-weight: 700;
   font-size: 16px;
@@ -117,11 +105,10 @@
   letter-spacing: -0.04em;
   color: #111;
   text-transform: uppercase;
-  html.dark-mode & {
-    color: #fff;
-  }
 }
-
+html.dark-mode .info-title {
+  color: #fff;
+}
 .info-author {
   font-style: italic;
   font-weight: 400;
@@ -130,7 +117,6 @@
   letter-spacing: -0.04em;
   color: #b4afaf;
 }
-
 .scroll-up-js {
   opacity: 1;
   width: 54px;
@@ -144,36 +130,29 @@
   right: 50px;
   background-color: transparent;
 }
-
 .scroll-up {
   stroke: #4f2ee8;
   margin: 0 auto;
 }
-
 .scroll-up:hover {
   stroke: white;
 }
-
 .scroll-up-js:hover {
   background-color: #4f2ee8;
   transform: scale(1.2);
 }
-
 .scroll-up-js:hover .scroll-up {
   stroke: white;
 }
-
 .js-scroll-up-hidden {
   pointer-events: none;
   opacity: 0;
 }
-
 .scroll-up-blue {
   width: 24px;
   height: 24px;
   margin: auto;
 }
-
 .scroll-up-js.show {
   display: block;
   opacity: 1;
@@ -183,13 +162,11 @@
   .container-books {
     width: 704px;
   }
-
   .display-book:nth-child(1),
   .display-book:nth-child(2),
   .display-book:nth-child(3) {
     display: block;
   }
-
   .list-books {
     max-width: 704px;
     display: grid;
@@ -197,7 +174,6 @@
     /* Тепер книги будуть по три в ряд */
     grid-gap: 40px;
   }
-
   .book-img {
     width: 218px;
     height: 366px;
@@ -208,7 +184,6 @@
   .container-books {
     width: 996px;
   }
-
   .display-book:nth-child(1),
   .display-book:nth-child(2),
   .display-book:nth-child(3),
@@ -216,14 +191,12 @@
   .display-book:nth-child(5) {
     display: block;
   }
-
   .list-books {
     max-width: 996px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 24px;
   }
-
   .book-img {
     width: 180px;
     height: 306px;

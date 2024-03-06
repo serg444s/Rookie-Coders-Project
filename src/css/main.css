@@ -1,17 +1,8 @@
-.main-container {
-  /* display: flex;
-  gap: 50px; */
-}
-
 .left-container {
   margin-bottom: 40px;
   margin-top: 72px;
   width: 335px;
 }
-
-.right-container {
-}
-
 @media screen and (min-width: 768px) {
   .left-container {
     width: 337px;
