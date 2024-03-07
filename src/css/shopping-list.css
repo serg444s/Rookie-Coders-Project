@@ -45,7 +45,7 @@ html.dark-mode .empty-shopping-list {
 }
 .book-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   gap: 14px;
   width: 100%;
   height: 170px;
