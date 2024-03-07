@@ -1,5 +1,4 @@
 .modal {
-  overflow: auto;
   padding: 24px;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -213,9 +212,4 @@ html.dark-mode .modal-congrat-text {
     margin-right: 96px;
     margin-left: 96px;
   }
-}
-@media screen and (min-width: 1440px) {
-  .modal {
-    overflow: hidden;
-  } 
 }
