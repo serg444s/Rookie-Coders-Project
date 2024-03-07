@@ -8,7 +8,6 @@ export const loadMain = document.querySelector('#modal-main');
 
 export async function startLoad() {
   let congratulationData = sessionStorage.getItem('numberOfCongratulation');
-  console.log(congratulationData);
   if (congratulationData < 1) {
     congratulation();
   }
