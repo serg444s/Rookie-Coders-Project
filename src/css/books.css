@@ -157,7 +157,48 @@ html.dark-mode .info-title {
   display: block;
   opacity: 1;
 }
+.modal-woman {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 100px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
+.modal-content-woman {
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px; /* Додайте максимальну ширину, якщо потрібно */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.woman-img{
+  width: 100%;
+}
 @media screen and (min-width: 768px) {
   .container-books {
     width: 704px;
