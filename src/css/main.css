@@ -1,7 +1,7 @@
 .left-container {
   margin-bottom: 40px;
   margin-top: 72px;
-  width: 335px;
+  max-width: 335px;
 }
 @media screen and (min-width: 768px) {
   .left-container {

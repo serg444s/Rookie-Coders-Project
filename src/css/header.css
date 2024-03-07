@@ -39,7 +39,7 @@ html.dark-mode .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 375px;
+  max-width: 375px;
 }
 .header_logo {
   gap: 8px;
