@@ -26,7 +26,7 @@ html.dark-mode .modal {
 .modal-icon-closed {
   stroke: #111;
   font-size: 20px;
-  transition: all 0.2s ease;
+  transition: all 0.21s ease;
 }
 html.dark-mode .modal-icon-closed {
   stroke: #fff;
