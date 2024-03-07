@@ -8,6 +8,7 @@ import { onOpenModal, onCloseModal } from './js/burger.js';
 // import { charities } from './js/support';
 
 import { showModal } from './js/modal-window.js';
+import { congratulation } from './js/startLoad.js';
 
 const bookList = document.querySelector('.top-categories-list');
 const openModalBtn = document.querySelector('[data-action="open-modal"]');
@@ -29,3 +30,5 @@ function currentStyle() {
   home.classList.add('active');
 }
 currentStyle();
+
+// document.addEventListener('DOMContentLoaded', congratulation);

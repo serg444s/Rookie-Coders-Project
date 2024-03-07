@@ -7,6 +7,13 @@ import { loaderOff } from './loader';
 export const loadMain = document.querySelector('#modal-main');
 
 export async function startLoad() {
+  let congratulationData = sessionStorage.getItem('numberOfCongratulation');
+  console.log(congratulationData);
+  if (congratulationData < 1) {
+    congratulation();
+  }
+  sessionStorage.setItem('numberOfCongratulation', 1);
+
   loaderOn(loadMain);
   const categories = document.querySelector('.top-categories-list');
   try {
@@ -26,22 +33,24 @@ export async function startLoad() {
     onError();
   }
 }
+// document.addEventListener('DOMContentLoaded', congratulation);
 
-document.addEventListener("DOMContentLoaded", function() {
-  const modal = document.getElementById("womanModal");
+export function congratulation() {
+  const modal = document.getElementById('womanModal');
   /*const closeBtn = document.getElementsByClassName("close")[0];*/
 
   // Показати модальне вікно при завантаженні сторінки
-  modal.style.display = "block";
+  modal.style.display = 'block';
 
   // Функція для закриття модального вікна при кліку на "хрестик"
   function closeModal() {
-    modal.style.display = "none";
+    modal.style.display = 'none';
   }
 
   // Закрити модальне вікно при кліку на "хрестик"
   /*closeBtn.addEventListener("click", closeModal);*/
 
   // Зникання модального вікна через 3 секунди
-  setTimeout(closeModal, 2000);
-});
+  setTimeout(closeModal, 2500);
+  // document.removeEventListener('DOMContentLoaded', congratulation);
+}
