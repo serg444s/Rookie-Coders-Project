@@ -9,6 +9,7 @@
 }
 .for__support {
   margin-top: 40px;
+  display: flex;
 }
 
 .supporters {
@@ -102,10 +103,15 @@
 }
 
 @media screen and (min-width: 768px) {
-  .supporters{
+  .supporters {
+    height: 474px;
     width: 335px;
   }
 }
 
 @media screen and (min-width: 1440px) {
+  .supporters {
+    height: 474px;
+    max-width: 356px;
+  }
 }
