@@ -1,19 +1,21 @@
 .modal {
-  padding: 24px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  /* padding: 24px;*/
+  /* padding: 40px auto; */
+  /* padding-bottom: 40px; */
+  padding: 40px 24px;
   border: 2px solid #111;
   border-radius: 18px;
-  width: 335px;
+  max-width: 335px;
   height: auto;
   background-color: #fff;
+  margin: 0 auto;
 }
 html.dark-mode .modal {
   background-color: #202024;
   border-color: white;
 }
 .modal-icon {
-  stroke-width: 2.50px;
+  stroke-width: 2.5px;
   position: absolute;
   top: 12px;
   right: 6px;
@@ -24,7 +26,7 @@ html.dark-mode .modal {
 .modal-icon-closed {
   stroke: #111;
   font-size: 20px;
-  transition: all 0.2s ease;
+  transition: all 0.21s ease;
 }
 html.dark-mode .modal-icon-closed {
   stroke: #fff;
@@ -38,12 +40,12 @@ html.dark-mode .modal-icon-closed:hover {
 .modal-content {
   display: flex;
   flex-direction: column;
+  max-width: 287px;
 }
 .modal-img {
   margin-bottom: 14px;
   border-radius: 8px;
-  width: 287px;
-  height: 420px;
+  max-width: 100%;
 }
 .modal-title {
   margin-bottom: 4px;
@@ -121,8 +123,9 @@ html.dark-mode .modal-link-applebook:hover {
   padding: 14px;
   border: 2px solid #4f2ee8;
   border-radius: 40px;
-  width: auto;
-  height: 46px;
+  /* width: auto; */
+  /* height: 46px; */
+  /* max-width: 279px; */
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 14px;
@@ -146,10 +149,11 @@ html.dark-mode .modal-btn:hover {
   background-color: #4f2ee8;
 }
 .modal-congrat-text {
-  margin-top: 14px;
+  /* margin-top: 14px;
   margin-bottom: 34px;
   margin-right: 20px;
-  margin-left: 20px;
+  margin-left: 20px; */
+  margin: 14px auto;
   text-align: center;
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
@@ -164,7 +168,7 @@ html.dark-mode .modal-congrat-text {
 @media screen and (min-width: 768px) {
   .modal {
     padding: 40px;
-    width: 579px;
+    max-width: 579px;
     height: auto;
   }
   .modal-icon {
@@ -177,6 +181,7 @@ html.dark-mode .modal-congrat-text {
   .modal-content {
     display: flex;
     flex-direction: row;
+    max-width: 100%;
   }
   .modal-img {
     width: 192px;
