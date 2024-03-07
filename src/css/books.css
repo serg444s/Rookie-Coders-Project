@@ -47,10 +47,7 @@ html.dark-mode .categories-title {
   background-color: #fff;
   transition: all 0.2s ease;
 }
-html.dark-mode .book-button {
-  color: #fff;
-  background-color: #202024;
-}
+
 .book-button:hover {
   background-color: #4f2ee8;
   color: #fff;
@@ -61,6 +58,18 @@ html.dark-mode .book-button {
   color: #fff;
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.15);
 }
+html.dark-mode .book-button {
+  color: #fff;
+  background-color: #202024;
+}
+html.dark-mode .book-button:hover {
+  color: #fff;
+   background-color: #4f2ee8;
+}
+html.dark-mode .book-button:focus {
+  color: #fff;
+   background-color: #4f2ee8;
+}
 .book-wrap {
   margin-top: 18px;
   position: relative;
@@ -69,8 +78,8 @@ html.dark-mode .book-button {
 .book-img {
   border-radius: 8px;
   width: 335px;
-  height: 535px;
-  object-fit: cover;
+  height: 485px;
+  object-fit:cover;
   cursor: pointer;
 }
 .book_cover {
@@ -171,12 +180,12 @@ html.dark-mode .info-title {
     max-width: 704px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* Тепер книги будуть по три в ряд */
-    grid-gap: 40px;
+    grid-gap: 25px;
   }
   .book-img {
     width: 218px;
-    height: 366px;
+    height: 316px;
+
   }
 }
 
@@ -199,6 +208,7 @@ html.dark-mode .info-title {
   }
   .book-img {
     width: 180px;
-    height: 306px;
-  }
+    height: 256px;
+ 
+}
 }
