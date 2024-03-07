@@ -26,3 +26,22 @@ export async function startLoad() {
     onError();
   }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const modal = document.getElementById("womanModal");
+  /*const closeBtn = document.getElementsByClassName("close")[0];*/
+
+  // Показати модальне вікно при завантаженні сторінки
+  modal.style.display = "block";
+
+  // Функція для закриття модального вікна при кліку на "хрестик"
+  function closeModal() {
+    modal.style.display = "none";
+  }
+
+  // Закрити модальне вікно при кліку на "хрестик"
+  /*closeBtn.addEventListener("click", closeModal);*/
+
+  // Зникання модального вікна через 3 секунди
+  setTimeout(closeModal, 2000);
+});
