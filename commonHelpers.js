@@ -1,4 +1,4 @@
-import{l as k,a as b,o as y,b as u,c as $,d as I,e as O,f as q,g as x}from"./assets/openbook-9645a182.js";import{a as m,b as M}from"./assets/vendor-9b4a9007.js";async function T(t){return t.map(({author:o,book_image:e,title:a,description:n,_id:l})=>`<li class="books-item-about display-book" >
+import{l as k,a as b,o as y,b as u,c as I,d as $,e as O,f as q,g as x}from"./assets/openbook-c861c060.js";import{a as m,b as M}from"./assets/vendor-9b4a9007.js";async function T(t){return t.map(({author:o,book_image:e,title:a,description:n,_id:l})=>`<li class="books-item-about display-book" >
     <div class="book-wrap">
     <img class="book-img" src="${e}" data-id="${l}"  alt="${n}" />
     <p class="book_cover">QUICK VIEW</p>
@@ -13,9 +13,9 @@ import{l as k,a as b,o as y,b as u,c as $,d as I,e as O,f as q,g as x}from"./ass
     <ul class='list-books'>${await T(a)}</ul>
     <button class="book-button" data-category="${e}">See more</button>
     </div>
-    `))).join("")}document.addEventListener("click",async t=>{if(t.target.classList.contains("book-button")){const o=t.target.dataset.category;await h(o)}});window.addEventListener("scroll",function(){const t=document.querySelector(".scroll-up-js");window.scrollY>2e3?t.classList.remove("js-scroll-up-hidden"):t.classList.add("js-scroll-up-hidden")});document.querySelector(".scroll-up-js").addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});const d=document.querySelector("#modal-main");async function B(){k(d);const t=document.querySelector(".top-categories-list");try{const o=await m.get("https://books-backend.p.goit.global/books/top-books");t.insertAdjacentHTML("afterbegin",'<h2 class="categories-title">Best Sellers<span> Books</span></h2>');const e=await C(o.data);return t.insertAdjacentHTML("beforeend",e),b(d),o.data}catch(o){console.log(o.message),y()}}async function h(t){k(d);const o=document.querySelector(".top-categories-list");o.innerHTML="";try{const a=(await m.get(`https://books-backend.p.goit.global/books/category?category=${t}`)).data;o.insertAdjacentHTML("afterbegin",await P(t,a)),b(d)}catch(e){console.log(e.message),y()}}async function P(t,o){const e=t.split(" "),n="<span>"+e[e.length-1]+"</span>";return e[e.length-1]=n,`
+    `))).join("")}document.addEventListener("click",async t=>{if(t.target.classList.contains("book-button")){const o=t.target.dataset.category;await h(o)}});window.addEventListener("scroll",function(){const t=document.querySelector(".scroll-up-js");window.scrollY>2e3?t.classList.remove("js-scroll-up-hidden"):t.classList.add("js-scroll-up-hidden")});document.querySelector(".scroll-up-js").addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});const d=document.querySelector("#modal-main");async function B(){k(d);const t=document.querySelector(".top-categories-list");try{const o=await m.get("https://books-backend.p.goit.global/books/top-books");t.insertAdjacentHTML("afterbegin",'<h2 class="categories-title">Best Sellers<span> Books</span></h2>');const e=await C(o.data);return t.insertAdjacentHTML("beforeend",e),b(d),o.data}catch(o){console.log(o.message),y()}}document.addEventListener("DOMContentLoaded",function(){const t=document.getElementById("womanModal");t.style.display="block";function o(){t.style.display="none"}setTimeout(o,2e3)});async function h(t){k(d);const o=document.querySelector(".top-categories-list");o.innerHTML="";try{const a=(await m.get(`https://books-backend.p.goit.global/books/category?category=${t}`)).data;o.insertAdjacentHTML("afterbegin",await D(t,a)),b(d)}catch(e){console.log(e.message),y()}}async function D(t,o){const e=t.split(" "),n="<span>"+e[e.length-1]+"</span>";return e[e.length-1]=n,`
   <h3 class="categories-title">${e.join(" ")}</h3>
-  <ul class='list-books'>${await _(o)}</ul>`}async function _(t){return t.map(D).join("")}function D({author:t,book_image:o,title:e,description:a,_id:n}){return`<li class="category-item" id=${n}>
+  <ul class='list-books'>${await P(o)}</ul>`}async function P(t){return t.map(_).join("")}function _({author:t,book_image:o,title:e,description:a,_id:n}){return`<li class="category-item" id=${n}>
     <div class="book-wrap">
     <img class="book-img" src="${o}"  alt="${a}" data-id="${n}"/>
     </div >
@@ -37,10 +37,10 @@ import{l as k,a as b,o as y,b as u,c as $,d as I,e as O,f as q,g as x}from"./ass
         <p class="modal-text">${L}</p>
         <div class="modal-link-icons">
             <a target="_blank" href="${w}">
-            <img class="modal-link-amazon" srcset="${u} 1x,${$} 2x" src="${u}" alt="Amazon Shop" />
+            <img class="modal-link-amazon" srcset="${u} 1x,${I} 2x" src="${u}" alt="Amazon Shop" />
             </a>
             <a target="_blank" href="${E.find(c=>c.name==="Apple Books").url}">
-            <img class="modal-link-applebook" src="${I}" alt="Open book" />
+            <img class="modal-link-applebook" src="${$}" alt="Open book" />
             </a>
         </div>
         </div>
