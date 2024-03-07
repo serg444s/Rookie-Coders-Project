@@ -197,16 +197,22 @@ html.dark-mode .header_icon_close:focus {
   display: flex;
 }
 .nav__link--current {
-  background-color: #eac645;
+   border: 2px solid;
+  border-radius: 16px;
+  border-color: #eac645;
   letter-spacing: -0.04em;
-  color: #111;
-  border: 0 solid #0003;
-  border-radius: 36px;
+  color: #fff;
   padding: 8px 16px;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.29;
   text-transform: uppercase;
+}
+.nav__link--current:hover{
+  color: #eac645;
+}
+.nav__link--current:focus{
+  color: #eac645;
 }
 .nav__shopping {
   align-items: center;
@@ -214,13 +220,29 @@ html.dark-mode .header_icon_close:focus {
   margin-top: 15px;
   display: flex;
   color: #fff;
+     border: 2px solid;
+  border-radius: 16px;
+  border-color: #eac645;
+   padding: 8px 16px;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 14px;
+}
+.nav__shopping:hover{
+  color: #eac645;
+}
+.nav__shopping:focus{
+  color: #eac645;
 }
 .nav__basket {
   fill: #fff;
+}
+.nav__basket:hover {
+  fill: #eac645;
+}
+.nav__basket:focus{
+  fill: #eac645;
 }
 .backdrop {
   transform-origin: 0 0;
