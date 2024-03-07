@@ -41,7 +41,7 @@ export async function showModal(event) {
 </svg>
         </button>
         <div class="modal-content">
-        <img class="modal-img" src="${book_image}" width="330" height="485"/>
+        <img class="modal-img" src="${book_image}"/>
         <div class="modal-content-text">
         <h3 class="modal-title">${title}</h3>
         <p class="modal-author">${author}</p> 
@@ -118,7 +118,6 @@ function changeBookText() {
     instance.element().querySelector('.modal-congrat-text').textContent =
       'Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".';
     addBookIdToStorage(bookId);
-    
   } else {
     instance.element().querySelector('.modal-btn').onclick = instance
       .element()

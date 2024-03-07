@@ -46,6 +46,7 @@ html.dark-mode .modal-icon-closed:hover {
   margin-bottom: 14px;
   border-radius: 8px;
   max-width: 100%;
+  object-fit: cover;
 }
 .modal-title {
   margin-bottom: 4px;
