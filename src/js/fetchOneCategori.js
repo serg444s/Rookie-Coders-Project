@@ -50,9 +50,10 @@ async function makeListBook(data) {
 }
 
 function makeMarcup({ author, book_image, title, description, _id }) {
-  return `<li class="category-item" id=${_id}>
+  return `<li class="category-item books-item-about" id=${_id}>
     <div class="book-wrap">
     <img class="book-img" src="${book_image}"  alt="${description}" data-id="${_id}"/>
+        <p class="book_cover">QUICK VIEW</p>
     </div >
     <div class="book-info">
     <p class="info-title">${title}</p>
