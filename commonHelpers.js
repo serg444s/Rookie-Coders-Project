@@ -1,4 +1,4 @@
-import{l as k,a as b,o as y,b as u,c as $,d as I,e as O,f as q,g as x}from"./assets/openbook-e1cd1f65.js";import{a as m,b as M}from"./assets/vendor-9b4a9007.js";async function T(t){return t.map(({author:o,book_image:e,title:a,description:n,_id:l})=>`<li class="books-item-about display-book" >
+import{l as k,a as b,o as y,b as u,c as $,d as I,e as O,f as q,g as x}from"./assets/openbook-9645a182.js";import{a as m,b as M}from"./assets/vendor-9b4a9007.js";async function T(t){return t.map(({author:o,book_image:e,title:a,description:n,_id:l})=>`<li class="books-item-about display-book" >
     <div class="book-wrap">
     <img class="book-img" src="${e}" data-id="${l}"  alt="${n}" />
     <p class="book_cover">QUICK VIEW</p>
@@ -25,7 +25,7 @@ import{l as k,a as b,o as y,b as u,c as $,d as I,e as O,f as q,g as x}from"./ass
     </div>
     </li>`}async function f(){const t="https://books-backend.p.goit.global/books/category-list";try{return(await m.get(t)).data}catch(o){console.error("Error fetching books:",o)}}async function A(){try{const t=await f(),o=document.querySelector(".categories-list_books");t.forEach(e=>{const a=document.createElement("li");a.classList.add("item-list_category"),a.dataset.category=e.list_name;const n=document.createElement("a");n.textContent=e.list_name,n.href=`#${e.list_name}`,n.classList.add("link_category-book"),a.appendChild(n),o.appendChild(a),a.addEventListener("click",async()=>{const l=a.dataset.category;await h(l)})})}catch(t){console.error("Error rendering categories:",t)}}document.addEventListener("DOMContentLoaded",A);let r=JSON.parse(localStorage.getItem("books"))||[];function H(t){r=JSON.parse(localStorage.getItem("books"))||[],r.includes(t)||(r.push(t),localStorage.setItem("books",JSON.stringify(r)))}function S(t){const o=JSON.parse(localStorage.getItem("books")),e=o.findIndex(a=>a===t);e!==-1&&o.splice(e,1),localStorage.setItem("books",JSON.stringify(o))}async function N(t){const o=`https://books-backend.p.goit.global/books/${t}`;return(await m.get(o)).data}const j=document.querySelector(".top-categories-list");j.addEventListener("click",v);let i,s;async function v(t){if(t.preventDefault(),t.target.nodeName!=="IMG")return;i=t.target.dataset.id;const o=await N(i);let e;r.includes(i)||(e="ADD TO SHOPPING LIST"),r.includes(i)&&(e="REMOVE FROM THE SHOPPING LIST");const{book_image:a,title:n,author:l,description:L,amazon_product_url:w,buy_links:E}=o;s=M.create(`<div class="modal">
         <button type="button" class="modal-icon">
-        <svg class="modal-icon-closed" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+        <svg class="modal-icon-closed" width="24" height="24" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
   <path d="M21 7L7 21M7 7L21 21" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
 </svg>
         </button>
