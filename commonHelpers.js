@@ -1,4 +1,4 @@
-import{l as b,a as k,o as y,b as u,c as I,d as $,e as O,f as q,g as x}from"./assets/openbook-19dc1c3c.js";import{a as m,b as M}from"./assets/vendor-9b4a9007.js";async function T(t){return t.map(({author:e,book_image:o,title:a,description:n,_id:l})=>`<li class="books-item-about display-book" >
+import{l as b,a as k,o as y,b as u,c as I,d as $,e as O,f as q,g as x}from"./assets/openbook-a11d4e80.js";import{a as m,b as M}from"./assets/vendor-9b4a9007.js";async function T(t){return t.map(({author:e,book_image:o,title:a,description:n,_id:l})=>`<li class="books-item-about display-book" >
     <div class="book-wrap">
     <img class="book-img" src="${o}" data-id="${l}"  alt="${n}" />
     <p class="book_cover">QUICK VIEW</p>
