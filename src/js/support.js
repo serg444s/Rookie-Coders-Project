@@ -133,7 +133,7 @@ charities.forEach(function (charity, index) {
 
 const swiper = new Swiper('.swiper', {
   direction: 'vertical',
-  loop: true,
+  loop: false,
   slidesPerView: 6,
   effect: 'slide',
 });
