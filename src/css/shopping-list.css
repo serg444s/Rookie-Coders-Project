@@ -45,7 +45,7 @@ html.dark-mode .empty-shopping-list {
 }
 .book-list {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   gap: 14px;
   width: 100%;
   height: 170px;
@@ -242,6 +242,20 @@ html.dark-mode .tui-pagination .tui-is-selected:hover {
 .tui-is-disabled.tui-last:hover {
   background: #111;
 } /* ================================ */
+@media screen and (max-width: 375px) {
+  .book-list {
+    max-width: 320px;
+    height: 120px;
+  }
+  .book-card-img {
+    width: 50px;
+    height: 71px;
+  }
+  .remove-shop-list-book {
+    width: 20px;
+    height: 20px;
+  }
+}
 @media screen and (min-width: 768px) {
   .empty-shopping-list-main {
     width: 349px;

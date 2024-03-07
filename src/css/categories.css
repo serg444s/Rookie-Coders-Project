@@ -4,8 +4,8 @@ ul.categories-list_books {
   justify-content: flex-start;
   flex-direction: column;
   gap: 24px;
-  width: 335px;
-  height:228px;
+  max-width: 100%;
+  height: 228px;
   overflow-y: scroll;
   padding-right: 20px;
 }
@@ -32,14 +32,14 @@ html.dark-mode a.link_category-book:focus {
   color: #eac645;
 }
 .categories-list_books::-webkit-scrollbar {
-  width: 8px;
-  height:167px;
+  max-width: 8px;
+  height: 167px;
 }
 .categories-list_books::-webkit-scrollbar-thumb {
   background: #e0e0e0;
   border-radius: 12px;
 }
-html.dark-mode .categories-list_books::-webkit-scrollbar-thumb{
+html.dark-mode .categories-list_books::-webkit-scrollbar-thumb {
   background: #111;
 }
 @media screen and (min-width: 375px) {
@@ -51,7 +51,7 @@ html.dark-mode .categories-list_books::-webkit-scrollbar-thumb{
     gap: 24px;
     width: 376px;
     height: 228px;
-}
+  }
   a.link_category-book {
     font: 400 16px / 1.125 'DM Sans', sans-serif;
     letter-spacing: -0.02em;
@@ -66,7 +66,7 @@ html.dark-mode .categories-list_books::-webkit-scrollbar-thumb{
   }
   ul.categories-list_books {
     gap: 32px;
-    width:356px;
+    width: 356px;
     height: 472px;
   }
 }
