@@ -36,10 +36,10 @@ export async function fetchOneCategori(category) {
 
 async function makeCategoryPage(category, data) {
   const words = category.split(' ');
-  const lastWord = words[words.length - 1];
-  const wrappedLastWord = '<span>' + lastWord + '</span>';
-  words[words.length - 1] = wrappedLastWord;
-  const updatedString = words.join(' ');
+  const middleIndex = Math.ceil(words.length / 2);
+  const firstHalf = words.slice(0, middleIndex).join(' ');
+  const secondHalf = words.slice(middleIndex).join(' ');
+  const updatedString = firstHalf + ' <span>' + secondHalf + '<span>';
   return `
   <h3 class="categories-title">${updatedString}</h3>
   <ul class='list-books'>${await makeListBook(data)}</ul>`;

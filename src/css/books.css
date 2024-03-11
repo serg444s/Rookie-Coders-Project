@@ -8,6 +8,7 @@
   letter-spacing: -0.04em;
   color: black;
   margin-bottom: 40px;
+  text-transform: capitalize;
 }
 html.dark-mode .categories-title {
   color: #fff;
