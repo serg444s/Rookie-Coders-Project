@@ -15,7 +15,7 @@ let instance;
 
 export async function showModal(event) {
   event.preventDefault();
-  if (event.target.nodeName !== 'IMG') return;
+  if (!event.target.hasAttribute('data-id')) return;
   bookId = event.target.dataset.id;
   const book = await getBookById(bookId);
   let buttonText;
