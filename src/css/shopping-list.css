@@ -72,8 +72,7 @@ html.dark-mode .empty-shopping-list {
   align-items: center;
 }
 .shop-list-title {
-  width: 144px;
-  height: 18px;
+  max-width: 144px;
   font-size: 16px;
   font-weight: 700;
   overflow: hidden;
@@ -307,8 +306,9 @@ html.dark-mode .tui-pagination .tui-is-selected:hover {
     height: 53px;
     margin-bottom: 24px;
   }
+
   .shop-list-title {
-    width: max-content;
+    max-width: 475px;
   }
   .shop-list-downpart {
     width: auto;
@@ -364,5 +364,8 @@ html.dark-mode .tui-pagination .tui-is-selected:hover {
     width: 92px;
     height: 27px;
     gap: 16px;
+  }
+  .shop-list-title {
+    max-width: 995px;
   }
 }

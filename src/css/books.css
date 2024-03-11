@@ -64,11 +64,11 @@ html.dark-mode .book-button {
 }
 html.dark-mode .book-button:hover {
   color: #fff;
-   background-color: #4f2ee8;
+  background-color: #4f2ee8;
 }
 html.dark-mode .book-button:focus {
   color: #fff;
-   background-color: #4f2ee8;
+  background-color: #4f2ee8;
 }
 .book-wrap {
   margin-top: 18px;
@@ -79,10 +79,11 @@ html.dark-mode .book-button:focus {
   border-radius: 8px;
   width: 335px;
   height: 485px;
-  object-fit:cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .book_cover {
+  cursor: pointer;
   font-weight: 600;
   font-size: 14px;
   position: absolute;
@@ -224,7 +225,6 @@ html.dark-mode .info-title {
   .book-img {
     width: 218px;
     height: 316px;
-
   }
 }
 
@@ -248,6 +248,5 @@ html.dark-mode .info-title {
   .book-img {
     width: 180px;
     height: 256px;
- 
-}
+  }
 }
