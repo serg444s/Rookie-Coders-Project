@@ -38,8 +38,6 @@ document.addEventListener('DOMContentLoaded', renderCategories);
 
 function activeCategory(e) {
   const links = document.querySelectorAll('.link_category-book');
-  console.log(links);
   links.forEach(link => link.classList.remove('active-category'));
   e.currentTarget.classList.add('active-category');
-  console.log(e.currentTarget);
 }

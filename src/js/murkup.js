@@ -20,6 +20,7 @@ export async function murkup(categories) {
 document.addEventListener('click', async event => {
   if (event.target.classList.contains('book-button')) {
     const categoryListBooks = event.target.dataset.category;
+    onBtnCategoryClick(categoryListBooks);
     await fetchOneCategori(categoryListBooks);
   }
 });
@@ -40,3 +41,14 @@ document.querySelector('.scroll-up-js').addEventListener('click', function () {
     behavior: 'smooth',
   });
 });
+
+function onBtnCategoryClick(categoryListBooks) {
+  const links = document.querySelectorAll('.link_category-book');
+  links.forEach(link => link.classList.remove('active-category'));
+
+  links.forEach(link => {
+    if (link.textContent === categoryListBooks) {
+      link.classList.add('active-category');
+    }
+  });
+}
