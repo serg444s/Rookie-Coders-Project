@@ -35,12 +35,14 @@ export async function startLoad() {
 // document.addEventListener('DOMContentLoaded', congratulation);
 
 export function congratulation() {
+  const today = new Date();
   const modal = document.getElementById('womanModal');
   /*const closeBtn = document.getElementsByClassName("close")[0];*/
-
-  // Показати модальне вікно при завантаженні сторінки
+  if (today.getMonth() === 3 && today.getDate() === 8) {
+    // Показати модальне вікно, якщо сьогодні 8 березня
+  
   modal.style.display = 'block';
-
+  }
   // Функція для закриття модального вікна при кліку на "хрестик"
   function closeModal() {
     modal.style.display = 'none';
